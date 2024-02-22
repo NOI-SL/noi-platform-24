@@ -1,26 +1,31 @@
-'use client'
-import Herosec from "@/components/herosec";
-import Navbar from "@/components/navbar";
-import Image from "next/image";
-import { AuthProvider } from "@asgardeo/auth-react";
+"use client";
+
+import Herosec from '@/components/herosec';
+import Mobilenav from '@/components/mobilenav';
+import Navbar from '@/components/navbar';
+import { LoginButton, LogoutButton } from '@/components/ui/login'
+import { useSession } from 'next-auth/react';
 
 export default function Home() {
+  const { status } = useSession();
+
   return (
-    // <AuthProvider
-    //   config={{
-    //     signInRedirectURL: "https://localhost:3000",
-    //     signOutRedirectURL: "https://localhost:3000",
-    //     clientID: "SVU2z9pmfL0Mpv9vyCgn1uRdYsEa",
-    //     baseUrl: "https://api.asgardeo.io/t/kodecosmo",
-    //     scope: ["openid", "profile"],
-    //   }}
-    //   >
-    <main className="min-h-full  flex flex-col  w-full">
-      <Navbar />
-      <Herosec />
-    </main>
-      
- 
-    
-  );
+    <>
+      {status === "authenticated" ? (
+        <main className="">
+          <Navbar />
+          <Herosec />
+          <Mobilenav />
+        </main>
+      ) : (
+
+        <main className="min-h-screen flex flex-col items-center justify-center text-center overflow-hidden bg-gray-100">
+          <p className="text-xl p-8">You are not logged in!</p>
+          <LoginButton />
+        </main>
+
+      )}
+    </>
+
+  )
 }

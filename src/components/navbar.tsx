@@ -1,10 +1,8 @@
-// Navbar.tsx
 "use client";
 
 import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { cn } from "@/lib/utils";
 import {
     NavigationMenu,
     NavigationMenuContent,
@@ -15,6 +13,7 @@ import {
     navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import logo from './logoblack.png';
+import { LogoutButton } from "./ui/login";
 
 interface Component {
     title: string;
@@ -133,6 +132,7 @@ const Navbar: React.FC = () => {
                                         <ListItem href="/docs/primitives/typography" title="Title 3">
                                             Coming soon
                                         </ListItem>
+                                        <LogoutButton />
                                     </ul>
                                 </NavigationMenuContent>
                             </NavigationMenuItem>

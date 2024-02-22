@@ -64,9 +64,6 @@ const Herosec: React.FC = () => {
                     </>
                 )}
             </div>
-
-
-
         </main>
     );
 }

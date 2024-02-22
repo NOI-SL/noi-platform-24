@@ -28,17 +28,19 @@ const Herosec: React.FC = () => {
                 <Image src={backimage.src} alt="NOI 24" layout="fill" objectFit="cover" quality={100} unoptimized />
             </div>
 
-            <div className='flex flex-col items-center content-center justify-center w-full text-white'>
+
+            <div className="flex flex-col items-center justify-center w-full h-screen text-white">
                 {isSplineLoaded && (
                     <>
-                        <div className=''>
+                        <div>
                             <motion.div
                                 initial={{ y: 100, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{ duration: 0.5, delay: 0.2, type: 'spring', stiffness: 100 }}
                                 className="z-10"
                             >
-                                <h1 className="text-[80px] lg:text-[250px] tracking-widest stroke-only mt-28 font-bold font-horus">NOI 24</h1>
+                                {/* Responsive font sizes for h1 element */}
+                                <h1 className="text-6xl md:text-[150px] lg:text-[250px] xl:text-[250px] 2xl:text-[300px] tracking-widest font-bold font-horus ">NOI 24</h1>
                             </motion.div>
                             <motion.div
                                 initial={{ y: 100, opacity: 0 }}
@@ -46,7 +48,8 @@ const Herosec: React.FC = () => {
                                 transition={{ duration: 0.5, delay: 0.2, type: 'spring', stiffness: 100 }}
                                 className="z-10"
                             >
-                                <p className="text-[13x] lg:text-[20px] tracking-widest font-sans mb-20">NATIONAL OLYMPIAD IN INFORMATICS</p>
+                                {/* Responsive text sizes and margin adjustments */}
+                                <p className="text-sm md:text-lg lg:text-[20px] xl:text-[22px] 2xl:text-[24px] tracking-widest font-sans mb-10 md:mb-15 lg:mb-20">NATIONAL OLYMPIAD IN INFORMATICS</p>
                             </motion.div>
                         </div>
 
@@ -54,13 +57,16 @@ const Herosec: React.FC = () => {
                             initial={{ y: 100, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ duration: 0.5, delay: 0.4, type: 'spring', stiffness: 100 }}
-                            className="mt-20 lg:mt-1 items-center z-10 font-horus"
+                            className="items-center z-10 font-horus"
                         >
                             <PrimBut name="Register Now" link="/register" />
                         </motion.div>
                     </>
                 )}
             </div>
+
+
+
         </main>
     );
 }

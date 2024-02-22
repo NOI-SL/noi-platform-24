@@ -25,7 +25,7 @@ const Herosec: React.FC = () => {
     return (
         <main className="min-h-full flex flex-col items-center justify-center text-center overflow-hidden">
             <div className=' top-0 -z-50 left-0 w-full h-full'>
-                <Image src={backimage} alt="NOI 24" layout="fill" objectFit="cover" quality={100} unoptimized />
+                <Image src={backimage.src} alt="NOI 24" layout="fill" objectFit="cover" quality={100} unoptimized />
             </div>
 
             <div className='flex flex-col items-center content-center justify-center w-full text-white'>

@@ -1,6 +1,7 @@
 "use client";
 
 import Herosec from '@/components/herosec';
+import Heroseclog from '@/components/heroseclog';
 import Mobilenav from '@/components/mobilenav';
 import Navbar from '@/components/navbar';
 import { LoginButton, LogoutButton } from '@/components/ui/login'
@@ -17,20 +18,19 @@ export default function Home() {
       </main>
     )
   }
-  
+
   return (
     <>
       {status === "authenticated" ? (
         <main className="">
           <Navbar />
-          <Herosec />
+          <Heroseclog />
           <Mobilenav />
         </main>
       ) : (
 
-        <main className="min-h-screen flex flex-col items-center justify-center text-center overflow-hidden bg-gray-100">
-          <p className="text-xl p-8">You are not logged in!</p>
-          <LoginButton />
+        <main className="">
+          <Herosec />
         </main>
 
       )}

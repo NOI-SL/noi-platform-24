@@ -7,8 +7,9 @@ import PrimBut from './ui/buttonone'; // Make sure PrimBut is also converted to 
 import logo from './logoblack.png';
 import Image from 'next/image';
 import backimage from './hero.png';
+import PrimButtwo from './ui/buttontwo';
 
-const Herosec: React.FC = () => {
+const Heroseclog: React.FC = () => {
     // State to manage the loading of the Spline scene
     const [isSplineLoaded, setIsSplineLoaded] = useState<boolean>(false);
 
@@ -59,7 +60,7 @@ const Herosec: React.FC = () => {
                             transition={{ duration: 0.5, delay: 0.4, type: 'spring', stiffness: 100 }}
                             className="items-center z-10 font-horus"
                         >
-                            <PrimBut name="Continue to Portal" link="#" />
+                            <PrimButtwo name="Continue to Profile" link="/profile" />
                         </motion.div>
                     </>
                 )}
@@ -68,4 +69,4 @@ const Herosec: React.FC = () => {
     );
 }
 
-export default Herosec;
+export default Heroseclog;

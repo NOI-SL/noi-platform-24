@@ -10,7 +10,7 @@ interface PrimButProps {
     link: string;
 }
 
-const PrimBut: React.FC<PrimButProps> = ({ name, link }) => {
+const PrimButtwo: React.FC<PrimButProps> = ({ name, link }) => {
     const [hovered, setHovered] = useState(false);
 
     const handleHoverStart = () => {
@@ -22,12 +22,12 @@ const PrimBut: React.FC<PrimButProps> = ({ name, link }) => {
     };
 
     const router = useRouter();
-    // const handleClick = () => {
-    //     // Delay navigation using setTimeout
-    //     // setTimeout(() => {
-    //     router.push(link);
-    //     // }, 400); // Delay for 1 second (adjust as needed)
-    // };
+    const handleClick = () => {
+        // Delay navigation using setTimeout
+        // setTimeout(() => {
+        router.push(link);
+        // }, 400); // Delay for 1 second (adjust as needed)
+    };
 
     const hoverAnimation = {
         scale: 1.05,
@@ -64,7 +64,7 @@ const PrimBut: React.FC<PrimButProps> = ({ name, link }) => {
             <motion.button
                 className="py-4 px-8 border-[3px] bg-white border-black text-black hover:text-slate-100 bg-primary-50"
                 style={{ position: 'relative', overflow: 'hidden', zIndex: 1 }} // Change default background color as needed
-                whileHover={hoverAnimation} onClick={() => signIn("asgardeo")}
+                whileHover={hoverAnimation} onClick={() => handleClick()}
             >
                 <AnimatePresence>
                     {hovered && (
@@ -84,4 +84,4 @@ const PrimBut: React.FC<PrimButProps> = ({ name, link }) => {
     );
 }
 
-export default PrimBut;
+export default PrimButtwo;

@@ -7,8 +7,17 @@ import { LoginButton, LogoutButton } from '@/components/ui/login'
 import { useSession } from 'next-auth/react';
 
 export default function Home() {
-  const { status } = useSession();
+  const { data, status } = useSession();
+  const profileData = data?.user?.profile;
 
+  if (status === "loading") {
+    return (
+      <main className="flex min-h-screen flex-col items-center justify-center p-24">
+        <p className="text-xl pb-24">Loading...</p>
+      </main>
+    )
+  }
+  
   return (
     <>
       {status === "authenticated" ? (

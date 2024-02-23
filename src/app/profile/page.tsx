@@ -26,24 +26,28 @@ export default function Profile() {
     }
 
     return (
-        <main className="flex min-h-screen flex-col items-center justify-center p-24">
-            <div className="max-w-md mx-auto bg-gray-800 rounded-lg shadow-md overflow-hidden p-24 m-8">
+        <main className="flex min-h-screen flex-col items-center justify-center p-8 bg-gray-100">
+            <div className="max-w-md mx-auto bg-white rounded-lg shadow-md overflow-hidden p-8 m-4">
                 <div className="mt-6">
-                    <h2 className="font-semibold">Profile Information</h2>
-                    <div className="mt-2 mb-8">
-                        <p className="text-gray-300">
-                            <span className="font-semibold">First Name:</span> {profileData?.given_name}
-                        </p>
-                        <p className="text-gray-300">
-                            <span className="font-semibold">Last Name:</span> {profileData?.family_name}
-                        </p>
-                        <p className="text-gray-300">
-                            <span className="font-semibold">Email:</span> {profileData?.username}
-                        </p>
+                    <h2 className="text-2xl font-semibold mb-4">Profile Information</h2>
+                    <div className="space-y-2">
+                        <div className="flex items-center">
+                            <span className="w-1/4 font-semibold text-gray-600">First Name:</span>
+                            <p className="text-gray-700">{profileData?.given_name}</p>
+                        </div>
+                        <div className="flex items-center">
+                            <span className="w-1/4 font-semibold text-gray-600">Last Name:</span>
+                            <p className="text-gray-700">{profileData?.family_name}</p>
+                        </div>
+                        <div className="flex items-center">
+                            <span className="w-1/4 font-semibold text-gray-600">Email:</span>
+                            <p className="text-gray-700">{profileData?.username}</p>
+                        </div>
                     </div>
                 </div>
             </div>
             <LogoutButton />
         </main>
+
     )
 }

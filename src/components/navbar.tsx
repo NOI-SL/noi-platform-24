@@ -89,7 +89,7 @@ ListItem.displayName = 'ListItem';
 
 const Navbar: React.FC = () => {
     return (
-        <nav className="sticky top-0 z-50 bg-white hidden py-5 lg:flex flex-row font-horus">
+        <nav className="sticky top-0 z-50 bg-white hidden py-5 lg:flex flex-row">
             <div className="md:mx-60 mx-5 flex flex-row justify-between content-center items-center w-full">
                 <Link href="/" passHref>
                     <Image
@@ -111,7 +111,7 @@ const Navbar: React.FC = () => {
                                             <NavigationMenuLink asChild>
                                                 <Link
                                                     className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                                                    href="https://portal.noi.lk/" target="_blank"
+                                                    href="https://portal.noi24.info/" target="_blank"
                                                 >
 
                                                     <div className="mb-2 mt-4 text-lg font-medium">
@@ -132,7 +132,7 @@ const Navbar: React.FC = () => {
                                         <ListItem href="/docs/primitives/typography" title="Title 3">
                                             Coming soon
                                         </ListItem>
-                                        <LogoutButton />
+                                        
                                     </ul>
                                 </NavigationMenuContent>
                             </NavigationMenuItem>
@@ -153,11 +153,7 @@ const Navbar: React.FC = () => {
                                 </NavigationMenuContent>
                             </NavigationMenuItem>
                             <NavigationMenuItem>
-                                <Link href="/register" legacyBehavior passHref>
-                                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                        Register Now
-                                    </NavigationMenuLink>
-                                </Link>
+                                <LogoutButton />
                             </NavigationMenuItem>
                         </NavigationMenuList>
                     </NavigationMenu>

@@ -21,6 +21,12 @@ interface Component {
     description: string;
 }
 
+interface NavbarProps {
+    status?: string; // Optional "status" prop
+    // Add other expected props here
+}
+
+
 const components: Component[] = [
     {
         title: "How to Compete",
@@ -65,6 +71,7 @@ interface ListItemProps {
     children: React.ReactNode;
 }
 
+
 const ListItem = React.forwardRef<HTMLAnchorElement, ListItemProps>(
     ({ href, title, children, ...props }, ref) => (
         <li>
@@ -87,7 +94,9 @@ const ListItem = React.forwardRef<HTMLAnchorElement, ListItemProps>(
 
 ListItem.displayName = 'ListItem';
 
-const Navbar: React.FC = () => {
+
+
+const Navbar: React.FC<NavbarProps> = (NavbarProps) => {
     return (
         <nav className="sticky top-0 z-50 bg-white hidden py-5 lg:flex flex-row">
             <div className="md:mx-60 mx-5 flex flex-row justify-between content-center items-center w-full">
@@ -132,7 +141,7 @@ const Navbar: React.FC = () => {
                                         <ListItem href="/docs/primitives/typography" title="Title 3">
                                             Coming soon
                                         </ListItem>
-                                        
+
                                     </ul>
                                 </NavigationMenuContent>
                             </NavigationMenuItem>
@@ -153,7 +162,16 @@ const Navbar: React.FC = () => {
                                 </NavigationMenuContent>
                             </NavigationMenuItem>
                             <NavigationMenuItem>
-                                <LogoutButton />
+                                {NavbarProps.status === "authenticated" ? (
+                                    <LogoutButton />
+                                ) : (
+                                    <NavigationMenuLink asChild>
+                                        <Link href="https://www.noi24.info/register" target="_black">
+                                            <div className="text-sans text-sm border rounded-lg bg-slate-100 py-2 px-4 hover:bg-slate-200">Register Now</div>
+                                        </Link>
+                                    </NavigationMenuLink>
+                                )}
+
                             </NavigationMenuItem>
                         </NavigationMenuList>
                     </NavigationMenu>

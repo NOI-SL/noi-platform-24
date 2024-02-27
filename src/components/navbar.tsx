@@ -183,7 +183,7 @@ const Navbar: React.FC<NavbarProps> = (NavbarProps) => {
                                     <LogoutButton />
                                 ) : (
                                     <NavigationMenuLink asChild>
-                                        <Link href="https://www.noi24.info/register" target="_black">
+                                            <Link href="https://www.noi.lk/register" target="_black">
                                             <div className="text-sans text-sm border rounded-lg bg-slate-100 py-2 px-4 hover:bg-slate-200">Register Now</div>
                                         </Link>
                                     </NavigationMenuLink>

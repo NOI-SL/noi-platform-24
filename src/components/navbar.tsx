@@ -22,7 +22,9 @@ interface Component {
 }
 
 interface NavbarProps {
-    status?: string; // Optional "status" prop
+    status?: string;
+    name?: string;
+    // Optional "status" prop
     // Add other expected props here
 }
 
@@ -30,9 +32,9 @@ interface NavbarProps {
 const components: Component[] = [
     {
         title: "How to Compete",
-        href: "/docs/primitives/alert-dialog",
+        href: "/howtocompete",
         description:
-            "Coming soon",
+            "Divisions and other details",
     },
     {
         title: "Resources",
@@ -113,22 +115,37 @@ const Navbar: React.FC<NavbarProps> = (NavbarProps) => {
                     <NavigationMenu>
                         <NavigationMenuList>
                             <NavigationMenuItem>
-                                <NavigationMenuTrigger>NOI - 24</NavigationMenuTrigger>
+                                <NavigationMenuTrigger>Explore</NavigationMenuTrigger>
                                 <NavigationMenuContent>
                                     <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                                         <li className="row-span-3">
                                             <NavigationMenuLink asChild>
                                                 <Link
                                                     className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                                                    href="https://portal.noi24.info/" target="_blank"
+                                                    href="/profile"
                                                 >
+                                                    {NavbarProps.status === "authenticated" ? (
+                                                        <div>
+                                                            <div className="mb-2 mt-4 text-lg font-medium">
+                                                                {NavbarProps.name}
+                                                               
+                                                            </div>
+                                                            <p className="text-sm leading-tight text-muted-foreground">
+                                                                Continue to the profile
+                                                            </p>
+                                                        </div>
+                                                    ) : (
+                                                        <div>
+                                                            <div className="mb-2 mt-4 text-lg font-medium">
+                                                                Portal Login
+                                                            </div>
+                                                            <p className="text-sm leading-tight text-muted-foreground">
+                                                                Continue to the profile
+                                                            </p>
+                                                        </div>
+                                                    )
+                                                    }
 
-                                                    <div className="mb-2 mt-4 text-lg font-medium">
-                                                        Portal Login
-                                                    </div>
-                                                    <p className="text-sm leading-tight text-muted-foreground">
-                                                        Continue to the moodle
-                                                    </p>
                                                 </Link>
                                             </NavigationMenuLink>
                                         </li>

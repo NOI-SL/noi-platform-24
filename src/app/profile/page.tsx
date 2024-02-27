@@ -2,6 +2,7 @@
 
 import Mobilenav from '@/components/mobilenav';
 import Navbar from '@/components/navbar';
+
 import { LogoutButton } from '@/components/ui/login'
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
@@ -21,35 +22,53 @@ export default function Profile() {
 
     if (status !== "authenticated") {
         return (
-            <main className="flex min-h-screen flex-col items-center justify-center p-24">
-                <p className="text-xl pb-24">Loading...</p>
+            <main className="flex min-h-screen flex-col items-center justify-center p-4 sm:p-8">
+                <p className="text-xl pb-8">Loading...</p>
             </main>
         )
     }
 
+    const state = String(status) === "authenticated" ? "authenticated" : "unauthenticated";
+    const name = String(profileData?.given_name);
+
     return (
         <>
-            <Navbar />
-            <main className="flex min-h-screen flex-col items-center justify-center p-8 bg-gray-100">
-                <div className="max-w-md mx-auto bg-white rounded-lg shadow-md overflow-hidden p-8 m-4">
-                    <div className="mt-6">
-                        <h2 className="text-2xl font-semibold mb-4">Profile Information</h2>
+            <Navbar
+                status={state}
+                name={name} 
+            />
+            <main className="flex flex-col min-h-screen p-4 sm:p-8 bg-gray-100">
+                <section className="mb-8">
+                    <h2 className="text-2xl font-semibold mb-4">Profile Information</h2>
+                    <div className="bg-white rounded-lg shadow-md p-4">
                         <div className="space-y-2">
-                            <div className="flex items-center">
-                                <span className="w-1/4 font-semibold text-gray-600">First Name:</span>
+                            <div className="flex flex-col sm:flex-row items-center">
+                                <span className="w-full sm:w-1/4 font-semibold text-gray-600">First Name:</span>
                                 <p className="text-gray-700">{profileData?.given_name}</p>
                             </div>
-                            <div className="flex items-center">
-                                <span className="w-1/4 font-semibold text-gray-600">Last Name:</span>
+                            <div className="flex flex-col sm:flex-row items-center">
+                                <span className="w-full sm:w-1/4 font-semibold text-gray-600">Last Name:</span>
                                 <p className="text-gray-700">{profileData?.family_name}</p>
                             </div>
-                            <div className="flex items-center">
-                                <span className="w-1/4 font-semibold text-gray-600">Email:</span>
+                            <div className="flex flex-col sm:flex-row items-center">
+                                <span className="w-full sm:w-1/4 font-semibold text-gray-600">Email:</span>
                                 <p className="text-gray-700">{profileData?.username}</p>
                             </div>
                         </div>
                     </div>
-                </div>
+                </section>
+                <section className="mb-8">
+                    <h2 className="text-2xl font-semibold mb-4">Account Settings</h2>
+                    <div className="bg-white rounded-lg shadow-md p-4">
+                        {/* Account settings content */}
+                    </div>
+                </section>
+                <section className="mb-8">
+                    <h2 className="text-2xl font-semibold mb-4">Activity Log</h2>
+                    <div className="bg-white rounded-lg shadow-md p-4">
+                        {/* Activity log content */}
+                    </div>
+                </section>
                 <LogoutButton />
             </main>
             <Mobilenav />

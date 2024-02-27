@@ -77,3 +77,18 @@
       font-family: 'Horus', sans-serif;
     }
 }
+
+.color-dark {
+  --tw-text-opacity: 1;
+  color: rgba(32, 28, 28, var(--tw-text-opacity));
+}
+
+.color-accent {
+  --tw-text-opacity: 1;
+  color: rgba(218, 167, 51, var(--tw-text-opacity));
+}
+
+.color-secondary {
+  --tw-text-opacity: 1;
+  color: rgba(37, 87, 84, var(--tw-text-opacity));
+}

@@ -1,7 +1,7 @@
 'use client'
 import React from 'react';
 import Link from 'next/link';
-import { FaHome, FaUserPlus } from 'react-icons/fa';
+import { FaHome, FaUserPlus, FaQuestionCircle, FaUser } from 'react-icons/fa';
 
 const Mobilenav: React.FC = () => {
     return (
@@ -16,6 +16,18 @@ const Mobilenav: React.FC = () => {
                 <div className="flex flex-col items-center space-y-1 cursor-pointer">
                     <FaUserPlus size={24} />
                     <span>Register Now</span>
+                </div>
+            </Link>
+            <Link href="/howtocompete" passHref>
+                <div className="flex flex-col items-center space-y-1 cursor-pointer">
+                    <FaQuestionCircle size={24} />
+                    <span>Compete</span>
+                </div>
+            </Link>
+            <Link href="/profile" passHref>
+                <div className="flex flex-col items-center space-y-1 cursor-pointer">
+                    <FaUser size={24} />
+                    <span>Profile</span>
                 </div>
             </Link>
         </nav>

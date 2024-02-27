@@ -18,7 +18,7 @@ const Heroseclog: React.FC = () => {
         // In a real scenario, you would use a Spline API method to check if it's loaded, if available.
         const timer = setTimeout(() => {
             setIsSplineLoaded(true);
-        }, 1000); // assuming the Spline takes 3 seconds to load
+        }, 0); // assuming the Spline takes 3 seconds to load
 
         return () => clearTimeout(timer);
     }, []);

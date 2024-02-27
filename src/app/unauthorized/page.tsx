@@ -11,7 +11,7 @@ export default function Unauthorized() {
 
     useEffect(() => {
         if (status === 'authenticated') {
-            push('/profile');
+            push('/');
         }
     }, [status])
 

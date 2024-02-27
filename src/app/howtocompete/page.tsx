@@ -69,7 +69,7 @@ const HowToCompete: React.FC = () => {
                         <li>Participants who enter this division will remain in this division until the end of the next Division B monthly practice contest.</li>
                         <li>Contestants will have to participate in a set of competitions every month.</li>
                         <li>The score of the participants in the division A program will be calculated based on the score obtained by participating in contests instructed by the program organizers. (Eg : A coordinator may instruct you to take part the codeforces contests along with other international contests)</li>
-                        <li>Contestants in the division A program are allowed to compete in NOI monthly contests, but their results wouldn't be counted for the final leaderboard of the contest.</li>
+                        <li>Contestants in the division A program are allowed to compete in NOI monthly contests, but their results wouldn&apos;t be counted for the final leaderboard of the contest.</li>
                         <li>At the end of each monthly Division B contest, the last ranking two members of the Division A program will be demoted to the Division B program.</li>
                     </ul>
 
@@ -80,6 +80,7 @@ const HowToCompete: React.FC = () => {
             </motion.main>
             <Mobilenav />
         </>
+
     );
 };
 

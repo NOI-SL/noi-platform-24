@@ -5,6 +5,7 @@ import Navbar from '@/components/navbar';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import Mobilenav from '@/components/mobilenav';
+import LoadingScreen from '@/components/loadingscreen';
 
 const HowToCompete: React.FC = () => {
     const { data: sessionData, status } = useSession();
@@ -18,9 +19,7 @@ const HowToCompete: React.FC = () => {
 
     if (status !== "authenticated") {
         return (
-            <main className="flex min-h-screen items-center justify-center">
-                <p className="text-xl">Loading...</p>
-            </main>
+            <LoadingScreen />
         )
     }
 

@@ -21,6 +21,7 @@ export default function Home() {
   }
 
 const state = String(status) === "authenticated" ? "authenticated" : "unauthenticated";
+const name = String(profileData?.given_name);
 
 
   return (
@@ -28,7 +29,8 @@ const state = String(status) === "authenticated" ? "authenticated" : "unauthenti
       {status === "authenticated" ? (
         <main className="">
           <Navbar
-            status={state} // Add the status prop to the Navbar component
+            status={state}
+            name={name} // Add the status prop to the Navbar component
           />
           <Heroseclog />
           <Mobilenav />

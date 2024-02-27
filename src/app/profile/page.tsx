@@ -29,11 +29,13 @@ export default function Profile() {
     }
 
     const state = String(status) === "authenticated" ? "authenticated" : "unauthenticated";
+    const name = String(profileData?.given_name);
 
     return (
         <>
             <Navbar
-                status={state} // Add the status prop to the Navbar component
+                status={state}
+                name={name} 
             />
             <main className="flex flex-col min-h-screen p-4 sm:p-8 bg-gray-100">
                 <section className="mb-8">

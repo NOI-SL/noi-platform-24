@@ -8,8 +8,9 @@ import Mobilenav from '@/components/mobilenav';
 import LoadingScreen from '@/components/loadingscreen';
 
 const HowToCompete: React.FC = () => {
-    const { data: sessionData, status } = useSession();
+    const { data, status } = useSession();
     const { push } = useRouter();
+    const profileData = data?.user?.profile;
 
     useEffect(() => {
         if (status === 'unauthenticated') {
@@ -24,10 +25,14 @@ const HowToCompete: React.FC = () => {
     }
 
     const state = status === "authenticated" ? "authenticated" : "unauthenticated";
+    const name = String(profileData?.given_name);
 
     return (
         <>
-            <Navbar status={state} />
+            <Navbar
+                status={state}
+                name={name}
+            />
             <motion.main
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}

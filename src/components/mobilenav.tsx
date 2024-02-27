@@ -12,7 +12,7 @@ const Mobilenav: React.FC = () => {
                     <span>Home</span>
                 </div>
             </Link>
-            <Link href="/register" passHref>
+            <Link href="https://www.noi.lk/register" target='_blank' passHref>
                 <div className="flex flex-col items-center space-y-1 cursor-pointer">
                     <FaUserPlus size={24} />
                     <span>Register Now</span>

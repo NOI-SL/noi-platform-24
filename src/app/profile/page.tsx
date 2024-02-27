@@ -2,6 +2,7 @@
 
 import Mobilenav from '@/components/mobilenav';
 import Navbar from '@/components/navbar';
+
 import { LogoutButton } from '@/components/ui/login'
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
@@ -27,9 +28,13 @@ export default function Profile() {
         )
     }
 
+    const state = String(status) === "authenticated" ? "authenticated" : "unauthenticated";
+
     return (
         <>
-            <Navbar />
+            <Navbar
+                status={state} // Add the status prop to the Navbar component
+            />
             <main className="flex min-h-screen flex-col items-center justify-center p-8 bg-gray-100">
                 <div className="max-w-md mx-auto bg-white rounded-lg shadow-md overflow-hidden p-8 m-4">
                     <div className="mt-6">

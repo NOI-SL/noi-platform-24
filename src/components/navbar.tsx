@@ -120,15 +120,29 @@ const Navbar: React.FC<NavbarProps> = (NavbarProps) => {
                                             <NavigationMenuLink asChild>
                                                 <Link
                                                     className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                                                    href="https://portal.noi24.info/" target="_blank"
+                                                    href="/" target="_blank"
                                                 >
+                                                    {NavbarProps.status === "authenticated" ? (
+                                                        <div>
+                                                            <div className="mb-2 mt-4 text-lg font-medium">
+                                                                Profile
+                                                            </div>
+                                                            <p className="text-sm leading-tight text-muted-foreground">
+                                                                Continue to the profile
+                                                            </p>
+                                                        </div>
+                                                    ) : (
+                                                        <div>
+                                                            <div className="mb-2 mt-4 text-lg font-medium">
+                                                                Portal Login
+                                                            </div>
+                                                            <p className="text-sm leading-tight text-muted-foreground">
+                                                                Continue to the profile
+                                                            </p>
+                                                        </div>
+                                                    )
+                                                    }
 
-                                                    <div className="mb-2 mt-4 text-lg font-medium">
-                                                        Portal Login
-                                                    </div>
-                                                    <p className="text-sm leading-tight text-muted-foreground">
-                                                        Continue to the moodle
-                                                    </p>
                                                 </Link>
                                             </NavigationMenuLink>
                                         </li>

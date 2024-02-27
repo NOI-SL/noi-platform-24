@@ -30,9 +30,9 @@ interface NavbarProps {
 const components: Component[] = [
     {
         title: "How to Compete",
-        href: "/docs/primitives/alert-dialog",
+        href: "/howtocompete",
         description:
-            "Coming soon",
+            "Divisions and other details",
     },
     {
         title: "Resources",

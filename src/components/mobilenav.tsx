@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Home, UserPlus, HelpCircle, User, ChevronUp, Compass, Clock, Award, BarChart2, BookOpen, Users, XCircle } from 'lucide-react';
+import { Home, UserPlus, HelpCircle, User, ChevronUp, Compass, Clock, Award, BarChart2, BookOpen, Users, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const navItems = [
@@ -61,9 +61,12 @@ const Mobilenav: React.FC = () => {
                         className="fixed bottom-16 inset-x-0 z-30 grid place-items-center bg-white p-4 rounded-t-2xl lg:hidden"
                         style={{ gridTemplateRows: 'auto 1fr auto' }}
                     >
-                        {/* Close Icon at the top */}
-                        <div className="self-end w-full text-right pt-2 pr-2">
-                            <XCircle size={32} className="text-red-500 cursor-pointer" onClick={toggleNav} />
+                        {/* Close Icon replaced with ChevronDown at the top */}
+                        <div className="w-full flex justify-center pt-2">
+                            <div className="flex items-center space-x-2 cursor-pointer" onClick={toggleNav}>
+                                <ChevronDown size={32} className="text-slate-700" />
+                                <span className="text-sm font-semibold text-slate-700">Less</span>
+                            </div>
                         </div>
 
                         {/* Nav Items in a grid, adjusting for 3 items per row */}
@@ -82,6 +85,7 @@ const Mobilenav: React.FC = () => {
                     </motion.div>
                 )}
             </AnimatePresence>
+
 
         </div >
     );

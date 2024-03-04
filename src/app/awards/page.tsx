@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSession } from 'next-auth/react';
+import Navbar from '@/components/navbar';
 
 interface Award {
     title: string;
@@ -26,7 +27,7 @@ const Awards: React.FC = () => {
 
     return (
         <>
-
+    <Navbar />
             <div>
                 <h1>Awards</h1>
                 {awards.map((award, index) => (

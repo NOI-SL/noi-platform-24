@@ -7,6 +7,7 @@ import { useRouter } from 'next/navigation';
 
 import LoadingScreen from '@/components/loadingscreen';
 import { useSession } from 'next-auth/react';
+import Mobilenav from '@/components/mobilenav';
 
 const AdminPage = () => {
     const { data, status } = useSession();
@@ -31,6 +32,8 @@ const AdminPage = () => {
     // Render Admin Page content or unauthorized message based on isAdmin
     // Note: This conditional rendering is client-side, ensure you have a fallback or loading state if necessary
     return (
+        <>
+        
         <div>
             {isAdmin ? (
                 <>
@@ -54,6 +57,8 @@ const AdminPage = () => {
                 </div>
             )}
         </div>
+        <Mobilenav />
+        </>
     );
 };
 

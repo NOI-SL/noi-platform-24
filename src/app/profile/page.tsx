@@ -57,19 +57,22 @@ export default function Profile() {
                         </div>
                     </div>
                 </section>
-                <section className="mb-8">
-                    <h2 className="text-2xl font-semibold mb-4">Account Settings</h2>
+                <section className="mb-8 w-1/2">
+                    <h2 className="text-2xl font-semibold mb-4">Hackerank</h2>
                     <div className="bg-white rounded-lg shadow-md p-4">
                         {/* Account settings content */}
                     </div>
                 </section>
-                <section className="mb-8">
-                    <h2 className="text-2xl font-semibold mb-4">Activity Log</h2>
+                <section className="mb-8 w-1/2">
+                    <h2 className="text-2xl font-semibold mb-4">Division</h2>
                     <div className="bg-white rounded-lg shadow-md p-4">
                         {/* Activity log content */}
                     </div>
                 </section>
+                <div>
+
                 <LogoutButton />
+                </div>
             </main>
             <Mobilenav />
         </>

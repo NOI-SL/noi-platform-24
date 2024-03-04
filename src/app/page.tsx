@@ -5,7 +5,6 @@ import Heroseclog from '@/components/heroseclog';
 import LoadingScreen from '@/components/loadingscreen';
 import Mobilenav from '@/components/mobilenav';
 import Navbar from '@/components/navbar';
-import { LoginButton, LogoutButton } from '@/components/ui/login'
 import { useSession } from 'next-auth/react';
 
 export default function Home() {

@@ -1,33 +1,33 @@
 'use client'
 import React from 'react';
 import Link from 'next/link';
-import { FaHome, FaUserPlus, FaQuestionCircle, FaUser } from 'react-icons/fa';
+import { Home, UserPlus, HelpCircle, User } from 'lucide-react';
 
 const Mobilenav: React.FC = () => {
     return (
-        <nav className='flex fixed flex-row justify-between bg-white/60 items-center lg:hidden text-black z-50 bottom-0 py-1 px-10 w-full bg-opacity-90 backdrop-filter backdrop-blur-[1000px]'>
+        <nav className='flex fixed inset-x-0 bottom-0 z-50 flex-row justify-around bg-white/95 backdrop-blur-lg py-2 px-4 lg:hidden shadow-lg  rounded -t-xl'>
             <Link href="/" passHref>
                 <div className="flex flex-col items-center space-y-1 cursor-pointer">
-                    <FaHome size={24} />
-                    <span>Home</span>
+                    <Home size={24} className="text-blue-500" />
+                    <span className="text-sm font-semibold">Home</span>
                 </div>
             </Link>
-            <Link href="https://www.noi.lk/register" target='_blank' passHref>
+            <Link href="https://www.noi.lk/register" passHref>
                 <div className="flex flex-col items-center space-y-1 cursor-pointer">
-                    <FaUserPlus size={24} />
-                    <span>Register Now</span>
+                    <UserPlus size={24} className="text-green-500" />
+                    <span className="text-sm font-semibold">Register Now</span>
                 </div>
             </Link>
             <Link href="/howtocompete" passHref>
                 <div className="flex flex-col items-center space-y-1 cursor-pointer">
-                    <FaQuestionCircle size={24} />
-                    <span>Compete</span>
+                    <HelpCircle size={24} className="text-yellow-500" />
+                    <span className="text-sm font-semibold">Compete</span>
                 </div>
             </Link>
             <Link href="/profile" passHref>
                 <div className="flex flex-col items-center space-y-1 cursor-pointer">
-                    <FaUser size={24} />
-                    <span>Profile</span>
+                    <User size={24} className="text-purple-500" />
+                    <span className="text-sm font-semibold">Profile</span>
                 </div>
             </Link>
         </nav>

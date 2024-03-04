@@ -44,7 +44,7 @@ const components: Component[] = [
     },
     {
         title: "Awards",
-        href: "/docs/primitives/progress",
+        href: "/awards",
         description:
             "Coming soon",
     },

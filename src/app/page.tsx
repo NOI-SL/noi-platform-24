@@ -40,6 +40,7 @@ const name = String(profileData?.given_name);
             // Add the status prop to the Navbar component
           />
           <Herosec />
+          <Mobilenav />
         </main>
       )}
     </>

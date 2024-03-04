@@ -60,6 +60,7 @@ const Herosec: React.FC = () => {
                             className="items-center z-10 font-horus"
                         >
                             <PrimBut name="Continue to Portal" link="#" />
+                            {/* <p className='font-sans'>If you haven't registered yet please register now</p> */}
                         </motion.div>
                     </>
                 )}

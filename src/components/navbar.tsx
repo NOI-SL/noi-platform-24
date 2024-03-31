@@ -100,7 +100,7 @@ ListItem.displayName = 'ListItem';
 
 const Navbar: React.FC<NavbarProps> = (NavbarProps) => {
     return (
-        <nav className="sticky top-0 z-50 bg-blacky bg-opacity-50 hidden py-5 lg:flex flex-row">
+        <nav className="sticky top-0 z-50 bg-blacky bg-opacity-80 hidden py-5 lg:flex flex-row">
             <div className="md:mx-60 mx-5 flex flex-row justify-between content-center items-center w-full">
                 <Link href="/" passHref>
                     <Image

@@ -81,7 +81,7 @@ const ListItem = React.forwardRef<HTMLAnchorElement, ListItemProps>(
                 <a
                     ref={ref}
                     href={href}
-                    className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                    className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none text-white transition-colors hover:bg-black hover:text-white focus:bg-black focus:text-accent-foreground"
                     {...props}
                 >
                     <div className="text-sm font-medium leading-none">{title}</div>
@@ -100,7 +100,7 @@ ListItem.displayName = 'ListItem';
 
 const Navbar: React.FC<NavbarProps> = (NavbarProps) => {
     return (
-        <nav className="sticky top-0 z-50 bg-white hidden py-5 lg:flex flex-row">
+        <nav className="sticky top-0 z-50 bg-blacky bg-opacity-50 hidden py-5 lg:flex flex-row">
             <div className="md:mx-60 mx-5 flex flex-row justify-between content-center items-center w-full">
                 <Link href="/" passHref>
                     <Image
@@ -121,7 +121,7 @@ const Navbar: React.FC<NavbarProps> = (NavbarProps) => {
                                         <li className="row-span-3">
                                             <NavigationMenuLink asChild>
                                                 <Link
-                                                    className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                                                    className="flex h-full w-full select-none flex-col justify-end bg-black-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                                                     href="/profile"
                                                 >
                                                     {NavbarProps.status === "authenticated" ? (
@@ -184,7 +184,7 @@ const Navbar: React.FC<NavbarProps> = (NavbarProps) => {
                                 ) : (
                                     <NavigationMenuLink asChild>
                                             <Link href="https://www.noi.lk/register" target="_black">
-                                            <div className="text-sans text-sm border rounded-lg bg-slate-100 py-2 px-4 hover:bg-slate-200">Register Now</div>
+                                            <div className="text-sans text-sm text-white bg-blacky-100 py-2 px-4 hover:bg-blacky-200">Register Now</div>
                                         </Link>
                                     </NavigationMenuLink>
                                 )}

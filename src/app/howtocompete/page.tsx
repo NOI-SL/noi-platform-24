@@ -25,10 +25,10 @@ const HowToCompete: React.FC = () => {
       <>
         <Navbar />
         <motion.main
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -50 }}
-          transition={{ duration: 0.5 }}
+          // initial={{ opacity: 0, y: 50 }}
+          // animate={{ opacity: 1, y: 0 }}
+          // exit={{ opacity: 0, y: -50 }}
+          // transition={{ duration: 0.5 }}
           className="min-h-full flex flex-col items-center justify-center text-center overflow-hidden bg-black"
         >
           <div className="mt-8 w-full py-20 bg-blacky-400">
@@ -52,7 +52,7 @@ const HowToCompete: React.FC = () => {
             </ul>
           </div>
 
-          <div className="flex flex-row w-full justify-center items-center h-90 py-4">
+          <div className="flex flex-row w-3/4 justify-center items-center h-90 py-4">
             <div className="flex-none w-1/4 flex justify-center items-center">
               <Image src={img2023} alt="Image 1" width={200} height={200} />
             </div>
@@ -154,18 +154,31 @@ const HowToCompete: React.FC = () => {
               <h1 className="text-lg font-semibold mb-4 text-gold">
                 Eligible Languages | භාවිත කළ හැකි භාෂා
               </h1>
-              <div className="flex flex-row w-full justify-center items-center">
-                <div className="mx-2">
-                  <Image src={cplusplus} alt="C++" width={200} height={200} />
-                </div>
+              <div className="flex flex-row w-full justify-left items-center">
+                <a
+                  href="https://cplusplus.com/doc/tutorial/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className=" w-1/4"
+                >
+                  <div className="mx-2 flex justify-center items-center">
+                    <Image src={cplusplus} alt="C++" width={100} height={100} />
+                  </div>
+                </a>
+
                 {/* <div className="mx-2">
                   <Image src={java} alt="Java" width={200} height={200} />
                 </div> */}
+                <p className="mb-8 text-white w-3/4 pt-7">
+                  C++ is commonly used in the development of system software,
+                  such as operating systems and device drivers, and in game
+                  development
+                </p>
               </div>
             </div>
             <h1 className="text-lg font-semibold mb-4 text-gold">
-                About the Competition | තරගාවලිය පිළිබඳව
-              </h1>
+              About the Competition | තරගාවලිය පිළිබඳව
+            </h1>
             <p className="mb-8 text-white">
               The main competition (or the National Olympiad in Informatics)
               will take place at the University of Colombo. The 8 contestants of

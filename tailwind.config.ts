@@ -26,8 +26,8 @@ const config = {
         foreground: "hsl(var(--foreground))",
 
         blacky: {
-          DEFAULT: "#000000",
-          foreground: "#000000",
+          DEFAULT: "#343a40",
+          foreground: "#343a40",
         },
         primary: {
           DEFAULT: "hsl(var(--primary))",
@@ -58,12 +58,16 @@ const config = {
           foreground: "hsl(var(--card-foreground))",
         },
         gold: {
-          DEFAULT: "#ffba08",
-          foreground: "#ffba08",
+          DEFAULT: "#F3D592",
+          foreground: "#F3D592",
         },
         darkred:{
           DEFAULT: "#0a0908",
           foreground: "#0a0908",
+        },
+        darkgreen:{
+          DEFAULT: "#08433F",
+          foreground: "#08433F",
         }
       },
       borderRadius: {

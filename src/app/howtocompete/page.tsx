@@ -29,7 +29,7 @@ const HowToCompete: React.FC = () => {
           // animate={{ opacity: 1, y: 0 }}
           // exit={{ opacity: 0, y: -50 }}
           // transition={{ duration: 0.5 }}
-          className="min-h-full flex flex-col items-center justify-center text-center overflow-hidden bg-black"
+          className="min-h-full flex flex-col items-center justify-center text-center overflow-hidden bg-gradient-to-br from-black to-darkgreen"
         >
           <div className="mt-8 w-full py-20 bg-blacky-400">
             <h1 className="text-4xl font-bold text-gold">

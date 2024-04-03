@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import loadingIcon from "@/assets/Img/Horse.svg";
+import loadingIcon from "@/assets/img/Horse.svg";
 
 const LoadingScreen: React.FC = () => {
   return (

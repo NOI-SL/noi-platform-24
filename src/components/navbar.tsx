@@ -12,7 +12,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import logo from "./logoblack.png";
+import logo from "./logo-white.png";
 import { LogoutButton } from "./ui/login";
 
 interface Component {

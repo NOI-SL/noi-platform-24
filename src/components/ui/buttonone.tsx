@@ -43,26 +43,26 @@ const PrimBut: React.FC<PrimButProps> = ({ name, link }) => {
             height: '100%',
             backgroundColor: '#201C1C', // Change this color as needed
         },
-        animate: {
-            width: '100%',
-            transition: {
-                duration: 0.15,
-                ease: 'easeInOut',
-            },
-        },
-        exit: {
-            width: 0,
-            transition: {
-                duration: 0.25,
-                ease: 'easeInOut',
-            },
-        },
+        // animate: {
+        //     width: '100%',
+        //     transition: {
+        //         duration: 0.15,
+        //         ease: 'easeInOut',
+        //     },
+        // },
+        // exit: {
+        //     width: 0,
+        //     transition: {
+        //         duration: 0.25,
+        //         ease: 'easeInOut',
+        //     },
+        // },
     };
 
     return (
         <div onMouseEnter={handleHoverStart} onMouseLeave={handleHoverEnd} style={{ position: 'relative' }}>
             <motion.button
-                className="py-4 px-8 border-[3px] bg-white border-black text-black hover:text-slate-100 bg-primary-50"
+                className="py-3 px-8 border-[3px] bg-darkgreen border-gold text-gold hover:text-slate-100 bg-darkgreen"
                 style={{ position: 'relative', overflow: 'hidden', zIndex: 1 }} // Change default background color as needed
                 whileHover={hoverAnimation} onClick={() => signIn("asgardeo")}
             >

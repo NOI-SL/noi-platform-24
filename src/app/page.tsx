@@ -27,18 +27,11 @@ const name = String(profileData?.given_name);
     <>
       {status === "authenticated" ? (
         <main className="">
-          <Navbar
-            status={state}
-            name={name} // Add the status prop to the Navbar component
-          />
           <Heroseclog />
           <Mobilenav />
         </main>
       ) : (
         <main className="">
-          <Navbar
-            // Add the status prop to the Navbar component
-          />
           <Herosec />
           <Mobilenav />
         </main>

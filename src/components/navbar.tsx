@@ -12,7 +12,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import logo from "./logo-white.png";
+import logo from "./NOILogoGold.svg";
 import { LogoutButton } from "./ui/login";
 
 interface Component {
@@ -74,7 +74,7 @@ const ListItem = React.forwardRef<HTMLAnchorElement, ListItemProps>(
         <a
           ref={ref}
           href={href}
-          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none text-white transition-colors hover:bg-black hover:text-white focus:bg-black focus:text-accent-foreground"
+          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none text-gold transition-colors hover:bg-black hover:text-gold focus:bg-black focus:text-accent-foreground"
           {...props}
         >
           <div className="text-sm font-medium leading-none">{title}</div>
@@ -91,7 +91,7 @@ ListItem.displayName = "ListItem";
 
 const Navbar: React.FC<NavbarProps> = (NavbarProps) => {
   return (
-    <nav className="sticky top-0 z-50 bg-blacky hidden py-5 lg:flex flex-row">
+    <nav className="fixed top-0 z-50 hidden py-5 lg:flex flex-row w-full">
       <div className="md:mx-60 mx-5 flex flex-row justify-between content-center items-center w-full">
         <Link href="/" passHref>
           <Image
@@ -105,14 +105,14 @@ const Navbar: React.FC<NavbarProps> = (NavbarProps) => {
         <div>
           <NavigationMenu>
             <NavigationMenuList>
-              <NavigationMenuItem>
+              {/* <NavigationMenuItem>
                 <NavigationMenuTrigger>Explore</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                     <li className="row-span-3">
                       <NavigationMenuLink asChild>
                         <Link
-                          className="flex h-full w-full select-none flex-col justify-end bg-black-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                          className="flex h-full w-full select-none flex-col justify-end from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                           href="/profile"
                         >
                           {NavbarProps.status === "authenticated" ? (
@@ -151,8 +151,8 @@ const Navbar: React.FC<NavbarProps> = (NavbarProps) => {
                     </ListItem>
                   </ul>
                 </NavigationMenuContent>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
+              </NavigationMenuItem> */}
+              {/* <NavigationMenuItem>
                 <NavigationMenuTrigger>Competition</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
@@ -167,15 +167,119 @@ const Navbar: React.FC<NavbarProps> = (NavbarProps) => {
                     ))}
                   </ul>
                 </NavigationMenuContent>
+              </NavigationMenuItem> */}
+              <NavigationMenuItem>
+                {NavbarProps.status === "authenticated" ? (
+                  <LogoutButton />
+                ) : (
+                  <NavigationMenuLink asChild>
+                    <Link href="https://noi-platform-24.vercel.app">
+                      <div className="text-sans text-sm text-gold bg-blacky-100 py-2 px-4 hover:bg-blacky-200">
+                        Home
+                      </div>
+                    </Link>
+                  </NavigationMenuLink>
+                )}
               </NavigationMenuItem>
               <NavigationMenuItem>
                 {NavbarProps.status === "authenticated" ? (
                   <LogoutButton />
                 ) : (
                   <NavigationMenuLink asChild>
-                    <Link href="https://www.noi.lk/register" target="_black">
-                      <div className="text-sans text-sm text-white bg-blacky-100 py-2 px-4 hover:bg-blacky-200">
+                    <Link href="https://noi-platform-24.vercel.app/howtocompete">
+                      <div className="text-sans text-sm text-gold bg-blacky-100 py-2 px-4 hover:bg-blacky-200">
+                        Compete
+                      </div>
+                    </Link>
+                  </NavigationMenuLink>
+                )}
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                {NavbarProps.status === "authenticated" ? (
+                  <LogoutButton />
+                ) : (
+                  <NavigationMenuLink asChild>
+                    <Link href="https://noi-platform-24.vercel.app/resources">
+                      <div className="text-sans text-sm text-gold bg-blacky-100 py-2 px-4 hover:bg-blacky-200">
+                        Resources
+                      </div>
+                    </Link>
+                  </NavigationMenuLink>
+                )}
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                {NavbarProps.status === "authenticated" ? (
+                  <LogoutButton />
+                ) : (
+                  <NavigationMenuLink asChild>
+                    <Link href="https://noi-platform-24.vercel.app/awards">
+                      <div className="text-sans text-sm text-gold bg-blacky-100 py-2 px-4 hover:bg-blacky-200">
+                        Awards
+                      </div>
+                    </Link>
+                  </NavigationMenuLink>
+                )}
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                {NavbarProps.status === "authenticated" ? (
+                  <LogoutButton />
+                ) : (
+                  <NavigationMenuLink asChild>
+                    <Link href="https://noi-platform-24.vercel.app/timeline">
+                      <div className="text-sans text-sm text-gold bg-blacky-100 py-2 px-4 hover:bg-blacky-200">
+                        Timeline
+                      </div>
+                    </Link>
+                  </NavigationMenuLink>
+                )}
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                {NavbarProps.status === "authenticated" ? (
+                  <LogoutButton />
+                ) : (
+                  <NavigationMenuLink asChild>
+                    <Link href="https://noi-platform-24.vercel.app/results">
+                      <div className="text-sans text-sm text-gold bg-blacky-100 py-2 px-4 hover:bg-blacky-200">
+                        Results
+                      </div>
+                    </Link>
+                  </NavigationMenuLink>
+                )}
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                {NavbarProps.status === "authenticated" ? (
+                  <LogoutButton />
+                ) : (
+                  <NavigationMenuLink asChild>
+                    <Link href="https://noi-platform-24.vercel.app/IOI2023">
+                      <div className="text-sans text-sm text-gold bg-blacky-100 py-2 px-4 hover:bg-blacky-200">
+                        IOI 2023
+                      </div>
+                    </Link>
+                  </NavigationMenuLink>
+                )}
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                {NavbarProps.status === "authenticated" ? (
+                  <LogoutButton />
+                ) : (
+                  <NavigationMenuLink asChild>
+                    <Link href="https://noi-platform-24.vercel.app/register">
+                      <div className="text-sans text-sm text-gold bg-blacky-100 py-2 px-4 hover:bg-blacky-200">
                         Register Now
+                      </div>
+                    </Link>
+                  </NavigationMenuLink>
+                )}
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                {NavbarProps.status === "authenticated" ? (
+                  <LogoutButton />
+                ) : (
+                  <NavigationMenuLink asChild>
+                    <Link href="https://noi-platform-24.vercel.app/">
+                      <div className="text-sans text-sm text-gold bg-blacky-100 py-2 px-4 hover:bg-blacky-200">
+                        Portal
                       </div>
                     </Link>
                   </NavigationMenuLink>

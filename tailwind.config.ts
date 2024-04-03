@@ -26,7 +26,7 @@ const config = {
         foreground: "hsl(var(--foreground))",
 
         blacky: {
-          DEFAULT: "#343a40",
+          DEFAULT: "#000000",
           foreground: "#343a40",
         },
         primary: {

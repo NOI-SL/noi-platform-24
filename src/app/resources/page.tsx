@@ -6,9 +6,9 @@ import Image from "next/image";
 const Resources: React.FC = () => {
   return (
     <>
-      <Navbar />
-      <div className="min-h-full flex flex-col items-center justify-center text-white bg-gradient-to-br from-black to-darkgreen py-20 px-20">
-        <h1 className="text-4xl font-bold text-gold text-center mb-8">
+      <div className="min-h-full flex flex-col items-center justify-center text-white bg-gradient-to-br from-black to-darkgreen">
+        <Navbar />
+        <h1 className="text-4xl font-bold text-gold text-center mb-8 mt-10">
           Resources | සම්පත්
         </h1>
         <div className="flex flex-col w-full">

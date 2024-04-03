@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import PrimBut from "./ui/buttonone"; // Make sure PrimBut is also converted to TypeScript
 import Image from "next/image";
-import NOIMask from "@/assets/Img/NOIMask.svg";
+import NOIMask from "@/assets/img/NOIMask.svg";
 import Navbar from "@/components/navbar";
 const Herosec: React.FC = () => {
   // State to manage the loading of the Spline scene

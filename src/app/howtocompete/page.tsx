@@ -23,7 +23,6 @@ const HowToCompete: React.FC = () => {
   if (status !== "authenticated") {
     return (
       <>
-        <Navbar />
         <motion.main
           // initial={{ opacity: 0, y: 50 }}
           // animate={{ opacity: 1, y: 0 }}
@@ -31,6 +30,7 @@ const HowToCompete: React.FC = () => {
           // transition={{ duration: 0.5 }}
           className="min-h-full flex flex-col items-center justify-center text-center overflow-hidden bg-gradient-to-br from-black to-darkgreen"
         >
+          <Navbar />
           <div className="mt-8 w-full py-20 bg-blacky-400">
             <h1 className="text-4xl font-bold text-gold">
               How to Compete | තරඟ වදින ආකාරය

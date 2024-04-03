@@ -30,10 +30,10 @@ const Awards: React.FC = () => {
 
   return (
     <>
-      <Navbar />
-      <div className="min-h-full w-full flex flex-col items-left justify-center text-left text-white overflow-hidden py-20 px-20 bg-gradient-to-br from-black to-darkgreen">
+      <div className="min-h-full w-full flex flex-col items-left justify-center text-left text-white overflow-hidden bg-gradient-to-br from-black to-darkgreen">
+        <Navbar />
         <div className="w-full flex flex-col justify-center items-center">
-          <h1 className="text-4xl font-bold text-gold text-center">
+          <h1 className="text-4xl font-bold text-gold text-center mt-10">
             Awards | සම්මාන
           </h1>
           <div className="flex flex-row w-4/5">

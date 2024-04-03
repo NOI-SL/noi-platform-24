@@ -13,7 +13,7 @@ export default function Unauthorized() {
         if (status === 'authenticated') {
             push('/');
         }
-    }, [status])
+    }, [status,push])
 
     return (
         <main className="flex min-h-screen flex-col items-center justify-center p-6 sm:p-12 ">
@@ -25,6 +25,5 @@ export default function Unauthorized() {
             </div>
             <LoginButton />
         </main>
-
     );
 };

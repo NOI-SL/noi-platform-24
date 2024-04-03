@@ -13,7 +13,7 @@ import img2021 from "@/assets/img/2021-team.jpg";
 import img2020 from "@/assets/img/2020-team.png";
 import img2019 from "@/assets/img/2019-team.jpg";
 import cplusplus from "@/assets/img/cplusplus.png";
-import java from "@/assets/img/java.png";
+// import java from "@/assets/img/java.png";
 
 const HowToCompete: React.FC = () => {
   const { data, status } = useSession();

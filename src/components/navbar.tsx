@@ -91,7 +91,7 @@ ListItem.displayName = "ListItem";
 
 const Navbar: React.FC<NavbarProps> = (NavbarProps) => {
   return (
-    <nav className="fixed top-0 z-50 hidden py-5 lg:flex flex-row w-full">
+    <nav className="sticky top-0 z-50 hidden py-5 lg:flex flex-row w-full">
       <div className="md:mx-60 mx-5 flex flex-row justify-between content-center items-center w-full">
         <Link href="/" passHref>
           <Image
@@ -173,7 +173,7 @@ const Navbar: React.FC<NavbarProps> = (NavbarProps) => {
                   <LogoutButton />
                 ) : (
                   <NavigationMenuLink asChild>
-                    <Link href="https://noi-platform-24.vercel.app">
+                    <Link href="https://noi-platform-24.vercel.app" >
                       <div className="text-sans text-sm text-gold bg-blacky-100 py-2 px-4 hover:bg-blacky-200">
                         Home
                       </div>

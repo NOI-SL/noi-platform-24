@@ -42,7 +42,7 @@ const components: Component[] = [
   {
     title: "Awards",
     href: "/awards",
-    description: "Coming soon",
+    description: "Awards Offered for Winners",
   },
   {
     title: "Results",
@@ -140,8 +140,8 @@ const Navbar: React.FC<NavbarProps> = (NavbarProps) => {
                     <ListItem href="/docs" title="Timeline">
                       Coming soon
                     </ListItem>
-                    <ListItem href="/docs/installation" title="Awards">
-                      Coming soon
+                    <ListItem href="/awards" title="Awards">
+                      Awards Offered for Winners
                     </ListItem>
                     <ListItem
                       href="/docs/primitives/typography"

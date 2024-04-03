@@ -18,7 +18,7 @@ export default function Profile() {
         if (status === 'unauthenticated') {
             push('/unauthorized');
         }
-    }, [status])
+    }, [status,push])
 
     if (status !== "authenticated") {
         return (

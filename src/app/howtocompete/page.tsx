@@ -43,7 +43,7 @@ const HowToCompete: React.FC = () => {
               </h1>
             </motion.main>
           </div>
-          <div className="mt-8 text-left lg:w-3/4 md:w-3/4 w-full mx-auto h-120">
+          <div className="mt-8 text-left lg:w-1/2 md:w-1/2 w-1/2 mx-auto h-120">
             <motion.main
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
@@ -100,7 +100,7 @@ const HowToCompete: React.FC = () => {
             transition={{ duration: 0.5 }}
             className="w-full flex flex-col justify-center items-center "
           >
-            <div className="container mx-auto text-left px-4 py-8 lg:w-3/4 md:w-3/4  w-full text-white mt-100">
+            <div className="container mx-auto text-left px-4 py-8 lg:w-1/2 md:w-1/2  w-full text-white mt-100">
               <h1 className="text-2xl font-bold mb-4 text-gold">
                 Process of the competition | තරඟ ක්‍රියාවලිය
               </h1>

@@ -173,8 +173,8 @@ const Navbar: React.FC<NavbarProps> = (NavbarProps) => {
                   <LogoutButton />
                 ) : (
                   <NavigationMenuLink asChild>
-                    <Link href="/" >
-                    <div className="text-sans text-sm text-gold py-2 px-4 cursor-pointer hover:text-white transition duration-300">
+                    <Link href="/">
+                      <div className="text-sans text-sm text-gold py-2 px-4 cursor-pointer hover:text-white transition duration-300">
                         Home
                       </div>
                     </Link>
@@ -251,11 +251,11 @@ const Navbar: React.FC<NavbarProps> = (NavbarProps) => {
                   <LogoutButton />
                 ) : (
                   <NavigationMenuLink asChild>
-                    <Link href="/IOI2023">
+                    <a href="https://ioi2023.hu/" target="_blank">
                       <div className="text-sans text-sm text-gold py-2 px-4 cursor-pointer hover:text-white transition duration-300">
                         IOI 2023
                       </div>
-                    </Link>
+                    </a>
                   </NavigationMenuLink>
                 )}
               </NavigationMenuItem>

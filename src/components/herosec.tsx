@@ -30,48 +30,47 @@ const Herosec: React.FC = () => {
             <>
               <div>
                 <motion.div
-                  // initial={{ y: 20, opacity: 0 }}
-                  // animate={{ y: 0, opacity: 1 }}
-                  // transition={{
-                  //   duration: 0.5,
-                  //   delay: 0.2,
-                  //   type: "spring",
-                  //   stiffness: 100,
-                  // }}
+                  initial={{ scale: 0.9, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{
+                    duration: 0.5,
+                    delay: 0.2,
+                    type: "spring",
+                    stiffness: 100,
+                  }}
                   className="z-10"
                 >
                   {/* Responsive font sizes for h1 element */}
-                </motion.div>
-                <motion.div
-                  // initial={{ y: 20, opacity: 0 }}
-                  // animate={{ y: 0, opacity: 1 }}
-                  // transition={{
-                  //   duration: 0.5,
-                  //   delay: 0.2,
-                  //   type: "spring",
-                  //   stiffness: 100,
-                  // }}
-                  className="z-10"
-                >
-                  {/* Responsive text sizes and margin adjustments */}
-                  <div className="w-full">
-                    <Image
-                      className=""
-                      src={NOIMask}
-                      alt="maskImage"
-                      width={700}
-                      height={500}
-                    />
-                    <p className="text-sm text-gold md:text-lg lg:text-[25px] tracking-widest font-sans lg:mb-2">
-                      <b>National Olympiad In Informatics</b>
-                    </p>
-                    <p className="text-sm text-gold md:text-lg lg:text-[15px] tracking-widest font-sans lg:mb-2">
-                      <b>ජාතික පරිගණක විද්‍යා ඔලිම්පියාඩ් තරඟාවලිය</b>
-                    </p>
-                    <p className="text-sm text-gold md:text-lg lg:text-[20px] tracking-widest font-sans lg:mb-2">
-                      <b>2024</b>
-                    </p>
-                  </div>
+                  <motion.div
+                    initial={{ scale: 0.9, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{
+                      duration: 0.5,
+                      delay: 0.2,
+                      type: "spring",
+                      stiffness: 100,
+                    }}
+                    className="z-10"
+                  >
+                    <div className="w-full cursor-pointer hover:pointer">
+                      <Image
+                        className="hover:scale-105 transition-transform duration-300"
+                        src={NOIMask}
+                        alt="maskImage"
+                        width={700}
+                        height={500}
+                      />
+                      <p className="text-sm text-white md:text-lg lg:text-[25px] tracking-widest font-sans lg:mb-2">
+                        <b>National Olympiad In Informatics</b>
+                      </p>
+                      <p className="text-sm text-gold md:text-lg lg:text-[15px] tracking-widest font-sans lg:mb-2">
+                        <b>ජාතික පරිගණක විද්‍යා ඔලිම්පියාඩ් තරඟාවලිය</b>
+                      </p>
+                      <p className="text-sm text-gold md:text-lg lg:text-[20px] tracking-widest font-sans lg:mb-2">
+                        <b>2024</b>
+                      </p>
+                    </div>
+                  </motion.div>
                 </motion.div>
               </div>
 

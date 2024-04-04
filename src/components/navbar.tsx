@@ -173,8 +173,8 @@ const Navbar: React.FC<NavbarProps> = (NavbarProps) => {
                   <LogoutButton />
                 ) : (
                   <NavigationMenuLink asChild>
-                    <Link href="https://noi-platform-24.vercel.app" >
-                      <div className="text-sans text-sm text-gold bg-blacky-100 py-2 px-4 hover:bg-blacky-200">
+                    <Link href="/" >
+                    <div className="text-sans text-sm text-gold py-2 px-4 cursor-pointer hover:text-white transition duration-300">
                         Home
                       </div>
                     </Link>
@@ -186,8 +186,8 @@ const Navbar: React.FC<NavbarProps> = (NavbarProps) => {
                   <LogoutButton />
                 ) : (
                   <NavigationMenuLink asChild>
-                    <Link href="https://noi-platform-24.vercel.app/howtocompete">
-                      <div className="text-sans text-sm text-gold bg-blacky-100 py-2 px-4 hover:bg-blacky-200">
+                    <Link href="/howtocompete">
+                      <div className="text-sans text-sm text-gold py-2 px-4 cursor-pointer hover:text-white transition duration-300">
                         Compete
                       </div>
                     </Link>
@@ -199,8 +199,8 @@ const Navbar: React.FC<NavbarProps> = (NavbarProps) => {
                   <LogoutButton />
                 ) : (
                   <NavigationMenuLink asChild>
-                    <Link href="https://noi-platform-24.vercel.app/resources">
-                      <div className="text-sans text-sm text-gold bg-blacky-100 py-2 px-4 hover:bg-blacky-200">
+                    <Link href="/resources">
+                      <div className="text-sans text-sm text-gold py-2 px-4 cursor-pointer hover:text-white transition duration-300">
                         Resources
                       </div>
                     </Link>
@@ -212,8 +212,8 @@ const Navbar: React.FC<NavbarProps> = (NavbarProps) => {
                   <LogoutButton />
                 ) : (
                   <NavigationMenuLink asChild>
-                    <Link href="https://noi-platform-24.vercel.app/awards">
-                      <div className="text-sans text-sm text-gold bg-blacky-100 py-2 px-4 hover:bg-blacky-200">
+                    <Link href="/awards">
+                      <div className="text-sans text-sm text-gold py-2 px-4 cursor-pointer hover:text-white transition duration-300">
                         Awards
                       </div>
                     </Link>
@@ -225,8 +225,8 @@ const Navbar: React.FC<NavbarProps> = (NavbarProps) => {
                   <LogoutButton />
                 ) : (
                   <NavigationMenuLink asChild>
-                    <Link href="https://noi-platform-24.vercel.app/timeline">
-                      <div className="text-sans text-sm text-gold bg-blacky-100 py-2 px-4 hover:bg-blacky-200">
+                    <Link href="/timeline">
+                      <div className="text-sans text-sm text-gold py-2 px-4 cursor-pointer hover:text-white transition duration-300">
                         Timeline
                       </div>
                     </Link>
@@ -238,8 +238,8 @@ const Navbar: React.FC<NavbarProps> = (NavbarProps) => {
                   <LogoutButton />
                 ) : (
                   <NavigationMenuLink asChild>
-                    <Link href="https://noi-platform-24.vercel.app/results">
-                      <div className="text-sans text-sm text-gold bg-blacky-100 py-2 px-4 hover:bg-blacky-200">
+                    <Link href="/results">
+                      <div className="text-sans text-sm text-gold py-2 px-4 cursor-pointer hover:text-white transition duration-300">
                         Results
                       </div>
                     </Link>
@@ -251,8 +251,8 @@ const Navbar: React.FC<NavbarProps> = (NavbarProps) => {
                   <LogoutButton />
                 ) : (
                   <NavigationMenuLink asChild>
-                    <Link href="https://noi-platform-24.vercel.app/IOI2023">
-                      <div className="text-sans text-sm text-gold bg-blacky-100 py-2 px-4 hover:bg-blacky-200">
+                    <Link href="/IOI2023">
+                      <div className="text-sans text-sm text-gold py-2 px-4 cursor-pointer hover:text-white transition duration-300">
                         IOI 2023
                       </div>
                     </Link>
@@ -264,8 +264,8 @@ const Navbar: React.FC<NavbarProps> = (NavbarProps) => {
                   <LogoutButton />
                 ) : (
                   <NavigationMenuLink asChild>
-                    <Link href="https://noi-platform-24.vercel.app/register">
-                      <div className="text-sans text-sm text-gold bg-blacky-100 py-2 px-4 hover:bg-blacky-200">
+                    <Link href="/register">
+                      <div className="text-sans text-sm text-gold py-2 px-4 cursor-pointer hover:text-white transition duration-300">
                         Register Now
                       </div>
                     </Link>
@@ -277,8 +277,8 @@ const Navbar: React.FC<NavbarProps> = (NavbarProps) => {
                   <LogoutButton />
                 ) : (
                   <NavigationMenuLink asChild>
-                    <Link href="https://noi-platform-24.vercel.app/">
-                      <div className="text-sans text-sm text-gold bg-blacky-100 py-2 px-4 hover:bg-blacky-200">
+                    <Link href="/">
+                      <div className="text-sans text-sm text-gold py-2 px-4 cursor-pointer hover:text-white transition duration-300">
                         Portal
                       </div>
                     </Link>

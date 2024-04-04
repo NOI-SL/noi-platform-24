@@ -2,30 +2,198 @@
 import React, { useState } from "react";
 
 const dataArray = [
-  { position : 1, hackerrankID : "LukeSky",firstName: "Luke",lastName:"Skywalker", school: "Royal College Colombo", score: 77},
-  { position : 2, hackerrankID : "LukeSky",firstName: "Luke",lastName:"Skywalker", school: "Royal College Colombo", score: 77},
-  { position : 3, hackerrankID : "LukeSky",firstName: "Luke",lastName:"Skywalker", school: "Royal College Colombo", score: 77},
-  { position : 4, hackerrankID : "LukeSky",firstName: "Luke",lastName:"Skywalker", school: "Royal College Colombo", score: 77},
-  { position : 5, hackerrankID : "LukeSky",firstName: "Luke",lastName:"Skywalker", school: "Royal College Colombo", score: 77},
-  { position : 6, hackerrankID : "LukeSky",firstName: "Luke",lastName:"Skywalker", school: "Royal College Colombo", score: 77},
-  { position : 7, hackerrankID : "LukeSky",firstName: "Luke",lastName:"Skywalker", school: "Royal College Colombo", score: 77},
-  { position : 8, hackerrankID : "LukeSky",firstName: "Luke",lastName:"Skywalker", school: "Royal College Colombo", score: 77},
-  { position : 9, hackerrankID : "LukeSky",firstName: "Luke",lastName:"Skywalker", school: "Royal College Colombo", score: 77},
-  { position : 1, hackerrankID : "LukeSky",firstName: "Luke",lastName:"Skywalker", school: "Royal College Colombo", score: 77},
-  { position : 12, hackerrankID : "LukeSky",firstName: "Luke",lastName:"Skywalker", school: "Royal College Colombo", score: 77},
-  { position : 1, hackerrankID : "LukeSky",firstName: "Luke",lastName:"Skywalker", school: "Royal College Colombo", score: 77},
-  { position : 11, hackerrankID : "LukeSky",firstName: "Luke",lastName:"Skywalker", school: "Royal College Colombo", score: 77},
-  { position : 16, hackerrankID : "LukeSky",firstName: "Luke",lastName:"Skywalker", school: "Royal College Colombo", score: 77},
-  { position : 15, hackerrankID : "LukeSky",firstName: "Luke",lastName:"Skywalker", school: "Royal College Colombo", score: 77},
-  { position : 19, hackerrankID : "LukeSky",firstName: "Luke",lastName:"Skywalker", school: "Royal College Colombo", score: 77},
-  { position : 20, hackerrankID : "LukeSky",firstName: "Luke",lastName:"Skywalker", school: "Royal College Colombo", score: 77},
-  { position : 4, hackerrankID : "LukeSky",firstName: "Luke",lastName:"Skywalker", school: "Royal College Colombo", score: 77},
-  { position : 5, hackerrankID : "LukeSky",firstName: "Luke",lastName:"Skywalker", school: "Royal College Colombo", score: 77},
-  { position : 6, hackerrankID : "LukeSky",firstName: "Luke",lastName:"Skywalker", school: "Royal College Colombo", score: 77},
-  { position : 7, hackerrankID : "LukeSky",firstName: "Luke",lastName:"Skywalker", school: "Royal College Colombo", score: 77},
-  { position : 8, hackerrankID : "LukeSky",firstName: "Luke",lastName:"Skywalker", school: "Royal College Colombo", score: 77},
-  { position : 9, hackerrankID : "LukeSky",firstName: "Luke",lastName:"Skywalker", school: "Royal College Colombo", score: 77},
-  { position : 10, hackerrankID : "LukeSky",firstName: "Luke",lastName:"Skywalker", school: "Royal College Colombo", score: 77},
+  {
+    position: 1,
+    hackerrankID: "LukeSky",
+    firstName: "Luke",
+    lastName: "Skywalker",
+    school: "Royal College Colombo",
+    score: 77,
+  },
+  {
+    position: 2,
+    hackerrankID: "LukeSky",
+    firstName: "Luke",
+    lastName: "Skywalker",
+    school: "Royal College Colombo",
+    score: 77,
+  },
+  {
+    position: 3,
+    hackerrankID: "LukeSky",
+    firstName: "Luke",
+    lastName: "Skywalker",
+    school: "Royal College Colombo",
+    score: 77,
+  },
+  {
+    position: 4,
+    hackerrankID: "LukeSky",
+    firstName: "Luke",
+    lastName: "Skywalker",
+    school: "Royal College Colombo",
+    score: 77,
+  },
+  {
+    position: 5,
+    hackerrankID: "LukeSky",
+    firstName: "Luke",
+    lastName: "Skywalker",
+    school: "Royal College Colombo",
+    score: 77,
+  },
+  {
+    position: 6,
+    hackerrankID: "LukeSky",
+    firstName: "Luke",
+    lastName: "Skywalker",
+    school: "Royal College Colombo",
+    score: 77,
+  },
+  {
+    position: 7,
+    hackerrankID: "LukeSky",
+    firstName: "Luke",
+    lastName: "Skywalker",
+    school: "Royal College Colombo",
+    score: 77,
+  },
+  {
+    position: 8,
+    hackerrankID: "LukeSky",
+    firstName: "Luke",
+    lastName: "Skywalker",
+    school: "Royal College Colombo",
+    score: 77,
+  },
+  {
+    position: 9,
+    hackerrankID: "LukeSky",
+    firstName: "Luke",
+    lastName: "Skywalker",
+    school: "Royal College Colombo",
+    score: 77,
+  },
+  {
+    position: 1,
+    hackerrankID: "LukeSky",
+    firstName: "Luke",
+    lastName: "Skywalker",
+    school: "Royal College Colombo",
+    score: 77,
+  },
+  {
+    position: 12,
+    hackerrankID: "LukeSky",
+    firstName: "Luke",
+    lastName: "Skywalker",
+    school: "Royal College Colombo",
+    score: 77,
+  },
+  {
+    position: 1,
+    hackerrankID: "LukeSky",
+    firstName: "Luke",
+    lastName: "Skywalker",
+    school: "Royal College Colombo",
+    score: 77,
+  },
+  {
+    position: 11,
+    hackerrankID: "LukeSky",
+    firstName: "Luke",
+    lastName: "Skywalker",
+    school: "Royal College Colombo",
+    score: 77,
+  },
+  {
+    position: 16,
+    hackerrankID: "LukeSky",
+    firstName: "Luke",
+    lastName: "Skywalker",
+    school: "Royal College Colombo",
+    score: 77,
+  },
+  {
+    position: 15,
+    hackerrankID: "LukeSky",
+    firstName: "Luke",
+    lastName: "Skywalker",
+    school: "Royal College Colombo",
+    score: 77,
+  },
+  {
+    position: 19,
+    hackerrankID: "LukeSky",
+    firstName: "Luke",
+    lastName: "Skywalker",
+    school: "Royal College Colombo",
+    score: 77,
+  },
+  {
+    position: 20,
+    hackerrankID: "LukeSky",
+    firstName: "Luke",
+    lastName: "Skywalker",
+    school: "Royal College Colombo",
+    score: 77,
+  },
+  {
+    position: 4,
+    hackerrankID: "LukeSky",
+    firstName: "Luke",
+    lastName: "Skywalker",
+    school: "Royal College Colombo",
+    score: 77,
+  },
+  {
+    position: 5,
+    hackerrankID: "LukeSky",
+    firstName: "Luke",
+    lastName: "Skywalker",
+    school: "Royal College Colombo",
+    score: 77,
+  },
+  {
+    position: 6,
+    hackerrankID: "LukeSky",
+    firstName: "Luke",
+    lastName: "Skywalker",
+    school: "Royal College Colombo",
+    score: 77,
+  },
+  {
+    position: 7,
+    hackerrankID: "LukeSky",
+    firstName: "Luke",
+    lastName: "Skywalker",
+    school: "Royal College Colombo",
+    score: 77,
+  },
+  {
+    position: 8,
+    hackerrankID: "LukeSky",
+    firstName: "Luke",
+    lastName: "Skywalker",
+    school: "Royal College Colombo",
+    score: 77,
+  },
+  {
+    position: 9,
+    hackerrankID: "LukeSky",
+    firstName: "Luke",
+    lastName: "Skywalker",
+    school: "Royal College Colombo",
+    score: 77,
+  },
+  {
+    position: 10,
+    hackerrankID: "LukeSky",
+    firstName: "Luke",
+    lastName: "Skywalker",
+    school: "Royal College Colombo",
+    score: 77,
+  },
 ];
 
 const itemsPerPage = 11;
@@ -62,18 +230,31 @@ const TableResults = () => {
             {currentData.map((data, index) => (
               <tr
                 key={index}
-                className={index % 2 === 0 ? "text-white bg-black" : "text-gold bg-grey"}
+                className={
+                  index % 2 === 0 ? "text-white bg-black" : "text-white bg-black"
+                }
               >
-                <td className="px-4 py-2 text-center">{data.position}</td>
-                <td className="px-4 py-2 text-center">{data.hackerrankID}</td>
-                <td className="px-4 py-2 text-center">{data.firstName}</td>
-                <td className="px-4 py-2 text-center">{data.lastName}</td>
-                <td className="px-4 py-2 text-center">{data.school}</td>
-                <td className="px-4 py-2 text-center">{data.score}</td>
+                <td className="px-4 py-2 text-center border-b border-accent-100">
+                  {data.position}
+                </td>
+                <td className="px-4 py-2 text-center border-b border-accent-100">
+                  {data.hackerrankID}
+                </td>
+                <td className="px-4 py-2 text-center border-b border-accent-100">
+                  {data.firstName}
+                </td>
+                <td className="px-4 py-2 text-center border-b border-accent-100">
+                  {data.lastName}
+                </td>
+                <td className="px-4 py-2 text-center border-b border-accent-100">
+                  {data.school}
+                </td>
+                <td className="px-4 py-2 text-center border-b border-accent-100">
+                  {data.score}
+                </td>
               </tr>
             ))}
           </tbody>
-
         </table>
       </div>
       <div className="flex justify-center mt-4">

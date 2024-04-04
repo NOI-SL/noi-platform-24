@@ -58,14 +58,14 @@ const Mobilenav: React.FC = () => {
                         animate={{ y: 0 }}
                         exit={{ y: '100%' }}
                         transition={{ type: 'spring', stiffness: 155, damping: 20 }}
-                        className="fixed bottom-16 inset-x-0 z-30 grid place-items-center bg-white p-4 rounded-t-2xl lg:hidden"
+                        className="fixed bottom-16 inset-x-0 z-30 grid place-items-center bg-black p-4 rounded-t-2xl lg:hidden"
                         style={{ gridTemplateRows: 'auto 1fr auto' }}
                     >
                         {/* Close Icon replaced with ChevronDown at the top */}
                         <div className="w-full flex justify-center pt-2">
                             <div className="flex items-center space-x-2 cursor-pointer" onClick={toggleNav}>
-                                <ChevronDown size={32} className="text-slate-700" />
-                                <span className="text-sm font-semibold text-slate-700">Less</span>
+                                <ChevronDown size={32} className="text-white" />
+                                <span className="text-sm font-semibold text-white">Less</span>
                             </div>
                         </div>
 
@@ -74,8 +74,8 @@ const Mobilenav: React.FC = () => {
                             <div className="grid gap-4 grid-cols-3 p-4">
                                 {navItems.map(({ href, icon: Icon, label }) => (
                                     <Link key={href} href={href} passHref>
-                                        <motion.div whileTap={{ scale: 0.95 }} className="flex flex-col items-center space-y-2 cursor-pointer p-2 border-2 border-gray-200 rounded-lg">
-                                            <Icon size={24} className="text-slate-700" />
+                                        <motion.div whileTap={{ scale: 0.95 }} className="flex text-white flex-col items-center space-y-2 cursor-pointer p-2 border-2 border-gray-200 rounded-lg">
+                                            <Icon size={24} className="text-white" />
                                             <span className="text-sm">{label}</span>
                                         </motion.div>
                                     </Link>

@@ -1,11 +1,12 @@
-import React, { createContext } from 'react';
+'use client'
+import React, {createContext} from 'react';
 import { useSession } from "next-auth/react";
 import Navbar from "@/components/navbar";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import LoadingScreen from "@/components/loadingscreen";
 
-const Resources: React.FC = () => {
+const Page: React.FC = () => {
   return (
     <>
       <div className="min-h-full flex flex-col items-center justify-center text-white bg-gradient-to-br from-black to-darkgreen">
@@ -144,4 +145,5 @@ const Resources: React.FC = () => {
   );
 };
 
-export default Resources;
+
+export default Page;

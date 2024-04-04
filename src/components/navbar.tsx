@@ -173,7 +173,7 @@ const Navbar: React.FC<NavbarProps> = (NavbarProps) => {
                   <LogoutButton />
                 ) : (
                   <NavigationMenuLink asChild>
-                    <Link href="https://noi-platform-24.vercel.app" >
+                    <Link href="/" >
                     <div className="text-sans text-sm text-gold py-2 px-4 cursor-pointer hover:text-white transition duration-300">
                         Home
                       </div>
@@ -186,7 +186,7 @@ const Navbar: React.FC<NavbarProps> = (NavbarProps) => {
                   <LogoutButton />
                 ) : (
                   <NavigationMenuLink asChild>
-                    <Link href="https://noi-platform-24.vercel.app/howtocompete">
+                    <Link href="/howtocompete">
                       <div className="text-sans text-sm text-gold py-2 px-4 cursor-pointer hover:text-white transition duration-300">
                         Compete
                       </div>
@@ -199,7 +199,7 @@ const Navbar: React.FC<NavbarProps> = (NavbarProps) => {
                   <LogoutButton />
                 ) : (
                   <NavigationMenuLink asChild>
-                    <Link href="https://noi-platform-24.vercel.app/resources">
+                    <Link href="/resources">
                       <div className="text-sans text-sm text-gold py-2 px-4 cursor-pointer hover:text-white transition duration-300">
                         Resources
                       </div>
@@ -212,7 +212,7 @@ const Navbar: React.FC<NavbarProps> = (NavbarProps) => {
                   <LogoutButton />
                 ) : (
                   <NavigationMenuLink asChild>
-                    <Link href="https://noi-platform-24.vercel.app/awards">
+                    <Link href="/awards">
                       <div className="text-sans text-sm text-gold py-2 px-4 cursor-pointer hover:text-white transition duration-300">
                         Awards
                       </div>
@@ -225,7 +225,7 @@ const Navbar: React.FC<NavbarProps> = (NavbarProps) => {
                   <LogoutButton />
                 ) : (
                   <NavigationMenuLink asChild>
-                    <Link href="https://noi-platform-24.vercel.app/timeline">
+                    <Link href="/timeline">
                       <div className="text-sans text-sm text-gold py-2 px-4 cursor-pointer hover:text-white transition duration-300">
                         Timeline
                       </div>
@@ -238,7 +238,7 @@ const Navbar: React.FC<NavbarProps> = (NavbarProps) => {
                   <LogoutButton />
                 ) : (
                   <NavigationMenuLink asChild>
-                    <Link href="https://noi-platform-24.vercel.app/results">
+                    <Link href="/results">
                       <div className="text-sans text-sm text-gold py-2 px-4 cursor-pointer hover:text-white transition duration-300">
                         Results
                       </div>
@@ -251,7 +251,7 @@ const Navbar: React.FC<NavbarProps> = (NavbarProps) => {
                   <LogoutButton />
                 ) : (
                   <NavigationMenuLink asChild>
-                    <Link href="https://noi-platform-24.vercel.app/IOI2023">
+                    <Link href="/IOI2023">
                       <div className="text-sans text-sm text-gold py-2 px-4 cursor-pointer hover:text-white transition duration-300">
                         IOI 2023
                       </div>
@@ -264,7 +264,7 @@ const Navbar: React.FC<NavbarProps> = (NavbarProps) => {
                   <LogoutButton />
                 ) : (
                   <NavigationMenuLink asChild>
-                    <Link href="https://noi-platform-24.vercel.app/register">
+                    <Link href="/register">
                       <div className="text-sans text-sm text-gold py-2 px-4 cursor-pointer hover:text-white transition duration-300">
                         Register Now
                       </div>
@@ -277,7 +277,7 @@ const Navbar: React.FC<NavbarProps> = (NavbarProps) => {
                   <LogoutButton />
                 ) : (
                   <NavigationMenuLink asChild>
-                    <Link href="https://noi-platform-24.vercel.app/">
+                    <Link href="/">
                       <div className="text-sans text-sm text-gold py-2 px-4 cursor-pointer hover:text-white transition duration-300">
                         Portal
                       </div>

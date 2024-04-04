@@ -1,12 +1,99 @@
-'use client'
-import React, {createContext} from 'react';
+"use client";
+import React, { createContext } from "react";
 import { useSession } from "next-auth/react";
 import Navbar from "@/components/navbar";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import LoadingScreen from "@/components/loadingscreen";
 
+interface Resource {
+  title: string;
+  subtopic: string;
+  description: string;
+  link: string;
+}
+
 const Page: React.FC = () => {
+  const noiFinalScores: Resource[] = [
+    {
+      title: "NOI 2023",
+      subtopic: "Sri Lanka",
+      description: "View Marksheet",
+      link: "https://example.com",
+    },
+    {
+      title: "NOI 2022",
+      subtopic: "Sri Lanka",
+      description: "View Marksheet",
+      link: "https://example.com",
+    },
+    {
+      title: "NOI 2021",
+      subtopic: "Sri Lanka",
+      description: "View Marksheet",
+      link: "https://example.com",
+    },
+  ];
+  const pastPapersAndSolutions: Resource[] = [
+    {
+      title: "IOI 2023",
+      subtopic: "Singapore",
+      description: "View Marksheet",
+      link: "https://example.com",
+    },
+    {
+      title: "IOI 2022",
+      subtopic: "Singapore",
+      description: "View Marksheet",
+      link: "https://example.com",
+    },
+    {
+      title: "IOI 2021",
+      subtopic: "Singapore",
+      description: "View Marksheet",
+      link: "https://example.com",
+    },
+  ];
+  const books: Resource[] = [
+    {
+      title: "Competitive Programmer's Handbook",
+      subtopic: "Antti Laaksonen",
+      description: "Download Book",
+      link: "https://example.com",
+    },
+    {
+      title: "Introduction to Algorithms 3 rd Edition",
+      subtopic: "Thomas H. Cormen",
+      description: "Download Book",
+      link: "https://example.com",
+    },
+  ];
+  const others: Resource[] = [
+    {
+      title: "IOI Syllubus",
+      subtopic: "ISC",
+      description: "Download Book",
+      link: "https://example.com",
+    },
+    {
+      title: "Hackerrank",
+      subtopic: "www.hackerrank.com",
+      description: "Visit Hackerrank Platform",
+      link: "https://example.com",
+    },
+    {
+      title: "Codeforces",
+      subtopic: "www.codeforces.com",
+      description: "Visit Codeforces Platform",
+      link: "https://example.com",
+    },
+    {
+      title: "C++ Videos",
+      subtopic: "Codearchary",
+      description: "Visit Codearchary Videos",
+      link: "https://example.com",
+    },
+  ];
   return (
     <>
       <div className="min-h-full flex flex-col items-center justify-center text-white bg-gradient-to-br from-black to-darkgreen">
@@ -31,110 +118,120 @@ const Page: React.FC = () => {
         >
           <div className="flex flex-col w-full">
             <div className="flex flex-col justify-center items-center">
-              <div className="p-4 w-4/5 h-[300px]">
+              <div className="p-4 w-1/2">
                 <h2 className="text-1xl font-bold text-gold text-left">
                   NOI Final Scores
                 </h2>
-                <div className="w-full h-[150px] flex flex-row justify-center items-center">
-                  <div className="w-1/5 text-white h-[100px] ml-10 mr-10 flex flex-col justify-center items-center rounded-lg  bg-black">
-                    <h3 className="text-1xl font-bold text-white text-center">
-                      NOI 2023
-                    </h3>
-                    <p className="text-0.5xl text-gold py-1">View Marksheet</p>
-                  </div>
-                  <div className="w-1/5 text-white h-[100px] ml-10 mr-10 flex flex-col justify-center items-center rounded-lg bg-black">
-                    <h3 className="text-1xl font-bold text-white text-center">
-                      NOI 2022
-                    </h3>
-                    <p className="text-0.5xl text-gold py-1">View Marksheet</p>
-                  </div>
-                  <div className="w-1/5 text-white h-[100px] ml-10 mr-10 flex flex-col justify-center items-center rounded-lg bg-black">
-                    <h3 className="text-1xl font-bold text-white text-center">
-                      NOI 2021
-                    </h3>
-                    <p className="text-0.5xl text-gold py-1">View Marksheet</p>
-                  </div>
+                <div className="w-full flex flex-col justify-center items-center mt-10">
+                  {noiFinalScores.map((resource, index) => (
+                    <div
+                      key={index}
+                      className="w-full flex flex-col justify-center items-center"
+                    >
+                      <h2 className="text-1xl font-bold text-gold text-center">
+                        {resource.title}
+                      </h2>
+                      <p className="text-white text-center">
+                        {resource.subtopic}
+                      </p>
+                      <p className="text-white text-center mb-20  hover:text-gold">
+                        <a
+                          href={resource.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {resource.description}
+                        </a>
+                      </p>
+                    </div>
+                  ))}
                 </div>
               </div>
-              <div className="p-4 w-4/5  h-[300px]">
+              <div className="p-4 w-1/2">
                 <h2 className="text-1xl font-bold text-gold text-left">
                   Past Papers and Solutions
                 </h2>
-                <div className="w-full h-[150px] flex flex-row justify-center items-center">
-                  <div className="w-1/5 text-white h-[100px] ml-10 mr-10 flex flex-col justify-center items-center rounded-lg bg-black">
-                    <h3 className="text-1xl font-bold text-white text-center">
-                      IOI 2023
-                    </h3>
-                    <p className="text-0.5xl text-gold py-1">Download</p>
-                  </div>
-                  <div className="w-1/5 text-white h-[100px] ml-10 mr-10 flex flex-col justify-center items-center rounded-lg bg-black">
-                    <h3 className="text-1xl font-bold text-white text-center">
-                      IOI 2022
-                    </h3>
-                    <p className="text-0.5xl text-gold py-1">Download</p>
-                  </div>
-                  <div className="w-1/5 text-white h-[100px] ml-10 mr-10 flex flex-col justify-center items-center rounded-lg bg-black">
-                    <h3 className="text-1xl font-bold text-white text-center">
-                      IOI 2021
-                    </h3>
-                    <p className="text-0.5xl text-gold py-1">Download</p>
-                  </div>
-                  <div className="w-1/5 text-white h-[100px] ml-10 mr-10 flex flex-col justify-center items-center rounded-lg bg-black">
-                    <h3 className="text-1xl font-bold text-white text-center">
-                      IOI 2020
-                    </h3>
-                    <p className="text-0.5xl text-gold py-1">Download</p>
-                  </div>
+                <div className="w-full flex flex-col justify-center items-center  mt-10">
+                  {pastPapersAndSolutions.map((resource, index) => (
+                    <div
+                      key={index}
+                      className="w-full flex flex-col justify-center items-center"
+                    >
+                      <h2 className="text-1xl font-bold text-gold text-center">
+                        {resource.title}
+                      </h2>
+                      <p className="text-white text-center">
+                        {resource.subtopic}
+                      </p>
+                      <p className="text-white text-center mb-20  hover:text-gold">
+                        <a
+                          href={resource.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {resource.description}
+                        </a>
+                      </p>
+                    </div>
+                  ))}
                 </div>
               </div>
-              <div className="p-4 w-4/5  h-[300px]">
+              <div className="p-4 w-1/2 ">
                 <h2 className="text-1xl font-bold text-gold text-left">
                   Books
                 </h2>
-                <div className="w-full h-[150px] flex flex-row justify-center items-center">
-                  <div className="w-1/4 text-white h-[100px] ml-10 mr-10 flex flex-col justify-center items-center px-5 rounded-lg bg-black">
-                    <h3 className="text-1xl font-bold text-white text-center">
-                      Competitive Programmer`s Handbook
-                    </h3>
-                    <p className="text-0.5xl text-gold py-1">Download</p>
-                  </div>
-                  <div className="w-1/4 text-white h-[100px] ml-10 mr-10 flex flex-col justify-center items-center px-5 rounded-lg bg-black">
-                    <h3 className="text-1xl font-bold text-white text-center">
-                      Introduction to Algorithems, 3rd Edition
-                    </h3>
-                    <p className="text-0.5xl text-gold py-1">Download</p>
-                  </div>
+                <div className="w-full flex flex-col justify-center items-center  mt-10">
+                  {books.map((resource, index) => (
+                    <div
+                      key={index}
+                      className="w-full flex flex-col justify-center items-center"
+                    >
+                      <h2 className="text-1xl font-bold text-gold text-center">
+                        {resource.title}
+                      </h2>
+                      <p className="text-white text-center">
+                        {resource.subtopic}
+                      </p>
+                      <p className="text-white text-center mb-20  hover:text-gold">
+                        <a
+                          href={resource.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {resource.description}
+                        </a>
+                      </p>
+                    </div>
+                  ))}
                 </div>
               </div>
-              <div className="p-4 w-4/5  h-[300px]">
+              <div className="p-4 w-1/2">
                 <h2 className="text-1xl font-bold text-gold text-left">
                   Others
                 </h2>
-                <div className="w-full h-[150px] flex flex-row justify-center items-center">
-                  <div className="w-1/5 text-white h-[100px] ml-10 mr-10 flex flex-col justify-center items-center rounded-lg bg-black">
-                    <h3 className="text-1xl font-bold text-white text-center">
-                      IOI Syllubus
-                    </h3>
-                    <p className="text-0.5xl text-gold py-1">Download</p>
-                  </div>
-                  <div className="w-1/5 text-white h-[100px] ml-10 mr-10 flex flex-col justify-center items-center rounded-lg bg-black">
-                    <h3 className="text-1xl font-bold text-white text-center">
-                      Hackerrank
-                    </h3>
-                    <p className="text-0.5xl text-gold py-1">View Hackerrank</p>
-                  </div>
-                  <div className="w-1/5 text-white h-[100px] ml-10 mr-10 flex flex-col justify-center items-center rounded-lg bg-black">
-                    <h3 className="text-1xl font-bold text-white text-center">
-                      Codeforces
-                    </h3>
-                    <p className="text-0.5xl text-gold py-1">View Codeforces</p>
-                  </div>
-                  <div className="w-1/5 text-white h-[100px] ml-10 mr-10 flex flex-col justify-center items-center rounded-lg bg-black">
-                    <h3 className="text-1xl font-bold text-white text-center">
-                      C++ Videos
-                    </h3>
-                    <p className="text-0.5xl text-gold py-1">View Videos</p>
-                  </div>
+                <div className="w-full flex flex-col justify-center items-center  mt-10">
+                  {others.map((resource, index) => (
+                    <div
+                      key={index}
+                      className="w-full flex flex-col justify-center items-center"
+                    >
+                      <h2 className="text-1xl font-bold text-gold text-center">
+                        {resource.title}
+                      </h2>
+                      <p className="text-white text-center">
+                        {resource.subtopic}
+                      </p>
+                      <p className="text-white text-center mb-20  hover:text-gold">
+                        <a
+                          href={resource.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {resource.description}
+                        </a>
+                      </p>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -144,6 +241,5 @@ const Page: React.FC = () => {
     </>
   );
 };
-
 
 export default Page;

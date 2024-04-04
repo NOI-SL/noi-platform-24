@@ -37,7 +37,7 @@ const Page: React.FC = () => {
             <h1 className="text-2xl font-bold text-gold text-center mt-10">
               Awards | සම්මාන
             </h1>
-          <div className="flex flex-row w-4/5">
+          <div className="flex flex-row w-1/2">
             <div className="flex flex-col justify-center items-center w-1/2 py-20">
               <h1 className="text-1xl font-bold text-white text-center">
                 Under 16 | 16 න් පහළ
@@ -65,7 +65,7 @@ const Page: React.FC = () => {
               />
             </div>
           </div>
-          <div className="flex flex-col w-4/5">
+          <div className="flex flex-col w-1/2">
             <h1 className="text-2xl font-bold text-gold text-center">
               Special Awards | විශේෂ සම්මාන
             </h1>

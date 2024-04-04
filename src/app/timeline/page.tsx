@@ -1,3 +1,4 @@
+"use client";
 import React, { createContext } from "react";
 import { useSession } from "next-auth/react";
 import Navbar from "@/components/navbar";
@@ -13,32 +14,38 @@ const Page: React.FC = () => {
     {
       date: "18 th JAN 2024",
       event: "Scholarship Awareness Session",
-      description: "lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
+      description:
+        "lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
     },
     {
       date: "20 th JAN 2024",
       event: "Opening Registrations",
-      description: "lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
+      description:
+        "lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
     },
     {
       date: "10th FEB 2024",
       event: "Closing Registrations",
-      description: "lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
+      description:
+        "lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
     },
     {
       date: "15th FEB 2024",
       event: "Proposal Submissions Ending",
-      description: "lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
+      description:
+        "lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
     },
     {
       date: "20th FEB 2024",
       event: "Announcing Finalists",
-      description: "lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
+      description:
+        "lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
     },
     {
       date: "Will Announce Soon",
       event: "Final Hackathon & Award Ceremony",
-      description: "lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
+      description:
+        "lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
     },
   ];
   function timelineItem(
@@ -73,40 +80,47 @@ const Page: React.FC = () => {
     <>
       <div className="min-h-full w-full flex flex-col items-left justify-center text-left text-white overflow-hidden bg-gradient-to-br from-black to-darkgreen">
         <Navbar />
-        <div className="w-full flex flex-col justify-center items-center">
-          <h1 className="text-2xl font-bold text-gold text-center mt-10">
-            NOI 2024 Timeline
-          </h1>
-          <div className="flex flex-col w-4/5 mb-10">
-            <div className="timeLineContainorOuter">
-              <div className="timeLineContainor">
-                <div className="row py-4">
-                  <div
-                    className="col-lg-4"
-                    data-aos="fade-up"
-                    data-aos-delay="100"
-                  >
-                    <div className="site-section-heading">
+        <motion.main
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -50 }}
+          transition={{ duration: 0.5 }}
+          className="w-full flex flex-col justify-center items-center"
+        >
+          <div className="w-full flex flex-col justify-center items-center">
+            <h1 className="text-2xl font-bold text-gold text-center mt-10">
+              NOI 2024 Timeline
+            </h1>
+            <div className="flex flex-col w-4/5 mb-10">
+              <div className="timeLineContainorOuter">
+                <div className="timeLineContainor">
+                  <div className="row py-4">
+                    <div
+                      className="col-lg-4"
+                      data-aos="fade-up"
+                      data-aos-delay="100"
+                    >
+                      <div className="site-section-heading"></div>
                     </div>
                   </div>
-                </div>
-                <div
-                  className="main-timeline-4 text-white"
-                  id="timeLineComponentDiv"
-                >
-                  {items.map((item, index) => {
-                    return timelineItem(
-                      item.date,
-                      item.event,
-                      item.description,
-                      index
-                    );
-                  })}
+                  <div
+                    className="main-timeline-4 text-white"
+                    id="timeLineComponentDiv"
+                  >
+                    {items.map((item, index) => {
+                      return timelineItem(
+                        item.date,
+                        item.event,
+                        item.description,
+                        index
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </motion.main>
       </div>
     </>
   );

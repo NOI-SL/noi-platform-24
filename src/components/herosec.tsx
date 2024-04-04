@@ -41,17 +41,6 @@ const Herosec: React.FC = () => {
                   className="z-10"
                 >
                   {/* Responsive font sizes for h1 element */}
-                  <motion.div
-                    initial={{ scale: 0.9, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    transition={{
-                      duration: 0.5,
-                      delay: 0.2,
-                      type: "spring",
-                      stiffness: 100,
-                    }}
-                    className="z-10"
-                  >
                     <div className="w-full cursor-pointer hover:pointer">
                       <Image
                         className="hover:scale-105 transition-transform duration-300"
@@ -70,7 +59,6 @@ const Herosec: React.FC = () => {
                         <b>2024</b>
                       </p>
                     </div>
-                  </motion.div>
                 </motion.div>
               </div>
 

@@ -1,15 +1,16 @@
-import React from "react";
+import React, { createContext } from "react";
 import { useSession } from "next-auth/react";
 import Navbar from "@/components/navbar";
 // import { motion } from "framer-motion";
 import Image from "next/image";
 import awardImages from "@/assets/img/GoldSilverBronze.png";
+import { motion } from "framer-motion";
 interface Award {
   title: string;
   description: string;
 }
 
-const Awards: React.FC = () => {
+const Page: React.FC = () => {
   const awards: Award[] = [
     {
       title: "Best Performing Contestant",
@@ -33,12 +34,12 @@ const Awards: React.FC = () => {
       <div className="min-h-full w-full flex flex-col items-left justify-center text-left text-white overflow-hidden bg-gradient-to-br from-black to-darkgreen">
         <Navbar />
         <div className="w-full flex flex-col justify-center items-center">
-          <h1 className="text-2xl font-bold text-gold text-center mt-10">
-            Awards | සම්මාන
-          </h1>
+            <h1 className="text-2xl font-bold text-gold text-center mt-10">
+              Awards | සම්මාන
+            </h1>
           <div className="flex flex-row w-4/5">
             <div className="flex flex-col justify-center items-center w-1/2 py-20">
-              <h1 className="text-2xl font-bold text-white text-center">
+              <h1 className="text-1xl font-bold text-white text-center">
                 Under 16 | 16 න් පහළ
               </h1>
               <p className="text-gold text-center">Gold | Silver | Bronze</p>
@@ -51,7 +52,7 @@ const Awards: React.FC = () => {
               />
             </div>
             <div className="flex flex-col justify-center items-center w-1/2 py-20">
-              <h1 className="text-2xl font-bold text-white text-center">
+              <h1 className="text-1xl font-bold text-white text-center">
                 Under 20 | 20 න් පහළ
               </h1>
               <p className="text-gold text-center">Gold | Silver | Bronze</p>
@@ -87,4 +88,4 @@ const Awards: React.FC = () => {
   );
 };
 
-export default Awards;
+export default Page;

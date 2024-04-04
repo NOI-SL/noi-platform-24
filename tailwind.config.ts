@@ -68,7 +68,11 @@ const config = {
         darkgreen:{
           DEFAULT: "#08433F",
           foreground: "#08433F",
-        }
+        },
+        gray:{
+          DEFAULT: "#212529",
+          foreground: "#212529",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

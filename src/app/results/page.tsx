@@ -38,7 +38,13 @@ const Page: React.FC = () => {
   
   return (
     <>
-      <div className="min-h-full flex flex-col items-center justify-center text-white bg-gradient-to-br from-black to-darkgreen">
+      <motion.main
+          // initial={{ opacity: 0, y: 50 }}
+          // animate={{ opacity: 1, y: 0 }}
+          // exit={{ opacity: 0, y: -50 }}
+          // transition={{ duration: 0.5 }}
+          className="min-h-full flex flex-col items-center justify-center text-center overflow-hidden bg-gradient-to-br from-black to-darkgreen text-white"
+        >
         <Navbar />
         <motion.main
           initial={{ opacity: 0, y: 50 }}
@@ -71,7 +77,7 @@ const Page: React.FC = () => {
             </div>
           </div>
         </motion.main>
-      </div>
+      </motion.main>
     </>
   );
 };

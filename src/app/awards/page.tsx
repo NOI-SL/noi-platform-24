@@ -6,6 +6,8 @@ import Navbar from "@/components/navbar";
 import Image from "next/image";
 import awardImages from "@/assets/img/GoldSilverBronze.png";
 import { motion } from "framer-motion";
+import NOIMask from "@/assets/img/NOIMask.svg";
+import Footer from "@/components/footer";
 interface Award {
   title: string;
   description: string;
@@ -42,6 +44,15 @@ const Page: React.FC = () => {
             transition={{ duration: 0.5 }}
             className="w-full flex flex-col justify-center items-center"
           >
+            <div className="w-full flex flex-col justify-center items-center">
+                <Image
+                  className="hover:scale-105 transition-transform duration-300"
+                  src={NOIMask}
+                  alt="maskImage"
+                  width={700}
+                  height={500}
+                />
+              </div>
             <h1 className="text-2xl font-bold text-gold text-center mt-10">
               Awards | සම්මාන
             </h1>
@@ -110,6 +121,7 @@ const Page: React.FC = () => {
             </div>
           </motion.main>
         </div>
+        <Footer/>
       </div>
     </>
   );

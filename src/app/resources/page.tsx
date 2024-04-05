@@ -5,7 +5,8 @@ import Navbar from "@/components/navbar";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import LoadingScreen from "@/components/loadingscreen";
-
+import NOIMask from "@/assets/img/NOIMask.svg";
+import Footer from "@/components/footer";
 interface Resource {
   title: string;
   subtopic: string;
@@ -104,7 +105,7 @@ const Page: React.FC = () => {
         className="min-h-full flex flex-col items-center justify-center text-center overflow-hidden bg-gradient-to-br from-black to-darkgreen"
       >
         <Navbar />
-        <div className="mt-8 w-full py-20 bg-blacky-400">
+        <div className="mt-8 w-full bg-blacky-400">
           <motion.main
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -112,6 +113,15 @@ const Page: React.FC = () => {
             transition={{ duration: 0.5 }}
             className="w-full flex flex-col justify-center items-center "
           >
+            <div className="w-full flex flex-col justify-center items-center">
+              <Image
+                className="hover:scale-105 transition-transform duration-300"
+                src={NOIMask}
+                alt="maskImage"
+                width={700}
+                height={500}
+              />
+            </div>
             <h1 className="text-2xl font-bold text-gold text-center mb-8 mt-10">
               Resources | සම්පත්
             </h1>
@@ -143,7 +153,7 @@ const Page: React.FC = () => {
                       <p className="text-white text-center">
                         {resource.subtopic}
                       </p>
-                      <p className="text-white text-center mb-20  hover:text-gold">
+                      <p className="text-white text-center mb-20 text-0.5xl hover:text-gold">
                         <a
                           href={resource.link}
                           target="_blank"
@@ -246,6 +256,7 @@ const Page: React.FC = () => {
             </div>
           </div>
         </motion.main>
+        <Footer/>
       </motion.main>
     </>
   );

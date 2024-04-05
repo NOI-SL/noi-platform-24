@@ -13,6 +13,8 @@ import img2021 from "@/assets/img/2021-team.jpg";
 import img2020 from "@/assets/img/2020-team.png";
 import img2019 from "@/assets/img/2019-team.jpg";
 import cplusplus from "@/assets/img/cplusplus.png";
+import NOIMask from "@/assets/img/NOIMask.svg";
+import Footer from "@/components/footer";
 // import java from "@/assets/img/java.png";
 
 const HowToCompete: React.FC = () => {
@@ -31,13 +33,22 @@ const HowToCompete: React.FC = () => {
           className="min-h-full flex flex-col items-center justify-center text-center overflow-hidden bg-gradient-to-br from-black to-darkgreen"
         >
           <Navbar />
-          <div className="mt-8 w-full py-20 bg-blacky-400">
+          <div className="mt-8 w-full bg-blacky-400">
             <motion.main
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -50 }}
               transition={{ duration: 0.5 }}
             >
+              <div className="w-full flex flex-col justify-center items-center">
+                <Image
+                  className="hover:scale-105 transition-transform duration-300"
+                  src={NOIMask}
+                  alt="maskImage"
+                  width={700}
+                  height={500}
+                />
+              </div>
               <h1 className="text-2xl font-bold text-gold">
                 How to Compete | තරඟ වදින ආකාරය
               </h1>
@@ -233,6 +244,7 @@ const HowToCompete: React.FC = () => {
               </p>
             </div>
           </motion.main>
+          <Footer/>
         </motion.main>
         <Mobilenav />
       </>

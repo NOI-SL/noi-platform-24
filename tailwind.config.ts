@@ -70,9 +70,13 @@ const config = {
           foreground: "#08433F",
         },
         gray:{
-          DEFAULT: "#212529",
-          foreground: "#212529",
+          DEFAULT: "#343a40",
+          foreground: "#343a40",
         },
+        brown:{
+          DEFAULT: "#6c584c",
+          foreground: "#6c584c",
+        }
       },
       borderRadius: {
         lg: "var(--radius)",

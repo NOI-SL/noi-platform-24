@@ -8,6 +8,8 @@ import awardImages from "@/assets/img/GoldSilverBronze.png";
 import "react-vertical-timeline-component/style.min.css";
 import { motion } from "framer-motion";
 import "./Timeline.css";
+import NOIMask from "@/assets/img/NOIMask.svg";
+import Footer from "@/components/footer";
 
 const Page: React.FC = () => {
   let items = [
@@ -88,6 +90,15 @@ const Page: React.FC = () => {
           className="w-full flex flex-col justify-center items-center"
         >
           <div className="w-full flex flex-col justify-center items-center">
+            <div className="w-full flex flex-col justify-center items-center">
+              <Image
+                className="hover:scale-105 transition-transform duration-300"
+                src={NOIMask}
+                alt="maskImage"
+                width={700}
+                height={500}
+              />
+            </div>
             <h1 className="text-2xl font-bold text-gold text-center mt-10">
               NOI 2024 Timeline
             </h1>
@@ -121,6 +132,7 @@ const Page: React.FC = () => {
             </div>
           </div>
         </motion.main>
+        <Footer/>
       </div>
     </>
   );

@@ -7,6 +7,8 @@ import PrimBut from "./ui/buttonone"; // Make sure PrimBut is also converted to 
 import Image from "next/image";
 import NOIMask from "@/assets/img/NOIMask.svg";
 import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
+
 const Herosec: React.FC = () => {
   // State to manage the loading of the Spline scene
   const [isSplineLoaded, setIsSplineLoaded] = useState<boolean>(false);
@@ -79,6 +81,7 @@ const Herosec: React.FC = () => {
             </>
           )}
         </div>
+        <Footer/>
       </main>
     </>
   );

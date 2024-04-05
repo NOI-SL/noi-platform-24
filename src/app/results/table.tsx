@@ -231,25 +231,25 @@ const TableResults = () => {
               <tr
                 key={index}
                 className={
-                  index % 2 === 0 ? "text-white bg-black" : "text-white bg-black"
+                  index % 2 === 0 ? "text-white bg-black" : "text-gold bg-black"
                 }
               >
-                <td className="px-4 py-2 text-center border-b border-accent-100">
+                <td className="px-4 py-2 text-center">
                   {data.position}
                 </td>
-                <td className="px-4 py-2 text-center border-b border-accent-100">
+                <td className="px-4 py-2 text-center">
                   {data.hackerrankID}
                 </td>
-                <td className="px-4 py-2 text-center border-b border-accent-100">
+                <td className="px-4 py-2 text-center">
                   {data.firstName}
                 </td>
-                <td className="px-4 py-2 text-center border-b border-accent-100">
+                <td className="px-4 py-2 text-center">
                   {data.lastName}
                 </td>
-                <td className="px-4 py-2 text-center border-b border-accent-100">
+                <td className="px-4 py-2 text-center">
                   {data.school}
                 </td>
-                <td className="px-4 py-2 text-center border-b border-accent-100">
+                <td className="px-4 py-2 text-center">
                   {data.score}
                 </td>
               </tr>
@@ -262,7 +262,7 @@ const TableResults = () => {
           <button
             onClick={() => handlePageChange(currentPage - 1)}
             disabled={currentPage === 1}
-            className="px-3 py-1 mr-1 bg-gold-300 rounded"
+            className="text-gold px-3 py-1 mr-1 bg-gold-300 rounded"
           >
             Prev
           </button>
@@ -282,7 +282,7 @@ const TableResults = () => {
           <button
             onClick={() => handlePageChange(currentPage + 1)}
             disabled={currentPage === totalPages}
-            className="px-3 py-1 bg-gold-300 rounded"
+            className="px-3 py-1 text-gold bg-gold-300 rounded"
           >
             Next
           </button>

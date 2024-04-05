@@ -96,19 +96,28 @@ const Page: React.FC = () => {
   ];
   return (
     <>
-      <div className="min-h-full flex flex-col items-center justify-center text-white bg-gradient-to-br from-black to-darkgreen">
+      <motion.main
+        // initial={{ opacity: 0, y: 50 }}
+        // animate={{ opacity: 1, y: 0 }}
+        // exit={{ opacity: 0, y: -50 }}
+        // transition={{ duration: 0.5 }}
+        className="min-h-full flex flex-col items-center justify-center text-center overflow-hidden bg-gradient-to-br from-black to-darkgreen"
+      >
         <Navbar />
-        <motion.main
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -50 }}
-          transition={{ duration: 0.5 }}
-          className="w-full flex flex-col justify-center items-center "
-        >
-          <h1 className="text-2xl font-bold text-gold text-center mb-8 mt-10">
-            Resources | සම්පත්
-          </h1>
-        </motion.main>
+        <div className="mt-8 w-full py-20 bg-blacky-400">
+          <motion.main
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -50 }}
+            transition={{ duration: 0.5 }}
+            className="w-full flex flex-col justify-center items-center "
+          >
+            <h1 className="text-2xl font-bold text-gold text-center mb-8 mt-10">
+              Resources | සම්පත්
+            </h1>
+          </motion.main>
+        </div>
+
         <motion.main
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -237,7 +246,7 @@ const Page: React.FC = () => {
             </div>
           </div>
         </motion.main>
-      </div>
+      </motion.main>
     </>
   );
 };

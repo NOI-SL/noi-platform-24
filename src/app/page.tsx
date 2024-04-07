@@ -28,12 +28,12 @@ const name = String(profileData?.given_name);
       {status === "authenticated" ? (
         <main className="">
           <Heroseclog />
-          <Mobilenav />
+          {/* <Mobilenav /> */}
         </main>
       ) : (
         <main className="">
           <Herosec />
-          <Mobilenav />
+          {/* <Mobilenav /> */}
         </main>
       )}
     </>

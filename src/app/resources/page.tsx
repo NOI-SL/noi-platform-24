@@ -137,7 +137,7 @@ const Page: React.FC = () => {
         >
           <div className="flex flex-col w-full">
             <div className="flex flex-col justify-center items-center">
-              <div className="p-4 w-1/2">
+              {/* <div className="p-4 w-1/2">
                 <h2 className="text-1xl font-bold text-gold text-left">
                   NOI Final Scores
                 </h2>
@@ -165,7 +165,7 @@ const Page: React.FC = () => {
                     </div>
                   ))}
                 </div>
-              </div>
+              </div> */}
               <div className="p-4 w-1/2">
                 <h2 className="text-1xl font-bold text-gold text-left">
                   Past Papers and Solutions
@@ -256,7 +256,7 @@ const Page: React.FC = () => {
             </div>
           </div>
         </motion.main>
-        <Footer/>
+        <Footer />
       </motion.main>
     </>
   );

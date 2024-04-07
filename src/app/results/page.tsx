@@ -40,7 +40,7 @@ const Page: React.FC = () => {
 
   return (
     <>
-      <motion.main
+      {/* <motion.main
         // initial={{ opacity: 0, y: 50 }}
         // animate={{ opacity: 1, y: 0 }}
         // exit={{ opacity: 0, y: -50 }}
@@ -89,7 +89,7 @@ const Page: React.FC = () => {
           </div>
         </motion.main>
         <Footer/>
-      </motion.main>
+      </motion.main> */}
     </>
   );
 };

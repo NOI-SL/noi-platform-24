@@ -233,7 +233,7 @@ const Navbar: React.FC<NavbarProps> = (NavbarProps) => {
                   </NavigationMenuLink>
                 )}
               </NavigationMenuItem>
-              <NavigationMenuItem>
+              {/* <NavigationMenuItem>
                 {NavbarProps.status === "authenticated" ? (
                   <LogoutButton />
                 ) : (
@@ -245,7 +245,7 @@ const Navbar: React.FC<NavbarProps> = (NavbarProps) => {
                     </Link>
                   </NavigationMenuLink>
                 )}
-              </NavigationMenuItem>
+              </NavigationMenuItem> */}
               <NavigationMenuItem>
                 {NavbarProps.status === "authenticated" ? (
                   <LogoutButton />
@@ -272,7 +272,7 @@ const Navbar: React.FC<NavbarProps> = (NavbarProps) => {
                   </NavigationMenuLink>
                 )}
               </NavigationMenuItem>
-              <NavigationMenuItem>
+              {/* <NavigationMenuItem>
                 {NavbarProps.status === "authenticated" ? (
                   <LogoutButton />
                 ) : (
@@ -284,7 +284,7 @@ const Navbar: React.FC<NavbarProps> = (NavbarProps) => {
                     </Link>
                   </NavigationMenuLink>
                 )}
-              </NavigationMenuItem>
+              </NavigationMenuItem> */}
             </NavigationMenuList>
           </NavigationMenu>
         </div>

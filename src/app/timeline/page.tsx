@@ -87,7 +87,7 @@ const Page: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -50 }}
           transition={{ duration: 0.5 }}
-          className="w-full flex flex-col justify-center items-center"
+          className="w-full flex flex-col justify-center items-center pb-10"
         >
           <div className="w-full flex flex-col justify-center items-center">
             <div className="w-full flex flex-col justify-center items-center">
@@ -103,9 +103,9 @@ const Page: React.FC = () => {
               NOI 2024 Timeline
             </h1>
             <div className="flex flex-col w-4/5 mb-10">
-              <div className="timeLineContainorOuter">
-                <div className="timeLineContainor">
-                  <div className="row py-4">
+              <div className="timeLineContainorOuter w-full">
+                <div className="timeLineContainor  w-full">
+                  <div className="row py-4 w-full">
                     <div
                       className="col-lg-4"
                       data-aos="fade-up"
@@ -115,7 +115,7 @@ const Page: React.FC = () => {
                     </div>
                   </div>
                   <div
-                    className="main-timeline-4 text-white"
+                    className="main-timeline-4 text-white w-full"
                     id="timeLineComponentDiv"
                   >
                     {items.map((item, index) => {

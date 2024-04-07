@@ -43,24 +43,24 @@ const Herosec: React.FC = () => {
                   className="z-10"
                 >
                   {/* Responsive font sizes for h1 element */}
-                    <div className="w-full cursor-pointer hover:pointer">
-                      <Image
-                        className="hover:scale-105 transition-transform duration-300"
-                        src={NOIMask}
-                        alt="maskImage"
-                        width={700}
-                        height={500}
-                      />
-                      <p className="text-sm text-white md:text-lg lg:text-[25px] tracking-widest font-sans lg:mb-2">
-                        <b>National Olympiad In Informatics</b>
-                      </p>
-                      <p className="text-sm text-gold md:text-lg lg:text-[15px] tracking-widest font-sans lg:mb-2">
-                        <b>ජාතික පරිගණක විද්‍යා ඔලිම්පියාඩ් තරඟාවලිය</b>
-                      </p>
-                      <p className="text-sm text-gold md:text-lg lg:text-[20px] tracking-widest font-sans lg:mb-2">
-                        <b>2024</b>
-                      </p>
-                    </div>
+                  <div className="w-full cursor-pointer hover:pointer">
+                    <Image
+                      className="hover:scale-105 transition-transform duration-300"
+                      src={NOIMask}
+                      alt="maskImage"
+                      width={700}
+                      height={500}
+                    />
+                    <p className="text-sm text-white md:text-lg lg:text-[25px] tracking-widest font-sans lg:mb-2">
+                      <b>National Olympiad In Informatics</b>
+                    </p>
+                    <p className="text-sm text-gold md:text-lg lg:text-[15px] tracking-widest font-sans lg:mb-2">
+                      <b>ජාතික පරිගණක විද්‍යා ඔලිම්පියාඩ් තරඟාවලිය</b>
+                    </p>
+                    <p className="text-sm text-gold md:text-lg lg:text-[20px] tracking-widest font-sans lg:mb-2">
+                      <b>2024</b>
+                    </p>
+                  </div>
                 </motion.div>
               </div>
 
@@ -76,13 +76,13 @@ const Herosec: React.FC = () => {
                 className="items-center z-10 font-horus"
               >
                 {/* <PrimBut name="Continue to Portal" link="#" /> */}
-                <PrimBut name="Register Now" link="#" />
+                <PrimBut name="Register Now" link="/register" />
                 {/* <p className='font-sans'>If you haven't registered yet please register now</p> */}
               </motion.div>
             </>
           )}
         </div>
-        <Footer/>
+        <Footer />
       </main>
     </>
   );

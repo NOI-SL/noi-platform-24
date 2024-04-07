@@ -36,7 +36,7 @@ const Page: React.FC = () => {
     <>
       <div className="min-h-full w-full flex flex-col items-left justify-center text-left text-white overflow-hidden bg-gradient-to-br from-black to-darkgreen">
         <Navbar />
-        <div className="w-full flex flex-col justify-center items-center">
+        <div className="w-full flex flex-col justify-center items-center pb-10">
           <motion.main
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -45,14 +45,14 @@ const Page: React.FC = () => {
             className="w-full flex flex-col justify-center items-center"
           >
             <div className="w-full flex flex-col justify-center items-center">
-                <Image
-                  className="hover:scale-105 transition-transform duration-300"
-                  src={NOIMask}
-                  alt="maskImage"
-                  width={700}
-                  height={500}
-                />
-              </div>
+              <Image
+                className="hover:scale-105 transition-transform duration-300"
+                src={NOIMask}
+                alt="maskImage"
+                width={700}
+                height={500}
+              />
+            </div>
             <h1 className="text-2xl font-bold text-gold text-center mt-10">
               Awards | සම්මාන
             </h1>
@@ -64,8 +64,8 @@ const Page: React.FC = () => {
             transition={{ duration: 0.5 }}
             className="w-full flex flex-col justify-center items-center"
           >
-            <div className="flex flex-row w-1/2">
-              <div className="flex flex-col justify-center items-center w-1/2 py-20">
+            <div className="flex flex-col w-1/2 lg:flex-row lg:w-1/2 sm:flex-col sm:w-full">
+              <div className="flex flex-col w-full justify-center items-center sm:w-full md:w-3/4 lg:w-1/2 pt-20 sm:pt-10 md:pt-20 lg:pt-20">
                 <h1 className="text-1xl font-bold text-white text-center">
                   Under 16 | 16 න් පහළ
                 </h1>
@@ -78,7 +78,7 @@ const Page: React.FC = () => {
                   height={200}
                 />
               </div>
-              <div className="flex flex-col justify-center items-center w-1/2 py-20">
+              <div className="flex flex-col w-full justify-center items-center sm:w-full md:w-3/4 lg:w-1/2 pt-10 sm:pt-10 md:pt-20 lg:pt-20">
                 <h1 className="text-1xl font-bold text-white text-center">
                   Under 20 | 20 න් පහළ
                 </h1>
@@ -100,28 +100,28 @@ const Page: React.FC = () => {
             transition={{ duration: 0.5 }}
             className="w-full flex flex-col justify-center items-center"
           >
-            <div className="flex flex-col w-1/2">
-              <h1 className="text-2xl font-bold text-gold text-center">
+            <div className="flex flex-col w-3/4 sm:w-1/2 md:3/4 lg:w-1/2 pt-10">
+              <h1 className="text-2xl font-bold text-gold text-center pb-10">
                 Special Awards | විශේෂ සම්මාන
               </h1>
               {awards.map((award, index) => (
                 <div className="py-10" key={index}>
-                  <h2 className="text-1xl text-gold text-left">
+                  <h2 className="text-1xl text-gold text-center sm:text-center md:text-left lg:text-left">
                     {award.title}
                   </h2>
-                  <p>{award.description}</p>
+                  <p className="text-center sm:text-center md:text-left lg:text-left">{award.description}</p>
                 </div>
               ))}
 
-              <p className="text-gold py-10">
+              <p className="text-gold py-10 text-center sm:text-center md:text-left lg:text-left">
                 Four contestants will be selected based on their performance at
                 the main competition to represent Sri Lanka at the International
-                Olympiad in Informatics 2022 program, hosted by Indonesia.
+                Olympiad in Informatics 2024 program, hosted by Egypt.
               </p>
             </div>
           </motion.main>
         </div>
-        <Footer/>
+        <Footer />
       </div>
     </>
   );

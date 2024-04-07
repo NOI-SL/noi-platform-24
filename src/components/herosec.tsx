@@ -1,4 +1,3 @@
-// Herosec.tsx
 "use client";
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
@@ -8,20 +7,34 @@ import Image from "next/image";
 import NOIMask from "@/assets/img/NOIMask.svg";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import { useSession } from "next-auth/react";
+import LoadingScreen from "@/components/loadingscreen";
 
 const Herosec: React.FC = () => {
-  // State to manage the loading of the Spline scene
   const [isSplineLoaded, setIsSplineLoaded] = useState<boolean>(false);
+  const { data, status } = useSession();
+  const profileData = data?.user?.profile;
+
+  const state =
+    String(status) === "authenticated" ? "authenticated" : "unauthenticated";
+  const name = String(profileData?.given_name);
 
   useEffect(() => {
-    // This is a placeholder to simulate the delay of loading the Spline scene
-    // In a real scenario, you would use a Spline API method to check if it's loaded, if available.
-    const timer = setTimeout(() => {
-      setIsSplineLoaded(true);
-    }, 1000); // assuming the Spline takes 3 seconds to load
+    if (status !== "loading") {
+      const timer = setTimeout(() => {
+        setIsSplineLoaded(true);
+      }, 1000); // assuming the Spline takes 3 seconds to load
+      return () => clearTimeout(timer);
+    }
+  }, [status]);
 
-    return () => clearTimeout(timer);
-  }, []);
+  if (status === "loading") {
+    return (
+      <main className="flex min-h-screen flex-col items-center justify-center p-24">
+        <LoadingScreen />
+      </main>
+    );
+  }
 
   return (
     <>
@@ -75,8 +88,11 @@ const Herosec: React.FC = () => {
                 }}
                 className="items-center z-10 font-horus"
               >
-                {/* <PrimBut name="Continue to Portal" link="#" /> */}
-                <PrimBut name="Register Now" link="/register" />
+                {state === "authenticated" ? (
+                  <PrimBut name="Continuing to Portal" link="/register" />
+                ) : (
+                  <PrimBut name="Register Now" link="/register" />
+                )}
                 {/* <p className='font-sans'>If you haven't registered yet please register now</p> */}
               </motion.div>
             </>

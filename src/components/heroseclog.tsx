@@ -8,6 +8,8 @@ import Image from "next/image";
 import NOIMask from "@/assets/img/NOIMask.svg";
 import Navbar from "@/components/navbar";
 import PrimButtwo from "./ui/buttontwo";
+import Footer from "@/components/footer";
+
 const Herosec: React.FC = () => {
     // State to manage the loading of the Spline scene
     const [isSplineLoaded, setIsSplineLoaded] = useState<boolean>(false);
@@ -86,12 +88,14 @@ const Herosec: React.FC = () => {
                                 }}
                                 className="items-center z-10 font-horus"
                             >
-                                <PrimButtwo name="Continue to Profile" link="/profile" />
+                                <PrimBut name="Continue to Profile" link="/profile" />
+                                {/* <PrimButtwo name="Continue to Profile" link="/profile" /> */}
                                 {/* <p className='font-sans'>If you haven't registered yet please register now</p> */}
                             </motion.div>
                         </>
                     )}
                 </div>
+                <Footer />
             </main>
         </>
     );

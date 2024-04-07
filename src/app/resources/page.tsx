@@ -167,7 +167,7 @@ const Page: React.FC = () => {
                 </div>
               </div> */}
               <div className="p-4 w-1/2">
-                <h2 className="text-1xl font-bold text-gold text-left">
+                <h2 className="text-1xl font-bold text-gold text-center sm:text-center md:text-left lg:text-left mt-10">
                   Past Papers and Solutions
                 </h2>
                 <div className="w-full flex flex-col justify-center items-center  mt-10">
@@ -196,7 +196,7 @@ const Page: React.FC = () => {
                 </div>
               </div>
               <div className="p-4 w-1/2 ">
-                <h2 className="text-1xl font-bold text-gold text-left">
+                <h2 className="text-1xl font-bold text-gold text-center sm:text-center md:text-left lg:text-left">
                   Books
                 </h2>
                 <div className="w-full flex flex-col justify-center items-center  mt-10">
@@ -225,7 +225,7 @@ const Page: React.FC = () => {
                 </div>
               </div>
               <div className="p-4 w-1/2">
-                <h2 className="text-1xl font-bold text-gold text-left">
+                <h2 className="text-1xl font-bold text-gold text-center sm:text-center md:text-left lg:text-left">
                   Others
                 </h2>
                 <div className="w-full flex flex-col justify-center items-center  mt-10">

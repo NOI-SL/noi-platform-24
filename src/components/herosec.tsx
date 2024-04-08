@@ -9,6 +9,7 @@ import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { useSession } from "next-auth/react";
 import LoadingScreen from "@/components/loadingscreen";
+import PrimButtwo from "./ui/buttontwo";
 
 const Herosec: React.FC = () => {
   const [isSplineLoaded, setIsSplineLoaded] = useState<boolean>(false);
@@ -89,9 +90,9 @@ const Herosec: React.FC = () => {
                 className="items-center z-10 font-horus"
               >
                 {state === "authenticated" ? (
-                  <PrimBut name="Continuing to Portal" link="/register" />
+                  <PrimButtwo name="Continuing to Profile" link="/profile" />
                 ) : (
-                  <PrimBut name="Register Now" link="/register" />
+                  <PrimBut name="Continue to portal" link="/" />
                 )}
                 {/* <p className='font-sans'>If you haven't registered yet please register now</p> */}
               </motion.div>

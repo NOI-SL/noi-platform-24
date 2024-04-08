@@ -22,12 +22,12 @@ interface Component {
   href: string;
 }
 
-interface NavbarProps {
-  status?: string;
-  name?: string;
-  // Optional "status" prop
-  // Add other expected props here
-}
+// interface NavbarProps {
+//   status?: string;
+//   name?: string;
+//   // Optional "status" prop
+//   // Add other expected props here
+// }
 
 const components: Component[] = [
   {
@@ -69,8 +69,8 @@ const components: Component[] = [
   //   description: "NOI 24 Portal",
   // },
 ];
-
-const Navbar: React.FC<NavbarProps> = (NavbarProps) => {
+// const Navbar: React.FC<NavbarProps> = (NavbarProps) => {
+const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => {
     setIsOpen(!isOpen);

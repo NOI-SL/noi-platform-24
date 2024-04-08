@@ -77,7 +77,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="sticky top-0 z-50 hidden py-5 lg:flex flex-row w-full">
+    <nav className="sticky top-0 z-50 flex py-5  flex-row w-full">
       <div className="md:mx-60 mx-5 flex flex-row justify-between content-center items-center w-full">
         <Link href="/" passHref>
           <Image

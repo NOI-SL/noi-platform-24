@@ -94,9 +94,6 @@ const Page: React.FC = () => {
                   <option value="other">Other</option>
                 </select>
               </label>
-            </div>
-
-            <div>
               <h2 className="text-2xl font-bold my-8 text-gold">
                 School Information
               </h2>
@@ -118,6 +115,9 @@ const Page: React.FC = () => {
                   className="mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3"
                 />
               </label>
+            </div>
+
+            <div>
               <h2 className="text-2xl font-bold my-8 text-gold">
                 Contact Information
               </h2>
@@ -170,9 +170,10 @@ const Page: React.FC = () => {
               <h2 className="text-2xl font-bold my-8 text-gold">
                 Proof Document Type
               </h2>
+              <span className="text-gold">Choose proof document type</span>
               <select
                 name="documentType"
-                className="mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3"
+                className="mt-1 block w-full rounded-md border border-gold shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3"
               >
                 <option value="nic">NIC</option>
                 <option value="postal_id">Postal ID</option>

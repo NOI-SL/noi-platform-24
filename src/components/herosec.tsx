@@ -92,7 +92,7 @@ const Herosec: React.FC = () => {
                 {state === "authenticated" ? (
                   <PrimButtwo name="Continuing to Profile" link="/profile" />
                 ) : (
-                  <PrimBut name="Continue to portal" link="/" />
+                  <PrimButtwo name="Continue to portal" link="/" />
                 )}
                 {/* <p className='font-sans'>If you haven't registered yet please register now</p> */}
               </motion.div>

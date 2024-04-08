@@ -1,7 +1,6 @@
 // Import React and necessary components
 "use client";
-import React from "react";
-import Input from "@/components/input";
+import React, { useState } from "react";
 import Navbar from "@/components/navbar";
 import { LoginButton } from "@/components/ui/login";
 import { useSession, signIn, signOut } from "next-auth/react";
@@ -12,6 +11,37 @@ const Page: React.FC = () => {
   const { data: session, status } = useSession();
   const isLoading = status === "loading";
   const isAuthenticated = !!session;
+
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    fullName: "",
+    birthdate: "",
+    gender: "",
+    schoolName: "",
+    schoolAddress: "",
+    addressLine1: "",
+    addressLine2: "",
+    addressLine3City: "",
+    contactNumber: "",
+    email: "",
+    documentType: "",
+    document: "",
+  });
+
+  const handleInputChange = (e: any) => {
+    const { name, value } = e.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    console.log(formData);
+  };
+
   return (
     <>
       <motion.main
@@ -38,7 +68,10 @@ const Page: React.FC = () => {
             </p>
           </div>
         </div>
-        <form className="p-8 w-full max-w-6xl shadow-sm">
+        <form
+          onSubmit={handleSubmit}
+          className="p-8 w-full max-w-6xl shadow-sm"
+        >
           <div className="grid md:grid-cols-2 gap-10">
             <div>
               <h2 className="text-2xl font-bold my-8 text-gold">
@@ -49,6 +82,8 @@ const Page: React.FC = () => {
                 <input
                   name="firstName"
                   type="text"
+                  value={formData.firstName}
+                  onChange={handleInputChange}
                   placeholder="Your first name"
                   className="mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3"
                 />
@@ -59,6 +94,8 @@ const Page: React.FC = () => {
                 <input
                   name="lastName"
                   type="text"
+                  value={formData.lastName}
+                  onChange={handleInputChange}
                   placeholder="Your last name"
                   className="mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3"
                 />
@@ -69,6 +106,8 @@ const Page: React.FC = () => {
                 <input
                   name="fullName"
                   type="text"
+                  value={formData.fullName}
+                  onChange={handleInputChange}
                   placeholder="Your full name"
                   className="mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3"
                 />
@@ -79,6 +118,8 @@ const Page: React.FC = () => {
                 <input
                   name="birthdate"
                   type="date"
+                  value={formData.birthdate}
+                  onChange={handleInputChange}
                   className="mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3"
                 />
               </label>
@@ -88,7 +129,10 @@ const Page: React.FC = () => {
                 <select
                   name="gender"
                   className="mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3"
+                  value={formData.gender}
+                  onChange={handleInputChange}
                 >
+                  <option value="" disabled>Choose One</option>
                   <option value="male">Male</option>
                   <option value="female">Female</option>
                   <option value="other">Other</option>
@@ -103,15 +147,19 @@ const Page: React.FC = () => {
                   name="schoolName"
                   type="text"
                   placeholder="School name"
+                  value={formData.schoolName}
+                  onChange={handleInputChange}
                   className="mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3"
                 />
               </label>
               <label className="block mb-5">
                 <span className="text-gold">School Address</span>
                 <input
-                  name="schoolName"
+                  name="schoolAddress"
                   type="text"
                   placeholder="School address"
+                  value={formData.schoolAddress}
+                  onChange={handleInputChange}
                   className="mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3"
                 />
               </label>
@@ -124,45 +172,55 @@ const Page: React.FC = () => {
               <label className="block mb-5">
                 <span className="text-gold">Address Line 1</span>
                 <input
-                  name="schoolName"
+                  name="addressLine1"
                   type="text"
-                  placeholder="School name"
+                  placeholder="Address Line 1"
+                  value={formData.addressLine1}
+                  onChange={handleInputChange}
                   className="mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3"
                 />
               </label>
               <label className="block mb-5">
                 <span className="text-gold">Address Line 2</span>
                 <input
-                  name="schoolName"
+                  name="addressLine2"
                   type="text"
-                  placeholder="School name"
+                  placeholder="Address Line 2"
+                  value={formData.addressLine2}
+                  onChange={handleInputChange}
                   className="mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3"
                 />
               </label>
               <label className="block mb-5">
                 <span className="text-gold">Address Line 3 / City</span>
                 <input
-                  name="schoolName"
+                  name="addressLine3City"
                   type="text"
-                  placeholder="School name"
+                  placeholder="Address Line 3 / City"
+                  value={formData.addressLine3City}
+                  onChange={handleInputChange}
                   className="mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3"
                 />
               </label>
               <label className="block mb-5">
                 <span className="text-gold">Contact Number</span>
                 <input
-                  name="schoolName"
+                  name="contactNumber"
                   type="text"
-                  placeholder="School name"
+                  placeholder="Contact Number"
+                  value={formData.contactNumber}
+                  onChange={handleInputChange}
                   className="mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3"
                 />
               </label>
               <label className="block mb-5">
                 <span className="text-gold">Email</span>
                 <input
-                  name="schoolName"
+                  name="email"
                   type="text"
-                  placeholder="School name"
+                  placeholder="Email"
+                  value={formData.email}
+                  onChange={handleInputChange}
                   className="mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3"
                 />
               </label>
@@ -174,7 +232,10 @@ const Page: React.FC = () => {
               <select
                 name="documentType"
                 className="mt-1 block w-full rounded-md border border-gold shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3"
+                value={formData.documentType}
+                onChange={handleInputChange}
               >
+                <option value="" disabled>Choose One</option>
                 <option value="nic">NIC</option>
                 <option value="postal_id">Postal ID</option>
                 <option value="passport">Passport</option>
@@ -193,6 +254,8 @@ const Page: React.FC = () => {
                 <input
                   name="document"
                   type="url"
+                  value={formData.document}
+                  onChange={handleInputChange}
                   placeholder="Eg: https://drive.google.com/drive/u/0/home...."
                   className="mt-1 mb-5 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3"
                 />

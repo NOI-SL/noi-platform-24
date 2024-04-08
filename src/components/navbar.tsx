@@ -95,14 +95,14 @@ const Navbar: React.FC = () => {
                 <NavigationMenuItem key={index}>
                   <NavigationMenuLink asChild>
                     {item.title === "IOI 2023" ? (
-                      <a
+                      <Link
                         href={item.href}
                         className="text-sans text-sm text-gold py-2 px-4 cursor-pointer hover:text-white transition duration-300"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
                         {item.title}
-                      </a>
+                      </Link>
                     ) : (
                       <Link href={item.href}>
                         <div className="text-sans text-sm text-gold py-2 px-4 cursor-pointer hover:text-white transition duration-300">
@@ -113,11 +113,11 @@ const Navbar: React.FC = () => {
                   </NavigationMenuLink>
                 </NavigationMenuItem>
               ))}
-              {status === "authenticated" && (
+              {/* {status === "authenticated" && (
                 <NavigationMenuItem>
                   <LogoutButton />
                 </NavigationMenuItem>
-              )}
+              )} */}
             </NavigationMenuList>
           </NavigationMenu>
         </div>

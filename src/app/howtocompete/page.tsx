@@ -22,7 +22,6 @@ const HowToCompete: React.FC = () => {
 
   const profileData = data?.user?.profile;
 
-  if (status !== "authenticated") {
     return (
       <>
         <motion.main
@@ -248,7 +247,6 @@ const HowToCompete: React.FC = () => {
         </motion.main>
       </>
     );
-  }
 };
 
 export default HowToCompete;

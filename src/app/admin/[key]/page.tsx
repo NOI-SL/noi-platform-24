@@ -38,8 +38,8 @@ const AdminPage = () => {
             {isAdmin ? (
                 <>
                 <Navbar
-                    status={status}
-                    name={data?.user?.profile?.given_name}
+                    // status={status}
+                    // name={data?.user?.profile?.given_name}
                 />
                 <main className="min-h-full flex flex-col items-center justify-center text-center overflow-hidden">
                     <div className="mt-8 border w-full py-20 bg-slate-400">

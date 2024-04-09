@@ -41,26 +41,26 @@ const Footer: React.FC = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-6">
               <div className="mb-6 md:mb-0">
-                <h2 className="mb-6 text-white font-semibold text-gold-900 uppercase dark:text-gold text-left">
+                <h2 className="mb-6 text-white font-semibold text-gold-900 uppercase dark:text-gold text-center md:text-left">
                   Pages
                 </h2>
-                <ul className="text-gold-500 dark:text-gold-400 font-medium text-left">
-                  <li className="mb-4 text-left">
+                <ul className="text-gold-500 dark:text-gold-400 font-medium  text-center md:text-left">
+                  <li className="mb-2  text-center md:text-left">
                     <Link href="/howtocompete" className="text-gold">
                       How to Compete
                     </Link>
                   </li>
-                  <li className="mb-4 text-left">
+                  <li className="mb-2  text-center md:text-left">
                     <Link href="/resources" className="text-gold">
                       Resources
                     </Link>
                   </li>
-                  <li className="mb-4 text-left">
+                  <li className="mb-2  text-center md:text-left">
                     <Link href="/awards" className="text-gold">
                       Awards
                     </Link>
                   </li>
-                  <li className="mb-4 text-left">
+                  <li className="mb-2  text-center md:text-left">
                     <Link href="/timeline" className="text-gold">
                       Timeline
                     </Link>
@@ -73,11 +73,11 @@ const Footer: React.FC = () => {
                 </ul>
               </div>
               <div className="mb-6 md:mb-0">
-                <h2 className="mb-6 text-white font-semibold text-gold-900 uppercase dark:text-gold text-left">
+                <h2 className="mb-6 text-white font-semibold text-gold-900 uppercase dark:text-gold  text-center md:text-left">
                   Partners
                 </h2>
                 <ul className="text-gold-500 dark:text-gold-400 font-medium">
-                  <li className="mb-4 text-left">
+                  <li className="mb-2 text-center md:text-left">
                     <Link
                       href="https://moe.gov.lk/"
                       target="_blank"
@@ -87,7 +87,7 @@ const Footer: React.FC = () => {
                       Ministry of Education
                     </Link>
                   </li>
-                  <li className="mb-4 text-left">
+                  <li className="mb-2 text-center md:text-left">
                     <Link
                       href="https://ucsc.cmb.ac.lk/"
                       target="_blank"
@@ -97,7 +97,7 @@ const Footer: React.FC = () => {
                       UCSC
                     </Link>
                   </li>
-                  <li className="mb-4 text-left">
+                  <li className="mb-2  text-center md:text-left">
                     <Link
                       href="https://ioinformatics.org/"
                       target="_blank"
@@ -110,15 +110,15 @@ const Footer: React.FC = () => {
                 </ul>
               </div>
               <div className="w-full mb-6 md:mb-0">
-                <h2 className="mb-6 text-white text-left font-semibold text-gold-900 uppercase dark:text-gold">
+                <h2 className="mb-6 text-white  text-center md:text-left font-semibold text-gold-900 uppercase dark:text-gold">
                   Contact
                 </h2>
                 <ul className="text-gold-500 dark:text-gold-400 font-medium">
-                  <li className="mb-4 text-left">
-                    <Link href="#" className="text-gold text-left mb-1">
+                  <li className="mb-4  text-center md:text-left">
+                    <Link href="#" className="text-gold  text-center md:text-left mb-1">
                       ACM Student Chapter of UCSC
                     </Link>
-                    <address className="text-gold text-left">
+                    <address className="text-gold  text-center md:text-left">
                       UCSC Building Complex,
                       <br />
                       No. 35, Reid Avenue,
@@ -133,15 +133,15 @@ const Footer: React.FC = () => {
             </div>
           </div>
           <hr className="border-gold my-6 border-gold-200 sm:mx-auto dark:border-gold-700 lg:my-8" />
-          <div className="sm:flex sm:items-center sm:justify-between">
-            <span className="text-gold text-gold-500 sm:text-center dark:text-gold-400">
+          <div className="sm:flex  text-center md:text-left sm:justify-between">
+            <span className="text-gold text-gold-500  text-center md:text-left dark:text-gold-400">
               © 2024{" "}
               <Link href="/" className="text-gold">
                 NOI
               </Link>
               . All Rights Reserved.
             </span>
-            <div className="flex mt-4 sm:justify-center sm:mt-0">
+            <div className="flex mt-4 justify-center sm:mt-0">
               <Link
                 href="https://www.facebook.com/noisrilanka"
                 target="_blank"

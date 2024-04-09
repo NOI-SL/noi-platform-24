@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import LoadingScreen from "@/components/loadingscreen";
 import NOIMask from "@/assets/img/NOIMask.svg";
 import Footer from "@/components/footer";
+import Particles from "@/components/particles/ParticleDesign";
 interface Resource {
   title: string;
   subtopic: string;
@@ -105,6 +106,7 @@ const Page: React.FC = () => {
         className="min-h-full flex flex-col items-center justify-center text-center overflow-hidden bg-gradient-to-br from-black to-darkgreen"
       >
         <Navbar />
+        <Particles />
         <div className="mt-8 w-full bg-blacky-400">
           <motion.main
             initial={{ opacity: 0, y: 50 }}

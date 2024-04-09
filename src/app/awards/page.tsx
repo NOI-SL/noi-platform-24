@@ -8,6 +8,7 @@ import awardImages from "@/assets/img/GoldSilverBronze.png";
 import { motion } from "framer-motion";
 import NOIMask from "@/assets/img/NOIMask.svg";
 import Footer from "@/components/footer";
+import Particles from "@/components/particles/ParticleDesign";
 interface Award {
   title: string;
   description: string;
@@ -36,6 +37,7 @@ const Page: React.FC = () => {
     <>
       <div className="min-h-full w-full flex flex-col items-left justify-center text-left text-white overflow-hidden bg-gradient-to-br from-black to-darkgreen">
         <Navbar />
+        <Particles />
         <div className="w-full flex flex-col justify-center items-center pb-10">
           <motion.main
             initial={{ opacity: 0, y: 50 }}

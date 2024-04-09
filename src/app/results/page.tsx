@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import LoadingScreen from "@/components/loadingscreen";
 import TableResults from "./table";
 import NOIMask from "@/assets/img/NOIMask.svg";
+import Particles from "@/components/particles/ParticleDesign";
 
 interface Result {
   title: string;
@@ -48,6 +49,7 @@ const Page: React.FC = () => {
         className="min-h-full flex flex-col items-center justify-center text-center overflow-hidden bg-gradient-to-br from-black to-darkgreen text-white"
       >
         <Navbar />
+        <Particles />
         <motion.main
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}

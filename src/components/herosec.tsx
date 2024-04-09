@@ -10,6 +10,7 @@ import Footer from "@/components/footer";
 import { useSession } from "next-auth/react";
 import LoadingScreen from "@/components/loadingscreen";
 import PrimButtwo from "./ui/buttontwo";
+import Particles from "@/components/particles/ParticleDesign";
 
 const Herosec: React.FC = () => {
   const [isSplineLoaded, setIsSplineLoaded] = useState<boolean>(false);
@@ -42,6 +43,7 @@ const Herosec: React.FC = () => {
       <main className="absolute min-h-full w-full flex flex-col items-center justify-center text-center overflow-hidden bg-gradient-to-br from-black to-darkgreen">
         <Navbar />
         <div className="flex flex-col items-center justify-center w-full h-screen text-accent">
+          <Particles />
           {isSplineLoaded && (
             <>
               <div>

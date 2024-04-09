@@ -114,7 +114,7 @@ const HowToCompete: React.FC = () => {
               the NOI portal using the email and password provided at
               registration. The NOI portal is the dashboard that contains
               information regarding upcoming competitions, training sessions,
-              homework, etc. personalized for you. If you’re new to programming,
+              homework, etc. personalized for you. If you`re new to programming,
               you can start off with the training material provided in the NOI
               portal.
             </p>
@@ -156,7 +156,7 @@ const HowToCompete: React.FC = () => {
                 </p>
                 <p className="text-white mb-5 text-justify sm:text-justify md:text-justify lg:text-justify">
                   Contestants in the division A program are allowed to compete
-                  in NOI monthly contests, but their results wouldn't be counted
+                  in NOI monthly contests, but their results wouldn`t be counted
                   for the final leaderboard of the contest. At the end of each
                   monthly Division B contest, the last ranking two members of
                   the Division A program will be demoted to the Division B

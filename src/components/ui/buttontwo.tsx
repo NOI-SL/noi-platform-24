@@ -63,7 +63,7 @@ const PrimButtwo: React.FC<PrimButProps> = ({ name, link }) => {
         <div onMouseEnter={handleHoverStart} onMouseLeave={handleHoverEnd} style={{ position: 'relative' }}>
             <motion.button
                 className="py-3 px-8 mt-10 border-[3px] bg-darkgreen border-gold text-gold hover:text-gold-100  "
-                style={{ position: 'relative', overflow: 'hidden', zIndex: 1 }} // Change default background color as needed
+                style={{ position: 'relative', overflow: 'hidden', zIndex: 21 }} // Change default background color as needed
                 whileHover={hoverAnimation} onClick={() => handleClick()}
             >
                 <AnimatePresence>

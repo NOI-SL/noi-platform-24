@@ -13,7 +13,7 @@ const ParticleDesign = () => {
         await console.log(container);
     }, []);
     return (
-        <div className="z-20" id="partclesContainor">
+        <div className="z-18" id="partclesContainor">
             <Particles
                 id="tsparticles"
                 init={particlesInit}
@@ -29,7 +29,7 @@ const ParticleDesign = () => {
                             }
                         },
                         "color": {
-                            "value": "#ffffff"
+                            "value": "#F3D592"
                         },
                         "shape": {
                             "type": "circle",
@@ -69,7 +69,7 @@ const ParticleDesign = () => {
                         "line_linked": {
                             "enable": false,
                             "distance": 150,
-                            "color": "#ffffff",
+                            "color": "#F3D592",
                             "opacity": 0.4,
                             "width": 1
                         },

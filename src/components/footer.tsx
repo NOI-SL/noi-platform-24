@@ -9,18 +9,19 @@ import Link from "next/link";
 const Footer: React.FC = () => {
   return (
     <>
-      <footer className="w-full bg-gradient-to-br from-black to-darkgreen p-4 sm:p-8 md:p-12 lg:p-16">
+      <footer className="w-full bg-gradient-to-br from-black to-darkgreen p-4 sm:p-8 md:p-12 lg:p-16" style={{ zIndex: 1 }}>
         <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
           <div className="md:flex md:justify-between flex-wrap">
             <div className="mb-6 md:mb-0">
               <div className="flex items-center">
-                <Link href="/" passHref>
-                  <Image src={logo} className="h-15 me-10" alt="NOI Logo" />
+                <Link href="/" style={{ zIndex: 21 }} passHref>
+                  <Image src={logo} className="h-15 me-10" style={{ zIndex: 21 }} alt="NOI Logo" />
                 </Link>
                 <Link
                   href="https://ucsc.cmb.ac.lk/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  style={{ zIndex: 21 }}
                 >
                   <Image
                     src={UCSCLogo}
@@ -28,12 +29,14 @@ const Footer: React.FC = () => {
                     height={100}
                     alt="UCSC Logo"
                     className="mr-5"
+                    style={{ zIndex: 21 }}
                   />
                 </Link>
                 <Link
                   href="https://ucsc.acm.org/home"
                   target="_blank"
                   rel="noopener noreferrer"
+                  style={{ zIndex: 21 }}
                 >
                   <Image src={ACMLogo} width={100} height={50} alt="ACM Logo" />
                 </Link>
@@ -46,27 +49,47 @@ const Footer: React.FC = () => {
                 </h2>
                 <ul className="text-gold-500 dark:text-gold-400 font-medium  text-center md:text-left">
                   <li className="mb-2  text-center md:text-left">
-                    <Link href="/howtocompete" className="text-gold">
+                    <Link
+                      href="/howtocompete"
+                      className="text-gold"
+                      style={{ zIndex: 21 }}
+                    >
                       How to Compete
                     </Link>
                   </li>
                   <li className="mb-2  text-center md:text-left">
-                    <Link href="/resources" className="text-gold">
+                    <Link
+                      href="/resources"
+                      className="text-gold"
+                      style={{ zIndex: 21 }}
+                    >
                       Resources
                     </Link>
                   </li>
                   <li className="mb-2  text-center md:text-left">
-                    <Link href="/awards" className="text-gold">
+                    <Link
+                      href="/awards"
+                      className="text-gold"
+                      style={{ zIndex: 21 }}
+                    >
                       Awards
                     </Link>
                   </li>
                   <li className="mb-2  text-center md:text-left">
-                    <Link href="/timeline" className="text-gold">
+                    <Link
+                      href="/timeline"
+                      className="text-gold"
+                      style={{ zIndex: 21 }}
+                    >
                       Timeline
                     </Link>
                   </li>
                   <li className="mb-2  text-center md:text-left">
-                    <Link href="/register" className="text-gold">
+                    <Link
+                      href="/register"
+                      className="text-gold"
+                      style={{ zIndex: 21 }}
+                    >
                       Register
                     </Link>
                   </li>
@@ -88,6 +111,7 @@ const Footer: React.FC = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-gold "
+                      style={{ zIndex: 21 }}
                     >
                       Ministry of Education
                     </Link>
@@ -98,6 +122,7 @@ const Footer: React.FC = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-gold"
+                      style={{ zIndex: 21 }}
                     >
                       UCSC
                     </Link>
@@ -108,6 +133,7 @@ const Footer: React.FC = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-gold"
+                      style={{ zIndex: 21 }}
                     >
                       IOI 2024
                     </Link>
@@ -120,7 +146,13 @@ const Footer: React.FC = () => {
                 </h2>
                 <ul className="text-gold-500 dark:text-gold-400 font-medium">
                   <li className="mb-4  text-center md:text-left">
-                    <Link href="#" className="text-gold  text-center md:text-left mb-1">
+                    <Link
+                      href="https://ucsc.acm.org/home"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gold  text-center md:text-left mb-1"
+                      style={{ zIndex: 21 }}
+                    >
                       ACM Student Chapter of UCSC
                     </Link>
                     <address className="text-gold  text-center md:text-left">
@@ -141,7 +173,7 @@ const Footer: React.FC = () => {
           <div className="sm:flex  text-center md:text-left sm:justify-between">
             <span className="text-gold text-gold-500  text-center md:text-left dark:text-gold-400">
               © 2024{" "}
-              <Link href="/" className="text-gold">
+              <Link href="/" className="text-gold" style={{ zIndex: 21 }}>
                 NOI
               </Link>
               . All Rights Reserved.
@@ -149,6 +181,7 @@ const Footer: React.FC = () => {
             <div className="flex mt-4 justify-center sm:mt-0">
               <Link
                 href="https://www.facebook.com/noisrilanka"
+                style={{ zIndex: 21 }}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gold-500 hover:text-gold-900 dark:hover:text-gold"
@@ -170,6 +203,7 @@ const Footer: React.FC = () => {
               </Link>
               <Link
                 href="#"
+                style={{ zIndex: 21 }}
                 className="text-gold-500 hover:text-gold-900 dark:hover:text-gold ms-5"
               >
                 <svg
@@ -185,6 +219,7 @@ const Footer: React.FC = () => {
               </Link>
               <Link
                 href="#"
+                style={{ zIndex: 21 }}
                 className="text-gold-500 hover:text-gold-900 dark:hover:text-gold ms-5"
               >
                 <svg
@@ -203,6 +238,7 @@ const Footer: React.FC = () => {
               </Link>
               <Link
                 href="#"
+                style={{ zIndex: 21 }}
                 className="text-gold-500 hover:text-gold-900 dark:hover:text-gold ms-5"
               >
                 <svg

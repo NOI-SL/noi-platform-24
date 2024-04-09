@@ -122,6 +122,7 @@ const Page: React.FC = () => {
                 alt="maskImage"
                 width={700}
                 height={500}
+                style={{ zIndex: 21 }}
               />
             </div>
             <h1 className="text-2xl font-bold text-gold text-center mb-8 mt-10">
@@ -184,7 +185,7 @@ const Page: React.FC = () => {
                       <p className="text-white text-center">
                         {resource.subtopic}
                       </p>
-                      <p className="text-white text-center mb-20  hover:text-gold">
+                      <p className="text-white text-center mb-20  hover:text-gold" style={{ zIndex: 21 }}>
                         <a
                           href={resource.link}
                           target="_blank"
@@ -213,7 +214,7 @@ const Page: React.FC = () => {
                       <p className="text-white text-center">
                         {resource.subtopic}
                       </p>
-                      <p className="text-white text-center mb-20  hover:text-gold">
+                      <p className="text-white text-center mb-20  hover:text-gold" style={{ zIndex: 21 }}>
                         <a
                           href={resource.link}
                           target="_blank"
@@ -242,7 +243,7 @@ const Page: React.FC = () => {
                       <p className="text-white text-center">
                         {resource.subtopic}
                       </p>
-                      <p className="text-white text-center mb-20  hover:text-gold">
+                      <p className="text-white text-center mb-20  hover:text-gold" style={{ zIndex: 21 }}>
                         <a
                           href={resource.link}
                           target="_blank"

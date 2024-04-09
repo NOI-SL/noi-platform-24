@@ -99,6 +99,7 @@ const Page: React.FC = () => {
                 alt="maskImage"
                 width={700}
                 height={500}
+                style={{ zIndex: 21 }}
               />
             </div>
             <h1 className="text-2xl font-bold text-gold text-center mt-10">

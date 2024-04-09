@@ -63,7 +63,7 @@ const HowToCompete: React.FC = () => {
             <h2 className="text-lg font-semibold mb-4 text-gold w-full text-center sm:text-center md:text-center lg:text-center">
               Eligibility | සුදුසුකම්
             </h2>
-            <p className="text-white w-full sm:w-full md:w-full lg:w-full text-center sm:text-center md:text-left lg:text-left mt-5">
+            <p className="text-white w-full sm:w-full md:w-full lg:w-full text-justify sm:text-justify md:text-justify lg:text-justify mt-5">
               The National Olympiad in Informatics program is for secondary
               school students, and contestants should be enrolled in a school.
               Contestants should be not older than twenty years on the 1st of
@@ -109,7 +109,7 @@ const HowToCompete: React.FC = () => {
             <h1 className="text-lg font-bold mb-5 text-gold text-center sm:text-center md:text-center lg:text-center text-gold w-full sm:w-3/4 md:w-3/4 lg:w-full mb-5">
               Process of the competition | තරඟ ක්‍රියාවලිය
             </h1>
-            <p className="text-white w-3/4 sm:w-3/4 md:w-3/4 lg:w-full mb-2 text-center sm:text-center md:text-left lg:text-left">
+            <p className="text-white w-3/4 sm:w-3/4 md:w-3/4 lg:w-full mb-2 text-justify sm:text-justify md:text-justify lg:text-justify">
               Upon registering at the NOI website, you will be able to sign into
               the NOI portal using the email and password provided at
               registration. The NOI portal is the dashboard that contains
@@ -121,7 +121,7 @@ const HowToCompete: React.FC = () => {
             <h2 className="text-lg font-semibold mb-4 text-gold w-full text-center sm:text-center md:text-center lg:text-center mt-5">
               Division B Program
             </h2>
-            <p className="text-white w-3/4 sm:w-3/4 md:w-3/4 lg:w-full mb-2 text-center sm:text-center md:text-left lg:text-left">
+            <p className="text-white w-3/4 sm:w-3/4 md:w-3/4 lg:w-full mb-2 text-justify sm:text-justify md:text-justify lg:text-justify">
               All newly registered contestants will be added to the Division B
               program as stated earlier. The monthly practice contests for the
               Division B contestants commenced on the 25th of November 2024.
@@ -137,7 +137,7 @@ const HowToCompete: React.FC = () => {
             </h2>
             <div className="flex justify-center">
               <div className="w-3/4 sm:w-3/4 md:w-full lg:w-full">
-                <p className="text-white mb-5 text-center sm:text-center md:text-left lg:text-left">
+                <p className="text-white mb-5 text-justify sm:text-justify md:text-justify lg:text-justify">
                   The initial 8 contestants of the division A program have
                   already been selected from the NOI 2021 competition after
                   taking their final scores into consideration. With the initial
@@ -147,14 +147,14 @@ const HowToCompete: React.FC = () => {
                   monthly practice contest. Contestants will have to participate
                   in a set of competitions every month.
                 </p>
-                <p className="text-white mb-5 text-center sm:text-center md:text-left lg:text-left">
+                <p className="text-white mb-5 text-justify sm:text-justify md:text-justify lg:text-justify">
                   The score of the participants in the division A program will
                   be calculated based on the score obtained by participating in
                   contests instructed by the program organizers. (Eg: A
                   coordinator may instruct you to take part the codeforces
                   contests along with other international contests)
                 </p>
-                <p className="text-white mb-5 text-center sm:text-center md:text-left lg:text-left">
+                <p className="text-white mb-5 text-justify sm:text-justify md:text-justify lg:text-justify">
                   Contestants in the division A program are allowed to compete
                   in NOI monthly contests, but their results wouldn't be counted
                   for the final leaderboard of the contest. At the end of each
@@ -184,7 +184,7 @@ const HowToCompete: React.FC = () => {
                 {/* <div className="mx-2">
                   <Image src={java} alt="Java" width={200} height={200} />
                 </div> */}
-                <p className="mb-8 text-white w-1/2 sm:w-1/2 md:w-1/2 lg:w-3/4 pt-7 text-center sm:text-center md:text-left lg:text-left">
+                <p className="mb-8 text-white w-1/2 sm:w-1/2 md:w-1/2 lg:w-3/4 pt-7 text-justify sm:text-justify md:text-justify lg:text-justify">
                   C++ is commonly used in the development of system software,
                   such as operating systems and device drivers, and in game
                   development
@@ -194,7 +194,7 @@ const HowToCompete: React.FC = () => {
             <h1 className="text-lg font-semibold mb-4 text-gold w-full text-center sm:text-center md:text-center lg:text-center">
               About the Competition | තරගාවලිය පිළිබඳව
             </h1>
-            <p className="mb-8 text-white w-3/4 sm:w-3/4 md:w-3/4 lg:w-full mb-5 text-center sm:text-center md:text-left lg:text-left">
+            <p className="mb-8 text-white w-3/4 sm:w-3/4 md:w-3/4 lg:w-full mb-5 text-justify sm:text-justify md:text-justify lg:text-justify">
               The main competition (or the National Olympiad in Informatics)
               will take place at the University of Colombo. The 8 contestants of
               Division A by April 2024 will be straight away participating in
@@ -206,7 +206,7 @@ const HowToCompete: React.FC = () => {
               part in the Qualifier Round.
             </p>
 
-            <p className="text-gold w-3/4 sm:w-3/4 md:w-3/4 lg:w-full mb-5 text-center sm:text-center md:text-left lg:text-left">
+            <p className="text-gold w-3/4 sm:w-3/4 md:w-3/4 lg:w-full mb-5 text-justify sm:text-justify md:text-justify lg:text-justify">
               Four contestants will be selected based on their performance at
               the main competition to represent Sri Lanka at the International
               Olympiad in Informatics 2024 program, hosted by Egypt.

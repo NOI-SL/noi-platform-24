@@ -15,6 +15,7 @@ import img2019 from "@/assets/img/2019-team.jpg";
 import cplusplus from "@/assets/img/cplusplus.png";
 import NOIMask from "@/assets/img/NOIMask.svg";
 import Footer from "@/components/footer";
+import Particles from "@/components/particles/ParticleDesign";
 // import java from "@/assets/img/java.png";
 
 const HowToCompete: React.FC = () => {
@@ -32,6 +33,7 @@ const HowToCompete: React.FC = () => {
         className="min-h-full flex flex-col items-center justify-center text-center overflow-hidden bg-gradient-to-br from-black to-darkgreen"
       >
         <Navbar />
+        <Particles />
         <div className="mt-8 w-full bg-blacky-400 sm:w-3/4">
           <motion.main
             initial={{ opacity: 0, y: 50 }}

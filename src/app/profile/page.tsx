@@ -2,7 +2,7 @@
 
 import Mobilenav from '@/components/mobilenav';
 import Navbar from '@/components/navbar';
-
+import Particles from "@/components/particles/ParticleDesign";
 import { LogoutButton } from '@/components/ui/login'
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
@@ -36,6 +36,7 @@ export default function Profile() {
 
             <main className="flex flex-col min-h-screen p-4 sm:p-8 from-black to-darkgreen bg-gradient-to-br text-white">
                 <Navbar />
+                <Particles />
                 <section className="mb-8">
                     <h2 className="text-2xl font-semibold mb-4">Profile Information</h2>
                     <div className="bg-white rounded-lg shadow-md p-4">

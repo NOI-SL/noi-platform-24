@@ -8,6 +8,7 @@ import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { userSchema } from "@/validations/userSchema";
+import Particles from "@/components/particles/ParticleDesign";
 import { LoginButton } from "@/components/ui/login";
 
 const Page: React.FC = () => {
@@ -75,6 +76,7 @@ const Page: React.FC = () => {
         className="min-h-full flex flex-col items-center justify-center text-center overflow-hidden bg-gradient-to-br from-black to-darkgreen pb-10"
       >
         <Navbar />
+        <Particles />
         <div className="flex flex-col">
           <div className="mt-10">
             <h2 className="text-4xl font-bold text-center mb-5 font-horus text-gold">

@@ -10,6 +10,7 @@ import { motion } from "framer-motion";
 import "./Timeline.css";
 import NOIMask from "@/assets/img/NOIMask.svg";
 import Footer from "@/components/footer";
+import Particles from "@/components/particles/ParticleDesign";
 
 const Page: React.FC = () => {
   let items = [
@@ -82,6 +83,7 @@ const Page: React.FC = () => {
     <>
       <div className="min-h-full w-full flex flex-col items-left justify-center text-left text-white overflow-hidden bg-gradient-to-br from-black to-darkgreen">
         <Navbar />
+        <Particles />
         <motion.main
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}

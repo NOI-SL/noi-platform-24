@@ -65,6 +65,11 @@ const Footer: React.FC = () => {
                       Timeline
                     </Link>
                   </li>
+                  <li className="mb-2  text-center md:text-left">
+                    <Link href="/register" className="text-gold">
+                      Register
+                    </Link>
+                  </li>
                   {/* <li className="mb-4 text-left">
                     <Link href="/results" className="text-gold">
                       Results

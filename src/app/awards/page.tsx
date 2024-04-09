@@ -113,7 +113,7 @@ const Page: React.FC = () => {
                 </div>
               ))}
 
-              <p className="text-gold py-10 text-center sm:text-center md:text-center lg:text-center">
+              <p className="text-gold py-10 text-justify sm:text-justify md:text-justify lg:text-justify">
                 Four contestants will be selected based on their performance at
                 the main competition to represent Sri Lanka at the International
                 Olympiad in Informatics 2024 program, hosted by Egypt.

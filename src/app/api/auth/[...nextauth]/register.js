@@ -1,10 +1,8 @@
 import { connectDB, closeDB } from "@/lib/db";
-import { closeFTP, connectFTP, ftpClient } from "@/lib/ftp";
 import User from "@/models/userModel";
-import fs from "fs";
 import { userSchema } from "@/validations/userSchema";
-import formidable from "formidable";
 import { generateRandomFileName } from "@/lib/utils";
+import axios from "axios"; // Import Axios
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
@@ -12,11 +10,6 @@ export default async function handler(req, res) {
   }
 
   try {
-    /*
-    // This is for file upload using ftp
-    const fields = await req.formData();
-    const validatedData = userSchema.parse(fields);
-    */
     const validatedData = req.body;
 
     const {
@@ -37,18 +30,6 @@ export default async function handler(req, res) {
     } = validatedData;
 
     const remoteFilePath = document;
-
-    /*
-    // This is for file upload using ftp
-    await connectFTP();
-
-    const fileData = fs.readFileSync(document);
-    const fileName = path.basename(document);
-    const remoteFileName = generateRandomFileName(fileName);
-    const remoteFilePath = `user_documents/${remoteFileName}`;
-
-    await ftpClient.uploadFrom(fileData, remoteFilePath);
-    */
 
     await connectDB();
 
@@ -81,13 +62,21 @@ export default async function handler(req, res) {
 
     await user.save();
 
-    res.status(201).json({ message: "User created successfully", data: user });
+    // Use Axios to submit the form data to another endpoint
+    const response = await axios.post("/api/register", validatedData);
+
+    res
+      .status(201)
+      .json({
+        message: "User created successfully",
+        data: user,
+        registrationResponse: response.data,
+      });
   } catch (error) {
     res
       .status(422)
       .json({ message: "Validation error", error: { message: error.errors } });
   } finally {
-    // await closeFTP();
     await closeDB();
   }
 }

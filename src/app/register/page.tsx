@@ -6,11 +6,16 @@ import Footer from "@/components/footer";
 import Particles from "@/components/particles/ParticleDesign";
 import { useFormik } from "formik";
 import userSchema from "@/validations/userSchema";
+import axios from "axios";
 
 const onSubmit = async (values: any, actions: any) => {
-  console.log(values);
-  await new Promise((resolve) => setTimeout(resolve, 500));
-  actions.resetForm();
+  try {
+    const response = await axios.post("/api/register", values);
+    console.log(response.data);
+    actions.resetForm();
+  } catch (error) {
+    console.error("Error submitting form:", error);
+  }
 };
 
 const Page: React.FC = () => {
@@ -385,7 +390,6 @@ const Page: React.FC = () => {
                   <option value="passport">Passport</option>
                   <option value="letter">Letter certified by school</option>
                   <option value="birth_certificate">Birth Certificate</option>
-
                 </select>
                 {errors.documentType && touched.documentType && (
                   <span className="text-red-500 text-sm mt-1">

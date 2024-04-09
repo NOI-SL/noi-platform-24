@@ -57,15 +57,17 @@ const Herosec: React.FC = () => {
                     stiffness: 100,
                   }}
                   className="z-10"
+                  style={{ zIndex: 21 }}
                 >
                   {/* Responsive font sizes for h1 element */}
-                  <div className="w-full cursor-pointer hover:pointer">
+                  <div className="w-full cursor-pointer hover:pointer" style={{ zIndex: 21 }}>
                     <Image
                       className="hover:scale-105 transition-transform duration-300"
                       src={NOIMask}
                       alt="maskImage"
                       width={700}
                       height={500}
+                      style={{ zIndex: 21 }}
                     />
                     <p className="text-sm text-white md:text-lg lg:text-[25px] tracking-widest font-sans lg:mb-2">
                       <b>National Olympiad In Informatics</b>
@@ -92,7 +94,7 @@ const Herosec: React.FC = () => {
                 className="items-center z-10 font-horus"
               >
                 {state === "authenticated" ? (
-                  <PrimButtwo name="Continuing to Profile" link="/profile" />
+                  <PrimButtwo  name="Continuing to Profile" link="/profile"  />
                 ) : (
                   <PrimButtwo name="Continue to portal" link="/" />
                 )}

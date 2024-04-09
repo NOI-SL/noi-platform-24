@@ -48,6 +48,7 @@ const HowToCompete: React.FC = () => {
                 alt="maskImage"
                 width={700}
                 height={500}
+                style={{ zIndex: 21 }}
               />
             </div>
             <h1 className="text-2xl text-center font-bold text-gold sm:w-full">
@@ -179,7 +180,7 @@ const HowToCompete: React.FC = () => {
                   className=" w-1/4"
                 >
                   <div className="mx-2 flex justify-center items-center">
-                    <Image src={cplusplus} alt="C++" width={100} height={100} />
+                    <Image style={{ zIndex: 21 }} src={cplusplus} alt="C++" width={100} height={100} />
                   </div>
                 </a>
 

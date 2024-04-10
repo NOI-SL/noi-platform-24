@@ -6,17 +6,9 @@ import Footer from "@/components/footer";
 import Particles from "@/components/particles/ParticleDesign";
 import { useFormik } from "formik";
 import userSchema from "@/validations/userSchema";
-import axios from "axios";
-
-const onSubmit = async (values: any, actions: any) => {
-  try {
-    const response = await axios.post("/api/auth/register", values);
-    console.log(response.data);
-    actions.resetForm();
-  } catch (error) {
-    console.error("Error submitting form:", error);
-  }
-};
+import { createUser } from "@/app/api/register/register";
+import { FormikValues } from "formik";
+import { useFormState } from "react-dom";
 
 const Page: React.FC = () => {
   const {
@@ -27,7 +19,7 @@ const Page: React.FC = () => {
     handleChange,
     handleSubmit,
     errors,
-  } = useFormik({
+  } = useFormik<FormikValues>({
     initialValues: {
       firstName: "",
       lastName: "",
@@ -45,7 +37,17 @@ const Page: React.FC = () => {
       document: "",
     },
     validationSchema: userSchema,
-    onSubmit: onSubmit,
+    onSubmit: async (values: FormikValues, actions: any) => {
+      try {
+        console.log("Values");
+        console.log(values);
+
+        await createUser(values);
+        actions.resetForm();
+      } catch (err) {
+        console.log("Registration Failed");
+      }
+    },
   });
 
   return (

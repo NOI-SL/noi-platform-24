@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import Particles from "@/components/particles/ParticleDesign";
@@ -8,9 +8,16 @@ import { useFormik } from "formik";
 import userSchema from "@/validations/userSchema";
 import { createUser } from "@/app/api/register/register";
 import { FormikValues } from "formik";
+import Link from "next/link";
 import { useFormState } from "react-dom";
 
 const Page: React.FC = () => {
+  const [display, setDisplay] = useState({
+    form: true,
+    success: false,
+    error: false,
+  });
+
   const {
     values,
     handleBlur,
@@ -41,8 +48,18 @@ const Page: React.FC = () => {
       try {
         await createUser(values);
         actions.resetForm();
+        setDisplay({
+          form: false,
+          success: true,
+          error: false,
+        });
       } catch (err) {
         console.log("Registration Failed");
+        setDisplay({
+          form: false,
+          success: false,
+          error: true,
+        });
       }
     },
   });
@@ -67,7 +84,7 @@ const Page: React.FC = () => {
               NOI 2024 Portal Access
             </p>
           </div>
-          <div className="mt-10 p-5 bg-gradient-to-br from-black to-darkgreen">
+          <div className="mt-10 p-5">
             <p className="text-center text-gold">
               Sign up for National Olympiad in Informatics program.
             </p>
@@ -429,7 +446,7 @@ const Page: React.FC = () => {
             <button
               type="submit"
               style={{ zIndex: 21 }}
-              className={`w-3/4 sm:w-3/4 md:w-1/4 lg:w-1/4 py-3 px-4 border-2 font-horus text-lg border-gold rounded-md shadow-sm text-gold hover:text-gold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ${
+              className={`w-3/4 sm:w-3/4 md:w-1/4 lg:w-1/4 py-3 px-4 border-2 font-horus text-lg border-gold rounded-md shadow-sm text-gold ${
                 isSubmitting
                   ? "bg-gray-300 cursor-not-allowed"
                   : "bg-black hover:bg-darkgreen"
@@ -439,8 +456,139 @@ const Page: React.FC = () => {
               {isSubmitting ? "Submitting..." : "Submit"}
             </button>
           </div>
-        </form>
+          <div
+            className="p-10 mb-4 text-gold rounded-lg dark:text-gold z-21"
+            role="alert"
+            style={{ display: display.success ? "block" : "none" }}
+          >
+            <div className="flex items-center justify-center">
+              <svg
+                className="flex-shrink-0 w-4 h-4 me-2"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+              </svg>
+              <span className="sr-only">Info</span>
+              <h3 className="text-lg font-medium">Registration Successful</h3>
+            </div>
+            <div className="mt-2 mb-4 text-sm z-21" style={{ zIndex: 21 }}>
+              Join our whatsapp group for more updates.
+              {/* <Link
+                style={{ zIndex: 21 }}
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://chat.whatsapp.com/JL2qyoImHrm4rqOYybeZTB"
+              >
+                <b>Click Here</b>
+              </Link> */}
+            </div>
+            <div className="flex justify-center align-center">
+              <button
+                type="button"
+                className="text-white bg-green-800 hover:bg-green-900 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-xs px-3 py-1.5 me-2 text-center inline-flex items-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+              >
+                <svg
+                  className="me-2 h-3 w-3"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 20 14"
+                >
+                  <path d="M10 0C4.612 0 0 5.336 0 7c0 1.742 3.546 7 10 7 6.454 0 10-5.258 10-7 0-1.664-4.612-7-10-7Zm0 10a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z" />
+                </svg>
+                <Link
+                  className="z-21"
+                  target="_blank"
+                  style={{ zIndex: 21 }}
+                  rel="noopener noreferrer"
+                  href="https://chat.whatsapp.com/JL2qyoImHrm4rqOYybeZTB"
+                >
+                  <div>Join WhatsApp Group</div>
+                </Link>
+              </button>
+              <button
+                type="button"
+                className="text-green-800 bg-transparent border border-green-800 hover:bg-green-900 hover:text-white focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-xs px-3 py-1.5 text-center dark:hover:bg-green-600 dark:border-green-600 dark:text-green-400 dark:hover:text-white dark:focus:ring-green-800"
+                data-dismiss-target="#alert-additional-content-3"
+                aria-label="Close"
+              >
+                <Link
+                  className="z-21"
+                  href="/"
+                  target="_blank"
+                  style={{ zIndex: 21 }}
+                  rel="noopener noreferrer"
+                >
+                  <div>Back to Home</div>
+                </Link>
+              </button>
+            </div>
+          </div>
 
+          <div
+            className="p-4 mb-4 text-red-800  rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+            role="alert"
+            style={{ display: display.error ? "block" : "none" }}
+          >
+            <div className="flex items-center">
+              <svg
+                className="flex-shrink-0 w-4 h-4 me-2"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+              </svg>
+              <span className="sr-only">Info</span>
+              <h3 className="text-lg font-medium">Registration Failed</h3>
+            </div>
+            <div className="mt-2 mb-4 text-sm">
+              Try again. If the problem persists, contact the administrator.
+              Email :{" "}
+              <Link
+                target="_blank"
+                rel="noopener noreferrer"
+                href="hapuarachchikaviru@gmail.com"
+                style={{ zIndex: 21 }}
+              >
+                hapuarachchikaviru@gmail.com
+              </Link>
+            </div>
+            <div className="flex">
+              <button
+                type="button"
+                className="text-white bg-red-800 hover:bg-red-900 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-xs px-3 py-1.5 me-2 text-center inline-flex items-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
+              >
+                <svg
+                  className="me-2 h-3 w-3"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 20 14"
+                >
+                  <path d="M10 0C4.612 0 0 5.336 0 7c0 1.742 3.546 7 10 7 6.454 0 10-5.258 10-7 0-1.664-4.612-7-10-7Zm0 10a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z" />
+                </svg>
+                <Link href="/register" style={{ zIndex: 21 }}>
+                  <div>Try Again</div>
+                </Link>
+              </button>
+              <button
+                type="button"
+                className="text-red-800 bg-transparent border border-red-800 hover:bg-red-900 hover:text-white focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-xs px-3 py-1.5 text-center dark:hover:bg-red-600 dark:border-red-600 dark:text-red-500 dark:hover:text-white dark:focus:ring-red-800"
+                data-dismiss-target="#alert-additional-content-2"
+                aria-label="Close"
+              >
+                <Link href="https://wa.me/94713491029" style={{ zIndex: 21 }}>
+                  <div>Contact Admin</div>
+                </Link>
+              </button>
+            </div>
+          </div>
+        </form>
         <Footer />
       </motion.main>
     </>

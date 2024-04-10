@@ -63,7 +63,7 @@ export default async function handler(req, res) {
     await user.save();
 
     // Use Axios to submit the form data to another endpoint
-    const response = await axios.post("/api/register", validatedData);
+    const response = await axios.post("/api/auth/register", validatedData);
 
     res
       .status(201)

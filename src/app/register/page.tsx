@@ -10,7 +10,7 @@ import axios from "axios";
 
 const onSubmit = async (values: any, actions: any) => {
   try {
-    const response = await axios.post("/api/register", values);
+    const response = await axios.post("/api/auth/register", values);
     console.log(response.data);
     actions.resetForm();
   } catch (error) {
@@ -430,7 +430,7 @@ const Page: React.FC = () => {
             <button
               type="submit"
               style={{ zIndex: 21 }}
-              className={`w-1/4 py-3 px-4 border-2 font-horus text-lg border-gold rounded-md shadow-sm text-gold hover:text-gold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ${
+              className={`w-3/4 sm:w-3/4 md:w-1/4 lg:w-1/4 py-3 px-4 border-2 font-horus text-lg border-gold rounded-md shadow-sm text-gold hover:text-gold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ${
                 isSubmitting
                   ? "bg-gray-300 cursor-not-allowed"
                   : "bg-black hover:bg-darkgreen"

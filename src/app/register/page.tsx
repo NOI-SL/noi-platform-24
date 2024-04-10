@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import React, { useState } from "react";
+import React, { useState, createRef, useRef, useCallback } from "react";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import Particles from "@/components/particles/ParticleDesign";
@@ -8,10 +8,14 @@ import { useFormik } from "formik";
 import userSchema from "@/validations/userSchema";
 import { createUser } from "@/app/api/register/register";
 import { FormikValues } from "formik";
+import { useField } from "formik";
 import Link from "next/link";
-import { useFormState } from "react-dom";
+import Dropzone, { DropzoneRef } from "react-dropzone";
+import Image from "next/image";
+import DropzoneComponent from "@/components/Dropzone";
 
 const Page: React.FC = () => {
+  const [errorMessage, setErrorMessage] = useState("");
   const [display, setDisplay] = useState({
     form: true,
     success: false,
@@ -63,6 +67,15 @@ const Page: React.FC = () => {
       }
     },
   });
+
+  const handleFileDrop = useCallback((acceptedFiles: any) => {
+    console.log("Accepted files:", acceptedFiles);
+    if (acceptedFiles.length === 0) {
+      setErrorMessage("No file selected.");
+    } else {
+      setErrorMessage("");
+    }
+  }, []);
 
   return (
     <>
@@ -361,7 +374,7 @@ const Page: React.FC = () => {
                   </span>
                 )}
               </label>
-              <label className="block mb-5 flex flex-col justify-center items-center">
+              <label className="block mb-1 flex flex-col justify-center items-center">
                 <span className="text-gold">Email</span>
                 <input
                   name="email"
@@ -384,7 +397,7 @@ const Page: React.FC = () => {
                 )}
               </label>
               <label className="block mb-5 flex flex-col justify-center items-center">
-                <h2 className="text-2xl font-bold my-8 text-gold">
+                <h2 className="text-2xl font-bold my-5 text-gold">
                   Proof Document Type
                 </h2>
                 <span className="text-gold">Document Type</span>
@@ -414,31 +427,8 @@ const Page: React.FC = () => {
                 )}
               </label>
               <label className="block mb-5 flex flex-col justify-center items-center">
-                <div className="block mb-5 flex flex-col justify-center items-center">
-                  <p className="text-sm text-gold">
-                    Upload to Google Drive and make it viewable to anyone, then
-                    copy the link.
-                  </p>
-                  <input
-                    name="document"
-                    type="url"
-                    placeholder="Eg: https://drive.google.com/drive/u/0/home...."
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={values.document}
-                    style={{ zIndex: 21 }}
-                    className={`mt-1 block w-3/4 rounded-md border ${
-                      errors.document && touched.document
-                        ? "border-red-500"
-                        : "border-gray-300"
-                    } shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3`}
-                  />
-                  {errors.document && touched.document && (
-                    <span className="text-red-500 text-sm mt-1">
-                      {errors.document}
-                    </span>
-                  )}
-                </div>
+                <span className="text-gold mb-2">Document</span>
+                <DropzoneComponent onFileDrop={handleFileDrop}  error={errorMessage}  />
               </label>
             </div>
           </div>

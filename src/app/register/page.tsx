@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import React, { useState } from "react";
+import React, { useState, createRef, useRef, useCallback } from "react";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import Particles from "@/components/particles/ParticleDesign";
@@ -8,10 +8,14 @@ import { useFormik } from "formik";
 import userSchema from "@/validations/userSchema";
 import { createUser } from "@/app/api/register/register";
 import { FormikValues } from "formik";
+import { useField } from "formik";
 import Link from "next/link";
-import { useFormState } from "react-dom";
+import Dropzone, { DropzoneRef } from "react-dropzone";
+import Image from "next/image";
+import DropzoneComponent from "@/components/Dropzone";
 
 const Page: React.FC = () => {
+  const [errorMessage, setErrorMessage] = useState("");
   const [display, setDisplay] = useState({
     form: true,
     success: false,
@@ -63,6 +67,15 @@ const Page: React.FC = () => {
       }
     },
   });
+
+  const handleFileDrop = useCallback((acceptedFiles: any) => {
+    console.log("Accepted files:", acceptedFiles);
+    if (acceptedFiles.length === 0) {
+      setErrorMessage("No file selected.");
+    } else {
+      setErrorMessage("");
+    }
+  }, []);
 
   return (
     <>
@@ -361,7 +374,7 @@ const Page: React.FC = () => {
                   </span>
                 )}
               </label>
-              <label className="block mb-5 flex flex-col justify-center items-center">
+              <label className="block mb-1 flex flex-col justify-center items-center">
                 <span className="text-gold">Email</span>
                 <input
                   name="email"
@@ -384,7 +397,7 @@ const Page: React.FC = () => {
                 )}
               </label>
               <label className="block mb-5 flex flex-col justify-center items-center">
-                <h2 className="text-2xl font-bold my-8 text-gold">
+                <h2 className="text-2xl font-bold my-5 text-gold">
                   Proof Document Type
                 </h2>
                 <span className="text-gold">Document Type</span>
@@ -414,31 +427,8 @@ const Page: React.FC = () => {
                 )}
               </label>
               <label className="block mb-5 flex flex-col justify-center items-center">
-                <div className="block mb-5 flex flex-col justify-center items-center">
-                  <p className="text-sm text-gold">
-                    Upload to Google Drive and make it viewable to anyone, then
-                    copy the link.
-                  </p>
-                  <input
-                    name="document"
-                    type="url"
-                    placeholder="Eg: https://drive.google.com/drive/u/0/home...."
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={values.document}
-                    style={{ zIndex: 21 }}
-                    className={`mt-1 block w-3/4 rounded-md border ${
-                      errors.document && touched.document
-                        ? "border-red-500"
-                        : "border-gray-300"
-                    } shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3`}
-                  />
-                  {errors.document && touched.document && (
-                    <span className="text-red-500 text-sm mt-1">
-                      {errors.document}
-                    </span>
-                  )}
-                </div>
+                <span className="text-gold mb-2">Document</span>
+                <DropzoneComponent onFileDrop={handleFileDrop}  error={errorMessage}  />
               </label>
             </div>
           </div>
@@ -462,15 +452,6 @@ const Page: React.FC = () => {
             style={{ display: display.success ? "block" : "none" }}
           >
             <div className="flex items-center justify-center">
-              <svg
-                className="flex-shrink-0 w-4 h-4 me-2"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
-              </svg>
               <span className="sr-only">Info</span>
               <h3 className="text-lg font-medium">Registration Successful</h3>
             </div>
@@ -490,15 +471,6 @@ const Page: React.FC = () => {
                 type="button"
                 className="text-white bg-green-800 hover:bg-green-900 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-xs px-3 py-1.5 me-2 text-center inline-flex items-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
               >
-                <svg
-                  className="me-2 h-3 w-3"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 20 14"
-                >
-                  <path d="M10 0C4.612 0 0 5.336 0 7c0 1.742 3.546 7 10 7 6.454 0 10-5.258 10-7 0-1.664-4.612-7-10-7Zm0 10a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z" />
-                </svg>
                 <Link
                   className="z-21"
                   target="_blank"
@@ -507,22 +479,6 @@ const Page: React.FC = () => {
                   href="https://chat.whatsapp.com/JL2qyoImHrm4rqOYybeZTB"
                 >
                   <div>Join WhatsApp Group</div>
-                </Link>
-              </button>
-              <button
-                type="button"
-                className="text-green-800 bg-transparent border border-green-800 hover:bg-green-900 hover:text-white focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-xs px-3 py-1.5 text-center dark:hover:bg-green-600 dark:border-green-600 dark:text-green-400 dark:hover:text-white dark:focus:ring-green-800"
-                data-dismiss-target="#alert-additional-content-3"
-                aria-label="Close"
-              >
-                <Link
-                  className="z-21"
-                  href="/"
-                  target="_blank"
-                  style={{ zIndex: 21 }}
-                  rel="noopener noreferrer"
-                >
-                  <div>Back to Home</div>
                 </Link>
               </button>
             </div>

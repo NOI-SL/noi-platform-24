@@ -1,4 +1,7 @@
 "use server";
+const multer = require("multer");
+const path = require("path");
+const fs = require("fs");
 
 import { MongoClient } from "mongodb";
 import { FormikValues } from "formik";
@@ -34,11 +37,66 @@ async function initializeDb() {
     console.error("Error initializing database:", err.message);
   }
 }
+initializeDb();
 
 async function checkDelegateExists(email: string): Promise<boolean> {
   const db = await getDbConnection();
   const delegate = await db.collection("users").findOne({ email });
   return !!delegate;
+}
+
+if (!fs.existsSync("./public/files")) {
+  fs.mkdirSync("./public/files", { recursive: true });
+}
+
+const storage = multer.diskStorage({
+  destination: function (req: any, file: any, cb: any) {
+    cb(null, "./public/files/");
+  },
+  filename: function (req: any, file: any, cb: any) {
+    const { email } = req.body;
+    if (!email) {
+      return cb(new Error("Email not provided"));
+    }
+    const extname = path.extname(file.originalname);
+    const filename = `${email}-${Date.now()}${extname}`;
+    cb(null, filename);
+  },
+});
+
+const fileFilter = (req: any, file: any, cb: any) => {
+  if (file.mimetype === "application/pdf") {
+    cb(null, true);
+  } else {
+    cb(new Error("Only PDF files are accepted"), false);
+  }
+};
+
+const upload = multer({
+  storage: storage,
+  fileFilter: fileFilter,
+});
+
+function getURLAndStore(document: any, email: any) {
+  return new Promise((resolve, reject) => {
+    upload.single("document")(
+      null,
+      {
+        body: { email: email },
+        file: document,
+      },
+      (err: any) => {
+        if (err) {
+          return reject(err);
+        }
+
+        const extname = path.extname(document.originalname);
+        const filename = `${email}-${Date.now()}${extname}`;
+        const url = `/files/${filename}`;
+        resolve(url);
+      }
+    );
+  });
 }
 
 export async function createUser(formData: FormikValues) {
@@ -58,11 +116,13 @@ export async function createUser(formData: FormikValues) {
       documentType,
       document,
     } = formData;
+    console.log(formData);
 
     if (!email) throw new Error("No Email provided");
     if (!document) throw new Error("No Document Provided");
 
-    const docFile = getURLAndStore(document,email);
+    const docFile = getURLAndStore(document, email);
+    console.log(docFile);
 
     const exists = await checkDelegateExists(email);
     if (exists) {
@@ -84,7 +144,7 @@ export async function createUser(formData: FormikValues) {
         full: fullName,
       },
       birthdate,
-      gender:genderEnum,
+      gender: genderEnum,
       school: {
         name: schoolName,
         address: schoolAddress,
@@ -118,4 +178,4 @@ export async function createUser(formData: FormikValues) {
   }
 }
 
-initializeDb();
+

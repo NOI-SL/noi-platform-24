@@ -6,11 +6,16 @@ import Footer from "@/components/footer";
 import Particles from "@/components/particles/ParticleDesign";
 import { useFormik } from "formik";
 import userSchema from "@/validations/userSchema";
+import axios from "axios";
 
 const onSubmit = async (values: any, actions: any) => {
-  console.log(values);
-  await new Promise((resolve) => setTimeout(resolve, 500));
-  actions.resetForm();
+  try {
+    const response = await axios.post("/api/auth/register", values);
+    console.log(response.data);
+    actions.resetForm();
+  } catch (error) {
+    console.error("Error submitting form:", error);
+  }
 };
 
 const Page: React.FC = () => {
@@ -385,7 +390,6 @@ const Page: React.FC = () => {
                   <option value="passport">Passport</option>
                   <option value="letter">Letter certified by school</option>
                   <option value="birth_certificate">Birth Certificate</option>
-
                 </select>
                 {errors.documentType && touched.documentType && (
                   <span className="text-red-500 text-sm mt-1">
@@ -426,7 +430,7 @@ const Page: React.FC = () => {
             <button
               type="submit"
               style={{ zIndex: 21 }}
-              className={`w-1/4 py-3 px-4 border-2 font-horus text-lg border-gold rounded-md shadow-sm text-gold hover:text-gold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ${
+              className={`w-3/4 sm:w-3/4 md:w-1/4 lg:w-1/4 py-3 px-4 border-2 font-horus text-lg border-gold rounded-md shadow-sm text-gold hover:text-gold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ${
                 isSubmitting
                   ? "bg-gray-300 cursor-not-allowed"
                   : "bg-black hover:bg-darkgreen"

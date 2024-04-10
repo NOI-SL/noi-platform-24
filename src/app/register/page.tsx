@@ -10,12 +10,8 @@ import { createUser } from "@/app/api/register/register";
 import { FormikValues } from "formik";
 import { useField } from "formik";
 import Link from "next/link";
-import Dropzone, { DropzoneRef } from "react-dropzone";
-import Image from "next/image";
-import DropzoneComponent from "@/components/Dropzone";
 
 const Page: React.FC = () => {
-  const [errorMessage, setErrorMessage] = useState("");
   const [display, setDisplay] = useState({
     form: true,
     success: false,
@@ -29,6 +25,7 @@ const Page: React.FC = () => {
     touched,
     handleChange,
     handleSubmit,
+    setFieldValue,
     errors,
   } = useFormik({
     initialValues: {
@@ -67,15 +64,6 @@ const Page: React.FC = () => {
       }
     },
   });
-
-  const handleFileDrop = useCallback((acceptedFiles: any) => {
-    console.log("Accepted files:", acceptedFiles);
-    if (acceptedFiles.length === 0) {
-      setErrorMessage("No file selected.");
-    } else {
-      setErrorMessage("");
-    }
-  }, []);
 
   return (
     <>
@@ -397,10 +385,10 @@ const Page: React.FC = () => {
                 )}
               </label>
               <label className="block mb-5 flex flex-col justify-center items-center">
-                <h2 className="text-2xl font-bold my-5 text-gold">
+                <h2 className="text-2xl font-bold my-7 text-gold">
                   Proof Document Type
                 </h2>
-                <span className="text-gold">Document Type</span>
+                <span className="text-gold ">Document Type</span>
                 <select
                   name="documentType"
                   onChange={handleChange}
@@ -428,18 +416,41 @@ const Page: React.FC = () => {
               </label>
               <label className="block mb-5 flex flex-col justify-center items-center">
                 <span className="text-gold mb-2">Document</span>
-                <DropzoneComponent onFileDrop={handleFileDrop}  error={errorMessage}  />
+                <input
+                  style={{ zIndex: 21 }}
+                  name="document"
+                  type="file"
+                  onChange={(event) => {
+                    const file =
+                      event.currentTarget.files && event.currentTarget.files[0]; // Check if files is not null
+                    if (file) {
+                      setFieldValue("document", file); // Update the value of the document field
+                    }
+                  }}
+                  onBlur={handleBlur}
+                  value={values.document} // This value will not be used for file inputs
+                  className={`mt-1 block w-3/4 rounded-md border w-3/4 p-2 bg-white text-black border z-21 rounded ${
+                    errors.document && touched.document
+                      ? "border-red-500"
+                      : "border-gray-300"
+                  } shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3`}
+                />
+                {errors.document && touched.document && (
+                  <span className="text-red-500 text-sm mt-1">
+                    {errors.document}
+                  </span>
+                )}
               </label>
             </div>
           </div>
-          <div className="flex flex-col justify-center items-center w-full mb-10">
+          <div className="flex flex-col justify-center items-center w-full mb-20">
             <button
               type="submit"
               style={{ zIndex: 21 }}
-              className={`w-3/4 sm:w-3/4 md:w-1/4 lg:w-1/4 py-3 px-4 border-2 font-horus text-lg border-gold rounded-md shadow-sm text-gold ${
+              className={`w-1/2 sm:w-1/2 md:w-1/6 lg:w-1/6 py-3 px-4 border-2 font-horus text-lg border-gold rounded-md shadow-sm text-gold ${
                 isSubmitting
                   ? "bg-gray-300 cursor-not-allowed"
-                  : "bg-black hover:bg-darkgreen"
+                  : "bg-black hover:bg-black"
               }`}
               disabled={isSubmitting}
             >

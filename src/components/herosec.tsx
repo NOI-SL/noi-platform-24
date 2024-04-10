@@ -11,6 +11,7 @@ import { useSession } from "next-auth/react";
 import LoadingScreen from "@/components/loadingscreen";
 import PrimButtwo from "./ui/buttontwo";
 import Particles from "@/components/particles/ParticleDesign";
+import Mobilenav from "./mobilenav";
 
 const Herosec: React.FC = () => {
   const [isSplineLoaded, setIsSplineLoaded] = useState<boolean>(false);
@@ -96,14 +97,16 @@ const Herosec: React.FC = () => {
                 {state === "authenticated" ? (
                   <PrimButtwo  name="Continuing to Profile" link="/profile"  />
                 ) : (
-                  <PrimButtwo name="Continue to portal" link="/" />
+                  <PrimBut name="Continue to portal" link="/" />
                 )}
                 {/* <p className='font-sans'>If you haven't registered yet please register now</p> */}
               </motion.div>
             </>
           )}
         </div>
+        {/* <Mobilenav /> */}
         <Footer />
+        
       </main>
     </>
   );

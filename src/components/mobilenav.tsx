@@ -20,7 +20,7 @@ const Mobilenav: React.FC = () => {
 
     return (
         <div>
-            <nav className='hidden inset-x-0 bottom-0 z-50 flex-row justify-around pb-4 bg-blacky/95 backdrop-blur-lg py-3 px-4 lg:hidden shadow-lg rounded-t-2xl text-white-700'>
+            <nav className='flex inset-x-0 bottom-0 z-50 flex-row justify-around pb-4 bg-blacky/95 backdrop-blur-lg py-3 px-4 lg:hidden shadow-lg rounded-t-2xl text-white-700'>
                 <Link href="/" passHref>
                     <div className="flex flex-col items-center space-y-1 cursor-pointer">
                         <Home size={24} className="text-y-white-700 text-white" />

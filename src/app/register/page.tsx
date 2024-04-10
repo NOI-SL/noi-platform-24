@@ -19,7 +19,7 @@ const Page: React.FC = () => {
     handleChange,
     handleSubmit,
     errors,
-  } = useFormik<FormikValues>({
+  } = useFormik({
     initialValues: {
       firstName: "",
       lastName: "",
@@ -39,9 +39,6 @@ const Page: React.FC = () => {
     validationSchema: userSchema,
     onSubmit: async (values: FormikValues, actions: any) => {
       try {
-        console.log("Values");
-        console.log(values);
-
         await createUser(values);
         actions.resetForm();
       } catch (err) {

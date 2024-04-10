@@ -66,7 +66,7 @@ const PrimBut: React.FC<PrimButProps> = ({ name, link }) => {
       style={{ position: "relative" }}
     >
       <motion.button
-        className="py-3 px-8 mt-10 border-[3px] bg-darkgreen border-gold text-gold hover:text-gold-100 bg-darkgreen"
+        className="py-3 px-8 mt-10 border-[3px]  border-gold text-gold hover:text-gold-100 bg-darkgreen"
         style={{ position: "relative", overflow: "hidden", zIndex: 1 }} // Change default background color as needed
         whileHover={hoverAnimation}
         onClick={() => signIn("asgardeo")}

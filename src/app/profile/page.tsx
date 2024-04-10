@@ -34,7 +34,7 @@ export default function Profile() {
     return (
         <>
 
-            <main className="flex flex-col min-h-screen p-4 sm:p-8 from-black to-darkgreen bg-gradient-to-br text-white">
+            <main className="flex flex-col min-h-screen p-4 sm:p-8 from-black to-darkgreen bg-gradient-to-br text-white ">
                 <Navbar />
                 <Particles />
                 <section className="mb-8">
@@ -68,7 +68,7 @@ export default function Profile() {
                         {/* Activity log content */}
                     </div>
                 </section>
-                <div>
+                <div className='z-30'>
                     <LogoutButton />
                 </div>
             </main>

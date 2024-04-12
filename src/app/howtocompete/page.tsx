@@ -30,7 +30,7 @@ const HowToCompete: React.FC = () => {
         // animate={{ opacity: 1, y: 0 }}
         // exit={{ opacity: 0, y: -50 }}
         // transition={{ duration: 0.5 }}
-        className="min-h-full flex flex-col items-center justify-center text-center overflow-hidden bg-gradient-to-br from-black to-darkgreen"
+        className="absolute min-h-full flex flex-col items-center justify-center text-center overflow-hidden bg-gradient-to-br from-black to-darkgreen"
       >
         <Navbar />
         <Particles />

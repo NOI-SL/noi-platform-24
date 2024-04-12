@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import React, { useState, createRef, useRef, useCallback } from "react";
+import React, { useState } from "react";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import Particles from "@/components/particles/ParticleDesign";
@@ -8,8 +8,10 @@ import { useFormik } from "formik";
 import userSchema from "@/validations/userSchema";
 import { createUser } from "@/app/api/register/register";
 import { FormikValues } from "formik";
-import { useField } from "formik";
+import firebase from "firebase/compat/app";
+import "firebase/compat/storage";
 import Link from "next/link";
+import firebaseConfig from "@/lib/firebaseInitialize";
 
 const Page: React.FC = () => {
   const [display, setDisplay] = useState({
@@ -64,7 +66,40 @@ const Page: React.FC = () => {
       }
     },
   });
+  const storagebucket = "noi2024-f1e9b.appspot.com";
+  const firebaseConfig = {
+    apiKey: process.env.REACT_APP_API_KEY,
+    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_PROJECT_ID,
+    storageBucket: storagebucket,
+    messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+    appId: process.env.REACT_APP_APP_ID,
+    measurementId: process.env.REACT_APP_MEASUREMENT_ID,
+  };
 
+  firebase.initializeApp(firebaseConfig);
+
+  const handleFileChange = (e:any) => {
+    const selectedFile = e.target.files[0];
+    if (selectedFile) {
+      const storageRef = firebase.storage().ref();
+      const fileRef = storageRef.child(selectedFile.name);
+  
+      fileRef
+        .put(selectedFile)
+        .then((snapshot) => {
+          snapshot.ref.getDownloadURL().then((downloadURL) => {
+            setFieldValue("document", downloadURL);
+            console.log("File available at", downloadURL);
+          });
+        })
+        .catch((error) => {
+          console.error("Error uploading file:", error);
+        });
+    } else {
+      console.log("No file selected");
+    }
+  }
   return (
     <>
       <motion.main
@@ -420,15 +455,9 @@ const Page: React.FC = () => {
                   style={{ zIndex: 21 }}
                   name="document"
                   type="file"
-                  onChange={(event) => {
-                    const file =
-                      event.currentTarget.files && event.currentTarget.files[0];
-                    if (file) {
-                      setFieldValue("document",file);
-                    }
-                  }}
+                  onChange={handleFileChange}
                   onBlur={handleBlur}
-                  // value={values.document} // This value will not be used for file inputs
+                  value={values.document} // This value will not be used for file inputs
                   className={`mt-1 block w-3/4 rounded-md border w-3/4 p-2 bg-white text-black border z-21 rounded ${
                     errors.document && touched.document
                       ? "border-red-500"

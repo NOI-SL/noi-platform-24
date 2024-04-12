@@ -120,12 +120,7 @@ export async function createUser(formData: FormikValues) {
 
     if (!email) throw new Error("No Email provided");
     if (!document) throw new Error("No Document Provided");
-    console.log(document);
-
-    const docFile = getURLAndStore(document, email);
-    console.log("DocFile");
-    console.log(docFile);
-
+    
     const exists = await checkDelegateExists(email);
     if (exists) {
       console.log("Delegate already exists");
@@ -159,7 +154,7 @@ export async function createUser(formData: FormikValues) {
       contactNumber,
       document: {
         type: documentType,
-        path: docFile,
+        path: document,
       },
       updated_at: new Date(),
       created_at: new Date(),

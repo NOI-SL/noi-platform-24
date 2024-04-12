@@ -1,7 +1,7 @@
 "use server";
 const multer = require("multer");
 const path = require("path");
-const fs = require("fs");
+const fs = require("fs-extra");
 
 import { MongoClient } from "mongodb";
 import { FormikValues } from "formik";
@@ -60,9 +60,13 @@ const storage = multer.diskStorage({
     }
     const extname = path.extname(file.originalname);
     const filename = `${email}-${Date.now()}${extname}`;
+    // Store the file with the new filename
     cb(null, filename);
+    // Return the filename
+    return filename;
   },
 });
+
 
 const fileFilter = (req: any, file: any, cb: any) => {
   if (file.mimetype === "application/pdf") {
@@ -77,26 +81,22 @@ const upload = multer({
   fileFilter: fileFilter,
 });
 
-function getURLAndStore(document: any, email: any) {
-  return new Promise((resolve, reject) => {
-    upload.single("document")(
-      null,
-      {
-        body: { email: email },
-        file: document,
-      },
-      (err: any) => {
-        if (err) {
-          return reject(err);
-        }
-
-        const extname = path.extname(document.originalname);
-        const filename = `${email}-${Date.now()}${extname}`;
-        const url = `/files/${filename}`;
-        resolve(url);
-      }
-    );
-  });
+async function getURLAndStore(document: any, email: any) {
+  try {
+    if (!document || !email) {
+      throw new Error('File or email not provided');
+    }
+    const destinationDir = path.join(process.cwd(), 'public/files');
+    await fs.ensureDir(destinationDir);
+    const extname = path.extname(document.name);
+    const documentname = `${email}-${Date.now()}${extname}`;
+    const filePath = path.join(destinationDir, documentname);
+    await fs.move(document.path, filePath);
+    return documentname;
+  } catch (error:any) {
+    console.error('Error saving and renaming file:', error.message);
+    throw error;
+  }
 }
 
 export async function createUser(formData: FormikValues) {
@@ -120,8 +120,10 @@ export async function createUser(formData: FormikValues) {
 
     if (!email) throw new Error("No Email provided");
     if (!document) throw new Error("No Document Provided");
+    console.log(document);
 
     const docFile = getURLAndStore(document, email);
+    console.log("DocFile");
     console.log(docFile);
 
     const exists = await checkDelegateExists(email);

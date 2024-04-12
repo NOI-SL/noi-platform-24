@@ -422,13 +422,13 @@ const Page: React.FC = () => {
                   type="file"
                   onChange={(event) => {
                     const file =
-                      event.currentTarget.files && event.currentTarget.files[0]; // Check if files is not null
+                      event.currentTarget.files && event.currentTarget.files[0];
                     if (file) {
-                      setFieldValue("document", file); // Update the value of the document field
+                      setFieldValue("document",file);
                     }
                   }}
                   onBlur={handleBlur}
-                  value={values.document} // This value will not be used for file inputs
+                  // value={values.document} // This value will not be used for file inputs
                   className={`mt-1 block w-3/4 rounded-md border w-3/4 p-2 bg-white text-black border z-21 rounded ${
                     errors.document && touched.document
                       ? "border-red-500"
@@ -449,12 +449,12 @@ const Page: React.FC = () => {
               style={{ zIndex: 21 }}
               className={`w-1/2 sm:w-1/2 md:w-1/6 lg:w-1/6 py-3 px-4 border-2 font-horus text-lg border-gold rounded-md shadow-sm text-gold ${
                 isSubmitting
-                  ? "bg-gray-300 cursor-not-allowed"
+                  ? "bg-black hover:bg-black cursor-not-allowed"
                   : "bg-black hover:bg-black"
               }`}
               disabled={isSubmitting}
             >
-              {isSubmitting ? "Submitting..." : "Submit"}
+              {isSubmitting ? "Submitting" : "Submit"}
             </button>
           </div>
           <div

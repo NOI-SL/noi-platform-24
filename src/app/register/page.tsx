@@ -256,11 +256,11 @@ const Page: React.FC = () => {
                 )}
               </label>
 
-              <h2 className="text-2xl font-bold my-8 text-gold">
+              <h2 className="text-2xl font-bold mt-24 sm:mt-24 md:mt-8 text-gold">
                 School Information
               </h2>
               <label className="block mb-5 flex flex-col justify-center items-center">
-                <span className="text-gold">School Name</span>
+                <span className="text-gold mt-8">School Name</span>
                 <input
                   name="schoolName"
                   type="text"
@@ -420,7 +420,7 @@ const Page: React.FC = () => {
                 )}
               </label>
               <label className="block mb-5 flex flex-col justify-center items-center">
-                <h2 className="text-2xl font-bold my-7 text-gold">
+                <h2 className="text-2xl font-bold my-8 text-gold mt-16 sm:mt-4 md:mt-7">
                   Proof Document Type
                 </h2>
                 <span className="text-gold ">Document Type</span>
@@ -472,7 +472,7 @@ const Page: React.FC = () => {
               </label>
             </div>
           </div>
-          <div className="flex flex-col justify-center items-center w-full mb-20">
+          <div className="flex flex-col justify-center items-center w-full mb-20 mt-10">
             <button
               type="submit"
               style={{ zIndex: 21 }}

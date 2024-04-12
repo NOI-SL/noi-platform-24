@@ -43,7 +43,7 @@ const Herosec: React.FC = () => {
     <>
       <main className="absolute min-h-full w-full flex flex-col items-center justify-center text-center overflow-hidden bg-gradient-to-br from-black to-darkgreen">
         <Navbar />
-        <div className="flex flex-col items-center justify-center w-full h-screen text-accent">
+        <div className="flex flex-col items-center justify-center w-full p-10 sm:p-10 md:p-0 md:h-screen text-accent">
           <Particles />
           {isSplineLoaded && (
             <>

@@ -1,33 +1,13 @@
-"use client";
-
 import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-} from "@/components/ui/navigation-menu";
 import logo from "./NOILogoGold.svg";
-import { LogoutButton } from "./ui/login";
 import { useState } from "react";
-import { IconButton } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
-import CloseIcon from "@mui/icons-material/Close";
-import mobileLogo from "../../Assets/NavBar/as-lpgp.png";
 
 interface Component {
   title: string;
   href: string;
 }
-
-// interface NavbarProps {
-//   status?: string;
-//   name?: string;
-//   // Optional "status" prop
-//   // Add other expected props here
-// }
 
 const components: Component[] = [
   {
@@ -50,11 +30,6 @@ const components: Component[] = [
     title: "Timeline",
     href: "/timeline",
   },
-  // {
-  //   title: "Results",
-  //   href: "/results",
-  //   description: "Results of NOI 24",
-  // },
   {
     title: "IOI 2024",
     href: "https://www.ioi2024.eg/",
@@ -63,13 +38,8 @@ const components: Component[] = [
     title: "Register Now",
     href: "/register",
   },
-  // {
-  //   title: "Portal",
-  //   href: "/",
-  //   description: "NOI 24 Portal",
-  // },
 ];
-// const Navbar: React.FC<NavbarProps> = (NavbarProps) => {
+
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => {
@@ -77,52 +47,131 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="sticky top-0 z-50 flex py-5  flex-row w-full">
-      <div className="md:mx-60 mx-5 flex flex-row justify-between content-center items-center w-full">
-        <Link href="/" passHref>
-          <Image
-            className="cursor-pointer hover:scale-105 transition-transform duration-300"
-            src={logo}
-            alt="NOI 24"
-            width={130}
-            height={50}
-          />
-        </Link>
-        <div>
-          <NavigationMenu>
-            <NavigationMenuList>
-              {components.map((item, index) => (
-                <NavigationMenuItem key={index}>
-                  <NavigationMenuLink asChild>
-                    {item.title === "IOI 2023" ? (
-                      <Link
-                        href={item.href}
-                        className="text-sans text-sm text-gold py-2 px-4 cursor-pointer hover:text-white transition duration-300"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {item.title}
-                      </Link>
-                    ) : (
-                      <Link href={item.href}>
-                        <div className="text-sans text-sm text-gold py-2 px-4 cursor-pointer hover:text-white transition duration-300">
-                          {item.title}
-                        </div>
-                      </Link>
-                    )}
-                  </NavigationMenuLink>
-                </NavigationMenuItem>
-              ))}
-              {/* {status === "authenticated" && (
-                <NavigationMenuItem>
-                  <LogoutButton />
-                </NavigationMenuItem>
-              )} */}
-            </NavigationMenuList>
-          </NavigationMenu>
+    <>
+      <nav className="w-full md:flex md:flex-col md:justify-center md:items-center">
+        <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+          <div className="relative flex h-16 items-center justify-between">
+            <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+              <button
+                type="button"
+                className="relative inline-flex items-center justify-center rounded-md p-2 text-gold hover:bg-black hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                aria-controls="mobile-menu"
+                aria-expanded="false"
+                style={{ zIndex: 21 }}
+                onClick={toggleMenu}
+              >
+                <span className="absolute -inset-0.5"></span>
+                <span className="sr-only">Open main menu</span>
+                <svg
+                  className="block h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                  />
+                </svg>
+                <svg
+                  className="hidden h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+              <div className="flex flex-shrink-0 items-center">
+                <Link href="/" style={{ zIndex: 21 }}>
+                  <Image
+                    style={{ zIndex: 21 }}
+                    className="h-8 w-auto"
+                    src={logo}
+                    alt="Your Company"
+                    width={160}
+                    height={40}
+                  />
+                </Link>
+              </div>
+              <div className="hidden sm:ml-6 sm:block">
+                <div className="flex space-x-4">
+                  {components.map((component, index) => (
+                    <Link
+                      href={component.href}
+                      key={index}
+                      style={{ zIndex: 21 }}
+                      target={
+                        component.title === "IOI 2024" ? "_blank" : "_self"
+                      }
+                      rel={
+                        component.title === "IOI 2024"
+                          ? "noopener noreferrer"
+                          : ""
+                      }
+                    >
+                      <div className="text-gold hover:text-white rounded-md px-3 py-2 text-sm font-medium">
+                        {component.title}
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </nav>
+        <div className="sm:hidden" id="mobile-menu" style={{ zIndex: 21 }}>
+          <div
+            className={`${isOpen ? "block" : "hidden"} sm:hidden`}
+            id="mobile-menu"
+            style={{ zIndex: 21 }}
+          >
+            <div
+              className="space-y-1 px-2 pb-3 pt-2 transition-opacity duration-3000"
+              style={{ zIndex: 21 }}
+            >
+              {isOpen && (
+                <>
+                  {components.map((component, index) => (
+                    <Link
+                      href={component.href}
+                      key={index}
+                      style={{ zIndex: 21 }}
+                      target={
+                        component.title === "IOI 2024" ? "_blank" : "_self"
+                      }
+                      rel={
+                        component.title === "IOI 2024"
+                          ? "noopener noreferrer"
+                          : ""
+                      }
+                    >
+                      <div
+                        className="text-gold hover:text-white block rounded-md px-3 py-2 text-base font-medium z-21"
+                        style={{ zIndex: 21 }}
+                      >
+                        {component.title}
+                      </div>
+                    </Link>
+                  ))}
+                </>
+              )}
+            </div>
+          </div>
+        </div>
+      </nav>
+    </>
   );
 };
 

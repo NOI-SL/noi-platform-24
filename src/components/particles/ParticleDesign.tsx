@@ -10,7 +10,6 @@ const ParticleDesign = () => {
     }, []);
 
     const particlesLoaded = useCallback(async (container: Container | undefined) => {
-        await console.log(container);
     }, []);
     return (
         <div className="z-18" id="partclesContainor">

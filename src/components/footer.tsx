@@ -129,7 +129,7 @@ const Footer: React.FC = () => {
                   </li>
                   <li className="mb-2  text-center md:text-left">
                     <Link
-                      href="https://ioinformatics.org/"
+                      href="https://www.ioi2024.eg/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-gold"

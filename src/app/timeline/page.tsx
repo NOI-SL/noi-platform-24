@@ -15,40 +15,58 @@ import Particles from "@/components/particles/ParticleDesign";
 const Page: React.FC = () => {
   let items = [
     {
-      date: "18 th JAN 2024",
-      event: "Scholarship Awareness Session",
-      description:
-        "lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
+      date: "17th February, 2024",
+      event: "Registrations Opened for NOI 2024",
+      description: "",
     },
     {
-      date: "20 th JAN 2024",
-      event: "Opening Registrations",
-      description:
-        "lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
+      date: "25th February, 2024",
+      event: "February Monthly Contest.",
+      description: "",
     },
     {
-      date: "10th FEB 2024",
-      event: "Closing Registrations",
-      description:
-        "lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
+      date: "26th March, 2024",
+      event: "March Monthly Contest",
+      description: "",
     },
     {
-      date: "15th FEB 2024",
-      event: "Proposal Submissions Ending",
+      date: "25th April, 2024",
+      event: "April Monthly Contest",
       description:
-        "lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
+        "April Monthly Contest with APIO Selection Test. Served as the Selection Test to select the Sri Lankan Delegation for APIO 2024.",
     },
     {
-      date: "20th FEB 2024",
-      event: "Announcing Finalists",
-      description:
-        "lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
+      date: "20th May, 2024",
+      event: "May Monthly Contest",
+      description: "",
     },
     {
-      date: "Will Announce Soon",
-      event: "Final Hackathon & Award Ceremony",
+      date: "4th June, 2024",
+      event: "Qualifier Round",
+      description: "",
+    },
+    {
+      date: "To be announced",
+      event: "Day 01 - Final Round of NOI 2024",
+      description: "Final Round of NOI 2024, held at the UCSC Premises",
+    },
+    {
+      date: "To be announced",
+      event: "Day 02 - Final Round of NOI 2024",
       description:
-        "lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
+        "Final Round of NOI 2024, held at the UCSC Premises. Four students will be selected to represent Sri Lanka at the International Olympiad in Informatics 2024.",
+    },
+    {
+      date: "1st september - 8th September 2024",
+      event: "International Olympiad in Informatics (IOI 2024)",
+      description:
+        "International Olympiad in Informatics (IOI 2024) to be held in Alexandria, Egypt.",
+    },
+    {
+      date: "To be announced",
+      event: "Awards Ceremony of NOI 2024",
+      description:
+        "The felicitation and appreciation of students who performed exceptionally.",
     },
   ];
   function timelineItem(
@@ -135,7 +153,7 @@ const Page: React.FC = () => {
             </div>
           </div>
         </motion.main>
-        <Footer/>
+        <Footer />
       </div>
     </>
   );

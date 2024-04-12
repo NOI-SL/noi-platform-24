@@ -56,8 +56,8 @@ const components: Component[] = [
   //   description: "Results of NOI 24",
   // },
   {
-    title: "IOI 2023",
-    href: "https://ioi2023.hu/",
+    title: "IOI 2024",
+    href: "https://www.ioi2024.eg/",
   },
   {
     title: "Register Now",

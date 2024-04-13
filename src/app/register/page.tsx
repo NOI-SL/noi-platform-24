@@ -469,7 +469,7 @@ const Page: React.FC = () => {
               style={{ zIndex: 21 }}
               className={`w-1/2 sm:w-1/2 md:w-1/6 lg:w-1/6 py-3 px-4 border-2 font-horus text-lg border-gold rounded-md shadow-sm text-gold ${isSubmitting
                   ? "bg-black hover:bg-black cursor-not-allowed"
-                  : "bg-black hover:bg-black"
+                  : " hover:bg-black"
                 }`}
               disabled={isSubmitting}
             >

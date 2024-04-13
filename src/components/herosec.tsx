@@ -61,7 +61,10 @@ const Herosec: React.FC = () => {
                   style={{ zIndex: 21 }}
                 >
                   {/* Responsive font sizes for h1 element */}
-                  <div className="w-full cursor-pointer hover:pointer" style={{ zIndex: 21 }}>
+                  <div
+                    className="w-full cursor-pointer hover:pointer"
+                    style={{ zIndex: 21 }}
+                  >
                     <Image
                       className="hover:scale-105 transition-transform duration-300"
                       src={NOIMask}
@@ -95,9 +98,11 @@ const Herosec: React.FC = () => {
                 className="items-center z-10 font-horus"
               >
                 {state === "authenticated" ? (
-                  <PrimButtwo  name="Continuing to Profile" link="/profile"  />
+                  // <PrimButtwo  name="Continuing to Profile" link="/profile"  />
+                  <PrimButtwo name="Continuing to Register" link="/register" />
                 ) : (
-                  <PrimBut name="Continue to portal" link="/" />
+                  // <PrimBut name="Continue to portal" link="/" />
+                  <PrimButtwo name="Continuing to Register" link="/register" />
                 )}
                 {/* <p className='font-sans'>If you haven't registered yet please register now</p> */}
               </motion.div>
@@ -106,7 +111,6 @@ const Herosec: React.FC = () => {
         </div>
         {/* <Mobilenav /> */}
         <Footer />
-        
       </main>
     </>
   );

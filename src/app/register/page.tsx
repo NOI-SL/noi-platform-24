@@ -19,7 +19,7 @@ const Page: React.FC = () => {
     success: false,
     error: false,
   });
-
+  const [documentURL, setDocumentURL] = useState("");
   const {
     values,
     handleBlur,
@@ -47,10 +47,11 @@ const Page: React.FC = () => {
       document: "",
     },
     validationSchema: userSchema,
-    onSubmit: async (values: FormikValues, actions: any) => {
+    onSubmit: async (values: any, actions: any) => {
       try {
-        await createUser(values);
+        await createUser({ ...values, document: documentURL });
         actions.resetForm();
+        setDocumentURL("");
         setDisplay({
           form: false,
           success: true,
@@ -79,18 +80,20 @@ const Page: React.FC = () => {
 
   firebase.initializeApp(firebaseConfig);
 
-  const handleFileChange = (e:any) => {
+  const handleFileChange = (e: any) => {
     const selectedFile = e.target.files[0];
     if (selectedFile) {
       const storageRef = firebase.storage().ref();
       const fileRef = storageRef.child(selectedFile.name);
-  
+
       fileRef
         .put(selectedFile)
         .then((snapshot) => {
           snapshot.ref.getDownloadURL().then((downloadURL) => {
-            setFieldValue("document", downloadURL);
-            console.log("File available at", downloadURL);
+            // setFieldValue("document", downloadURL);
+            // console.log(values.document);
+            setDocumentURL(downloadURL);
+            console.log("File available at", documentURL);
           });
         })
         .catch((error) => {
@@ -99,7 +102,7 @@ const Page: React.FC = () => {
     } else {
       console.log("No file selected");
     }
-  }
+  };
   return (
     <>
       <motion.main
@@ -110,7 +113,9 @@ const Page: React.FC = () => {
         className="min-h-full flex flex-col items-center justify-center text-center overflow-hidden bg-gradient-to-br from-black to-darkgreen"
       >
         <Navbar />
-        <Particles />
+        <div>
+          <Particles />
+        </div>
         <div className="flex flex-col">
           <div className="mt-10">
             <h2 className="text-4xl font-bold text-center mb-5 font-horus text-gold">
@@ -457,16 +462,14 @@ const Page: React.FC = () => {
                   type="file"
                   onChange={handleFileChange}
                   onBlur={handleBlur}
-                  value={values.document} // This value will not be used for file inputs
+                  // value={documentURL}
                   className={`mt-1 block w-3/4 rounded-md border w-3/4 p-2 bg-white text-black border z-21 rounded ${
-                    errors.document && touched.document
-                      ? "border-red-500"
-                      : "border-gray-300"
+                    documentURL == "" && touched.document ? "border-red-500" : "border-gray-300"
                   } shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3`}
                 />
-                {errors.document && touched.document && (
+                {documentURL == "" && touched.document && (
                   <span className="text-red-500 text-sm mt-1">
-                    {errors.document}
+                    Please provide document
                   </span>
                 )}
               </label>

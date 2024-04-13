@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import PrimBut from "./ui/buttonone"; // Make sure PrimBut is also converted to TypeScript
 import Image from "next/image";
-import NOIMask from "@/assets/img/NOIMask.svg";
+import NOIMask from "@/assets/img/NOIMaskp.png";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { useSession } from "next-auth/react";
@@ -66,12 +66,12 @@ const Herosec: React.FC = () => {
                     style={{ zIndex: 21 }}
                   >
                     <Image
-                      className="hover:scale-105 transition-transform duration-300"
+                      className="hover:scale-105 transition-transform duration-300 mb-8"
                       src={NOIMask}
                       alt="maskImage"
                       width={700}
                       height={500}
-                      style={{ zIndex: 21 }}
+                      style={{ zIndex: 50 }}
                     />
                     <p className="text-sm text-white md:text-lg lg:text-[25px] tracking-widest font-sans lg:mb-2">
                       <b>National Olympiad In Informatics</b>

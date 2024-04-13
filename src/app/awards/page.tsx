@@ -6,7 +6,7 @@ import Navbar from "@/components/navbar";
 import Image from "next/image";
 import awardImages from "@/assets/img/GoldSilverBronze.png";
 import { motion } from "framer-motion";
-import NOIMask from "@/assets/img/NOIMask.svg";
+import NOIMask from "@/assets/img/NOIMaskp.png";
 import Footer from "@/components/footer";
 import Particles from "@/components/particles/ParticleDesign";
 interface Award {

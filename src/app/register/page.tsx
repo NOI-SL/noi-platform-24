@@ -479,7 +479,7 @@ const Page: React.FC = () => {
 
         </form>
         <div
-          className="p-10 mb-4 text-gold rounded-lg dark:text-gold z-21 border"
+          className="p-10 mb-4 text-gold rounded-lg dark:text-gold z-21 "
           role="alert"
           style={{ display: display.success ? "block" : "none" }}
         >
@@ -517,11 +517,11 @@ const Page: React.FC = () => {
         </div>
 
         <div
-          className="p-4 mb-4 text-red-800  rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+          className="p-10 mb-4 text-gold rounded-lg dark:text-gold z-21 "
           role="alert"
           style={{ display: display.error ? "block" : "none" }}
         >
-          <div className="flex items-center">
+          <div className="flex items-center justify-center min-h-full">
             <svg
               className="flex-shrink-0 w-4 h-4 me-2"
               aria-hidden="true"
@@ -546,7 +546,7 @@ const Page: React.FC = () => {
               hapuarachchikaviru@gmail.com
             </Link>
           </div>
-          <div className="flex">
+          <div className="flex justify-center align-center">
             <button
               type="button"
               className="text-white bg-red-800 hover:bg-red-900 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-xs px-3 py-1.5 me-2 text-center inline-flex items-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
@@ -571,7 +571,7 @@ const Page: React.FC = () => {
               aria-label="Close"
             >
               <Link href="https://wa.me/94713491029" style={{ zIndex: 21 }}>
-                <div>Contact Admin</div>
+                <div className="text-white">Contact Admin</div>
               </Link>
             </button>
           </div>

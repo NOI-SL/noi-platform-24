@@ -13,7 +13,7 @@ import img2021 from "@/assets/img/2021-team.jpg";
 import img2020 from "@/assets/img/2020-team.png";
 import img2019 from "@/assets/img/2019-team.jpg";
 import cplusplus from "@/assets/img/cplusplus.png";
-import NOIMask from "@/assets/img/NOIMask.svg";
+import NOIMask from "@/assets/img/NOIMaskp.png";
 import Footer from "@/components/footer";
 import Particles from "@/components/particles/ParticleDesign";
 // import java from "@/assets/img/java.png";
@@ -43,10 +43,10 @@ const HowToCompete: React.FC = () => {
           >
             <div className="w-full flex flex-col justify-center items-center">
               <Image
-                className="hover:scale-105 transition-transform duration-300"
+                className="hover:scale-105 transition-transform duration-300 mb-8"
                 src={NOIMask}
                 alt="maskImage"
-                width={700}
+                width={650}
                 height={500}
                 style={{ zIndex: 21 }}
               />

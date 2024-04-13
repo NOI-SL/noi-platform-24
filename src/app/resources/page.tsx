@@ -5,7 +5,7 @@ import Navbar from "@/components/navbar";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import LoadingScreen from "@/components/loadingscreen";
-import NOIMask from "@/assets/img/NOIMask.svg";
+import NOIMask from "@/assets/img/NOIMaskp.png";
 import Footer from "@/components/footer";
 import Particles from "@/components/particles/ParticleDesign";
 interface Resource {
@@ -105,10 +105,10 @@ const Page: React.FC = () => {
           >
             <div className="w-full flex flex-col justify-center items-center">
               <Image
-                className="hover:scale-105 transition-transform duration-300"
+                className="hover:scale-105 transition-transform duration-300 mb-8"
                 src={NOIMask}
                 alt="maskImage"
-                width={700}
+                width={650}
                 height={500}
                 style={{ zIndex: 21 }}
               />

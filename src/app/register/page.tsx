@@ -11,8 +11,6 @@ import { FormikValues } from "formik";
 import firebase from "firebase/compat/app";
 import "firebase/compat/storage";
 import Link from "next/link";
-import Image from "next/image";
-import NOIMask from "@/assets/img/NOIMask.svg";
 import firebaseConfig from "@/lib/firebaseInitialize";
 
 const Page: React.FC = () => {
@@ -120,16 +118,6 @@ const Page: React.FC = () => {
         </div>
         <div className="flex flex-col">
           <div className="mt-10">
-          <div className="w-full flex flex-col justify-center items-center">
-              <Image
-                className="hover:scale-105 transition-transform duration-300"
-                src={NOIMask}
-                alt="maskImage"
-                width={700}
-                height={500}
-                style={{ zIndex: 21 }}
-              />
-            </div>
             <h2 className="text-4xl font-bold text-center mb-5 font-horus text-gold">
               Registration | Student
             </h2>
@@ -147,6 +135,8 @@ const Page: React.FC = () => {
           </div>
         </div>
         <form
+          style={{ display: display.success ? "none" : "block" } || { display: display.error ? "none" : "block" }}
+          
           className="p-8 w-full max-w-6xl shadow-sm"
           onSubmit={handleSubmit}
         >
@@ -481,13 +471,13 @@ const Page: React.FC = () => {
                 />
                 {documentURL == "" && touched.document && (
                   <span className="text-red-500 text-sm mt-1">
-                    Required
+                    Please provide document
                   </span>
                 )}
               </label>
             </div>
           </div>
-          <div className="flex flex-col justify-center items-center w-full mb-10 mt-10">
+          <div className="flex flex-col justify-center items-center w-full mb-20 mt-10">
             <button
               type="submit"
               style={{ zIndex: 21 }}
@@ -501,105 +491,106 @@ const Page: React.FC = () => {
               {isSubmitting ? "Submitting" : "Submit"}
             </button>
           </div>
-          <div
-            className="mb-4 text-gold rounded-lg dark:text-gold z-21"
-            role="alert"
-            style={{ display: display.success ? "block" : "none" }}
-          >
-            <div className="flex items-center justify-center">
-              <span className="sr-only">Info</span>
-              <h3 className="text-lg font-medium">Registration Successful</h3>
-            </div>
-            <div className="mt-2 mb-4 text-sm z-21" style={{ zIndex: 21 }}>
-              Join our whatsapp group for more updates.
-              {/* <Link
-                style={{ zIndex: 21 }}
+          
+        </form>
+        <div
+          className="p-10 mb-4 text-gold rounded-lg dark:text-gold z-21 border"
+          role="alert"
+          style={{ display: display.success ? "block" : "none" }}
+        >
+          <div className="flex items-center justify-center min-h-full ">
+            <span className="sr-only">Info</span>
+            <h3 className="text-lg font-medium">Registration Successful</h3>
+          </div>
+          <div className="mt-2 mb-4 text-sm z-21" style={{ zIndex: 21 }}>
+            Join our whatsapp group for more updates.
+            <Link
+              style={{ zIndex: 21 }}
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://chat.whatsapp.com/JL2qyoImHrm4rqOYybeZTB"
+            >
+              <b>Click Here</b>
+            </Link>
+          </div>
+          <div className="flex justify-center align-center">
+            <button
+              type="button"
+              className="text-white bg-green-800 hover:bg-green-900 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-xs px-3 py-1.5 me-2 text-center inline-flex items-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+            >
+              <Link
+                className="z-21"
                 target="_blank"
+                style={{ zIndex: 21 }}
                 rel="noopener noreferrer"
                 href="https://chat.whatsapp.com/JL2qyoImHrm4rqOYybeZTB"
               >
-                <b>Click Here</b>
-              </Link> */}
-            </div>
-            <div className="flex justify-center align-center">
-              <button
-                type="button"
-                className="text-white bg-green-800 hover:bg-green-900 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-xs px-3 py-1.5 me-2 text-center inline-flex items-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
-              >
-                <Link
-                  className="z-21"
-                  target="_blank"
-                  style={{ zIndex: 21 }}
-                  rel="noopener noreferrer"
-                  href="https://chat.whatsapp.com/JL2qyoImHrm4rqOYybeZTB"
-                >
-                  <div>Join WhatsApp Group</div>
-                </Link>
-              </button>
-            </div>
+                <div>Join WhatsApp Group</div>
+              </Link>
+            </button>
           </div>
+        </div>
 
-          <div
-            className="mb-4 text-gold rounded-lg dark:text-gold z-21"
-            role="alert"
-            style={{ display: display.error ? "block" : "none" }}
-          >
-            <div className="flex items-center">
+        <div
+          className="p-4 mb-4 text-red-800  rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+          role="alert"
+          style={{ display: display.error ? "block" : "none" }}
+        >
+          <div className="flex items-center">
+            <svg
+              className="flex-shrink-0 w-4 h-4 me-2"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+            </svg>
+            <span className="sr-only">Info</span>
+            <h3 className="text-lg font-medium">Registration Failed</h3>
+          </div>
+          <div className="mt-2 mb-4 text-sm">
+            Try again. If the problem persists, contact the administrator.
+            Email :{" "}
+            <Link
+              target="_blank"
+              rel="noopener noreferrer"
+              href="hapuarachchikaviru@gmail.com"
+              style={{ zIndex: 21 }}
+            >
+              hapuarachchikaviru@gmail.com
+            </Link>
+          </div>
+          <div className="flex">
+            <button
+              type="button"
+              className="text-white bg-red-800 hover:bg-red-900 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-xs px-3 py-1.5 me-2 text-center inline-flex items-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
+            >
               <svg
-                className="flex-shrink-0 w-4 h-4 me-2"
+                className="me-2 h-3 w-3"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
-                viewBox="0 0 20 20"
+                viewBox="0 0 20 14"
               >
-                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                <path d="M10 0C4.612 0 0 5.336 0 7c0 1.742 3.546 7 10 7 6.454 0 10-5.258 10-7 0-1.664-4.612-7-10-7Zm0 10a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z" />
               </svg>
-              <span className="sr-only">Info</span>
-              <h3 className="text-lg font-medium">Registration Failed</h3>
-            </div>
-            <div className="mt-2 mb-4 text-sm">
-              Try again. If the problem persists, contact the administrator.
-              Email :{" "}
-              <Link
-                target="_blank"
-                rel="noopener noreferrer"
-                href="hapuarachchikaviru@gmail.com"
-                style={{ zIndex: 21 }}
-              >
-                hapuarachchikaviru@gmail.com
+              <Link href="/register" style={{ zIndex: 21 }}>
+                <div>Try Again</div>
               </Link>
-            </div>
-            <div className="flex">
-              <button
-                type="button"
-                className="text-white bg-red-800 hover:bg-red-900 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-xs px-3 py-1.5 me-2 text-center inline-flex items-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
-              >
-                <svg
-                  className="me-2 h-3 w-3"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 20 14"
-                >
-                  <path d="M10 0C4.612 0 0 5.336 0 7c0 1.742 3.546 7 10 7 6.454 0 10-5.258 10-7 0-1.664-4.612-7-10-7Zm0 10a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z" />
-                </svg>
-                <Link href="/register" style={{ zIndex: 21 }}>
-                  <div>Try Again</div>
-                </Link>
-              </button>
-              <button
-                type="button"
-                className="text-red-800 bg-transparent border border-red-800 hover:bg-red-900 hover:text-white focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-xs px-3 py-1.5 text-center dark:hover:bg-red-600 dark:border-red-600 dark:text-red-500 dark:hover:text-white dark:focus:ring-red-800"
-                data-dismiss-target="#alert-additional-content-2"
-                aria-label="Close"
-              >
-                <Link href="https://wa.me/94713491029" style={{ zIndex: 21 }}>
-                  <div>Contact Admin</div>
-                </Link>
-              </button>
-            </div>
+            </button>
+            <button
+              type="button"
+              className="text-red-800 bg-transparent border border-red-800 hover:bg-red-900 hover:text-white focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-xs px-3 py-1.5 text-center dark:hover:bg-red-600 dark:border-red-600 dark:text-red-500 dark:hover:text-white dark:focus:ring-red-800"
+              data-dismiss-target="#alert-additional-content-2"
+              aria-label="Close"
+            >
+              <Link href="https://wa.me/94713491029" style={{ zIndex: 21 }}>
+                <div>Contact Admin</div>
+              </Link>
+            </button>
           </div>
-        </form>
+        </div>
         <Footer />
       </motion.main>
     </>

@@ -67,7 +67,6 @@ const storage = multer.diskStorage({
   },
 });
 
-
 const fileFilter = (req: any, file: any, cb: any) => {
   if (file.mimetype === "application/pdf") {
     cb(null, true);
@@ -84,44 +83,28 @@ const upload = multer({
 async function getURLAndStore(document: any, email: any) {
   try {
     if (!document || !email) {
-      throw new Error('File or email not provided');
+      throw new Error("File or email not provided");
     }
-    const destinationDir = path.join(process.cwd(), 'public/files');
+    const destinationDir = path.join(process.cwd(), "public/files");
     await fs.ensureDir(destinationDir);
     const extname = path.extname(document.name);
     const documentname = `${email}-${Date.now()}${extname}`;
     const filePath = path.join(destinationDir, documentname);
     await fs.move(document.path, filePath);
     return documentname;
-  } catch (error:any) {
-    console.error('Error saving and renaming file:', error.message);
+  } catch (error: any) {
+    console.error("Error saving and renaming file:", error.message);
     throw error;
   }
 }
 
-export async function createUser(formData: FormikValues) {
+export async function createUser(formData: any) {
+  console.log(formData);
   try {
-    const {
-      email,
-      firstName,
-      lastName,
-      fullName,
-      birthdate,
-      schoolName,
-      schoolAddress,
-      addressLine1,
-      addressLine2,
-      addressLine3,
-      contactNumber,
-      documentType,
-      document,
-    } = formData;
-    console.log(formData);
+    if (!formData.email) throw new Error("No Email provided");
+    if (!formData.document) throw new Error("No Document Provided");
 
-    if (!email) throw new Error("No Email provided");
-    if (!document) throw new Error("No Document Provided");
-    
-    const exists = await checkDelegateExists(email);
+    const exists = await checkDelegateExists(formData.email);
     if (exists) {
       console.log("Delegate already exists");
       return;
@@ -134,27 +117,27 @@ export async function createUser(formData: FormikValues) {
     };
 
     const newDelegate = {
-      email,
+      email: formData.email,
       name: {
-        first: firstName,
-        last: lastName,
-        full: fullName,
+        first: formData.firstName,
+        last: formData.lastName,
+        full: formData.fullName,
       },
-      birthdate,
+      birthdate: formData.birthdate,
       gender: genderEnum,
       school: {
-        name: schoolName,
-        address: schoolAddress,
+        name: formData.schoolName,
+        address: formData.schoolAddress,
       },
       address: {
-        line1: addressLine1,
-        line2: addressLine2,
-        line3: addressLine3,
+        line1: formData.addressLine1,
+        line2: formData.addressLine2,
+        line3: formData.addressLine3,
       },
-      contactNumber,
+      contactNumber: formData.contactNumber,
       document: {
-        type: documentType,
-        path: document,
+        type: formData.documentType,
+        path: formData.document,
       },
       updated_at: new Date(),
       created_at: new Date(),
@@ -174,5 +157,3 @@ export async function createUser(formData: FormikValues) {
     throw err;
   }
 }
-
-

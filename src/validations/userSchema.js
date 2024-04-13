@@ -33,13 +33,13 @@ const userSchema = yup.object().shape({
     .string("Please Select Document Type")
     .required("Required")
     .oneOf(["nic", "postal_id", "passport", "letter", "birth_certificate"]),
-  document: yup
-    .mixed()
-    .test("fileType", "Only PDF files are accepted", (value) => {
-      if (!value || !value.name) return true;
-      const extension = value.name.split(".").pop().toLowerCase();
-      return extension === "pdf";
-    })
-    .required("Please upload a PDF document"),
+  // document: yup
+  //   .mixed()
+  //   .test("fileType", "Only PDF files are accepted", (value) => {
+  //     if (!value || !value.name) return true;
+  //     const extension = value.name.split(".").pop().toLowerCase();
+  //     return extension === "pdf";
+  //   })
+  //   .required("Please upload a PDF document"),
 });
 export default userSchema;

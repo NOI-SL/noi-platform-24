@@ -48,7 +48,7 @@ const Navbar: React.FC = () => {
 
   return (
     <>
-      <nav className="w-full md:flex md:flex-col md:justify-center md:items-center align-middle content-center z-50">
+      <nav className="relative top-0  w-full md:flex md:flex-col justify-center items-center align-middle content-center z-50 md:py-4 pt-3 bg-black/50 backdrop-blur-sm">
         <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
           <div className="relative flex h-16 items-center justify-between">
             <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -92,7 +92,7 @@ const Navbar: React.FC = () => {
                 </svg>
               </button>
             </div>
-            <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+            <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start content-center">
               <div className="flex flex-shrink-0 items-center">
                 <Link href="/" style={{ zIndex: 21 }}>
                   <Image
@@ -100,7 +100,7 @@ const Navbar: React.FC = () => {
                     
                     src={logo}
                     alt="Your Company"
-                    width={160}
+                    width={110}
                     height={40}
                   />
                 </Link>
@@ -139,7 +139,7 @@ const Navbar: React.FC = () => {
             style={{ zIndex: 21 }}
           >
             <div
-              className="space-y-1 px-2 pb-3 pt-2 transition-opacity duration-3000 z-50"
+              className="fixed w-1/2 h-screen space-y-1 px-2 pb-3 pt-2 transition-opacity duration-3000 z-50 bg-black/50 backdrop-blur-lg"
               style={{ zIndex: 40 }}
             >
               {isOpen && (

@@ -15,7 +15,7 @@ const components: Component[] = [
     href: "/",
   },
   {
-    title: "How to Compete",
+    title: "Compete",
     href: "/howtocompete",
   },
   {

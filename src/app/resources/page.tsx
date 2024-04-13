@@ -22,25 +22,25 @@ interface Passpapers{
 
 const Page: React.FC = () => {
 
-  const pastPapersAndSolutions: Passpapers[] = [
+  const pastProblemsAndSolutions: Passpapers[] = [
     {
-      title: "IOI 2023",
-      description:"Visit Website",
+      title: "IOI 2023 Materials",
+      description:"Find Materials",
       link: "https://ioi2023.hu/tasks/index.html",
     },
     {
-      title: "IOI 2022",
-      description:"Visit Website",
+      title: "IOI 2022 Materials",
+      description:"Find Materials",
       link: "https://ioinformatics.org/page/ioi-2022/56",
     },
     {
-      title: "IOI 2021",
-      description:"Visit Website",
+      title: "IOI 2021 Materials",
+      description:"Find Materials",
       link: "https://ioinformatics.org/page/ioi-2021/55",
     },
     {
-      title:"IOI 2020",
-      description:"Visit Website",
+      title:"IOI 2020 Materials",
+      description:"Find Materials",
       link: "https://ioinformatics.org/page/ioi-2020/54",
     }
   ];
@@ -128,41 +128,12 @@ const Page: React.FC = () => {
         >
           <div className="flex flex-col w-full">
             <div className="flex flex-col justify-center items-center">
-              {/* <div className="p-4 w-1/2">
-                <h2 className="text-1xl font-bold text-gold text-left">
-                  NOI Final Scores
-                </h2>
-                <div className="w-full flex flex-col justify-center items-center mt-10">
-                  {noiFinalScores.map((resource, index) => (
-                    <div
-                      key={index}
-                      className="w-full flex flex-col justify-center items-center"
-                    >
-                      <h2 className="text-1xl font-bold text-gold text-center">
-                        {resource.title}
-                      </h2>
-                      <p className="text-white text-center">
-                        {resource.subtopic}
-                      </p>
-                      <p className="text-white text-center mb-20 text-0.5xl hover:text-gold">
-                        <a
-                          href={resource.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          {resource.description}
-                        </a>
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div> */}
               <div className="p-4 w-1/2">
                 <h2 className="text-2xl font-bold text-gold text-center sm:text-center md:text-center lg:text-center mt-10">
                   Past Papers and Solutions
                 </h2>
                 <div className="w-full flex flex-col justify-center items-center  mt-10">
-                  {pastPapersAndSolutions.map((resource, index) => (
+                  {pastProblemsAndSolutions.map((resource, index) => (
                     <div
                       key={index}
                       className="w-full flex flex-col justify-center items-center"

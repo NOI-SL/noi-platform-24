@@ -429,7 +429,7 @@ const Page: React.FC = () => {
                 )}
               </label>
               <label className="block mb-1 flex flex-col justify-center items-center">
-                <span className="text-gold">Email</span>
+                <span className="text-gold">Email (should be unique)</span>
                 <input
                   name="email"
                   type="text"

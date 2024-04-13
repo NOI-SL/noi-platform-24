@@ -1,7 +1,5 @@
 "use server";
-const multer = require("multer");
-const path = require("path");
-const fs = require("fs-extra");
+
 
 import { MongoClient } from "mongodb";
 import { FormikValues } from "formik";
@@ -43,59 +41,6 @@ async function checkDelegateExists(email: string): Promise<boolean> {
   const db = await getDbConnection();
   const delegate = await db.collection("users").findOne({ email });
   return !!delegate;
-}
-
-if (!fs.existsSync("./public/files")) {
-  fs.mkdirSync("./public/files", { recursive: true });
-}
-
-const storage = multer.diskStorage({
-  destination: function (req: any, file: any, cb: any) {
-    cb(null, "./public/files/");
-  },
-  filename: function (req: any, file: any, cb: any) {
-    const { email } = req.body;
-    if (!email) {
-      return cb(new Error("Email not provided"));
-    }
-    const extname = path.extname(file.originalname);
-    const filename = `${email}-${Date.now()}${extname}`;
-    // Store the file with the new filename
-    cb(null, filename);
-    // Return the filename
-    return filename;
-  },
-});
-
-const fileFilter = (req: any, file: any, cb: any) => {
-  if (file.mimetype === "application/pdf") {
-    cb(null, true);
-  } else {
-    cb(new Error("Only PDF files are accepted"), false);
-  }
-};
-
-const upload = multer({
-  storage: storage,
-  fileFilter: fileFilter,
-});
-
-async function getURLAndStore(document: any, email: any) {
-  try {
-    if (!document || !email) {
-      throw new Error("File or email not provided");
-    }
-    const destinationDir = path.join(process.cwd(), "public/files");
-    await fs.ensureDir(destinationDir);
-    const extname = path.extname(document.name);
-    const documentname = `${email}-${Date.now()}${extname}`;
-    const filePath = path.join(destinationDir, documentname);
-    await fs.move(document.path, filePath);
-    return documentname;
-  } catch (error: any) {
-    console.error("Error saving and renaming file:", error.message);
-    throw error;
-  }
 }
 
 export async function createUser(formData: any) {

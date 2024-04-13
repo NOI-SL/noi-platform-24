@@ -11,6 +11,8 @@ import { FormikValues } from "formik";
 import firebase from "firebase/compat/app";
 import "firebase/compat/storage";
 import Link from "next/link";
+import Image from "next/image";
+import NOIMask from "@/assets/img/NOIMask.svg";
 import firebaseConfig from "@/lib/firebaseInitialize";
 
 const Page: React.FC = () => {
@@ -118,6 +120,16 @@ const Page: React.FC = () => {
         </div>
         <div className="flex flex-col">
           <div className="mt-10">
+          <div className="w-full flex flex-col justify-center items-center">
+              <Image
+                className="hover:scale-105 transition-transform duration-300"
+                src={NOIMask}
+                alt="maskImage"
+                width={700}
+                height={500}
+                style={{ zIndex: 21 }}
+              />
+            </div>
             <h2 className="text-4xl font-bold text-center mb-5 font-horus text-gold">
               Registration | Student
             </h2>
@@ -469,13 +481,13 @@ const Page: React.FC = () => {
                 />
                 {documentURL == "" && touched.document && (
                   <span className="text-red-500 text-sm mt-1">
-                    Please provide document
+                    Required
                   </span>
                 )}
               </label>
             </div>
           </div>
-          <div className="flex flex-col justify-center items-center w-full mb-20 mt-10">
+          <div className="flex flex-col justify-center items-center w-full mb-10 mt-10">
             <button
               type="submit"
               style={{ zIndex: 21 }}
@@ -490,7 +502,7 @@ const Page: React.FC = () => {
             </button>
           </div>
           <div
-            className="p-10 mb-4 text-gold rounded-lg dark:text-gold z-21"
+            className="mb-4 text-gold rounded-lg dark:text-gold z-21"
             role="alert"
             style={{ display: display.success ? "block" : "none" }}
           >
@@ -528,7 +540,7 @@ const Page: React.FC = () => {
           </div>
 
           <div
-            className="p-4 mb-4 text-red-800  rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+            className="mb-4 text-gold rounded-lg dark:text-gold z-21"
             role="alert"
             style={{ display: display.error ? "block" : "none" }}
           >

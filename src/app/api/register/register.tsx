@@ -157,3 +157,4 @@ export async function createUser(formData: any) {
     throw err;
   }
 }
+initializeDb();

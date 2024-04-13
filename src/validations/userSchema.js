@@ -1,45 +1,37 @@
 import * as yup from "yup";
 
+const today = new Date();
+
 const userSchema = yup.object().shape({
-  firstName: yup.string("Please Enter First Name").required("Required"),
-  lastName: yup.string("Please Enter Last Name").required("Required"),
-  fullName: yup.string("Please Enter Full Name").required("Required"),
-  birthdate: yup.string("Please Enter Your Birthdate").required("Required"),
+  firstName: yup.string().required("Required"),
+  lastName: yup.string().required("Required"),
+  fullName: yup.string().required("Required"),
+  birthdate: yup
+    .date()
+    .max(today, "Please Enter your Birthdate correctly")
+    .test("age", "Age must be less than 20 years", function (value) {
+      const age = today.getFullYear() - value.getFullYear();
+      return age <= 20;
+    })
+    .required("Required"),
   gender: yup
-    .string("Please Select Your Gender")
+    .string()
     .required("Required")
-    .oneOf(["male", "female", "other"]),
-  schoolName: yup.string("Please Enter Your School Name").required("Required"),
-  schoolAddress: yup
-    .string("Please Enter Your School Address")
-    .required("Required"),
-  addressLine1: yup
-    .string("Please Enter Your Address Line 01")
-    .required("Required"),
-  addressLine2: yup
-    .string("Please Enter Your Address Line 02")
-    .required("Required"),
-  addressLine3: yup
-    .string("Please Enter Your Address Line 03")
-    .required("Required"),
+    .oneOf(["male", "female", "other"], "Please Select Your Gender"),
+  schoolName: yup.string().required("Required"),
+  schoolAddress: yup.string().required("Required"),
+  addressLine1: yup.string().required("Required"),
+  addressLine2: yup.string(),
+  addressLine3: yup.string().required("Required"),
   contactNumber: yup
-    .string("Please Enter Your Contact Number")
+    .string()
+    .matches(/^[0-9]{10}$|^(\+94)[0-9]{9}$/, "Invalid phone number")
     .required("Required"),
-  email: yup
-    .string("Please Enter your Email")
-    .email("Please Enter A Valid Email")
-    .required("Required"),
+  email: yup.string().email("Please Enter A Valid Email").required("Required"),
   documentType: yup
-    .string("Please Select Document Type")
+    .string()
     .required("Required")
     .oneOf(["nic", "postal_id", "passport", "letter", "birth_certificate"]),
-  // document: yup
-  //   .mixed()
-  //   .test("fileType", "Only PDF files are accepted", (value) => {
-  //     if (!value || !value.name) return true;
-  //     const extension = value.name.split(".").pop().toLowerCase();
-  //     return extension === "pdf";
-  //   })
-  //   .required("Please upload a PDF document"),
 });
+
 export default userSchema;

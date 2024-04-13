@@ -20,6 +20,8 @@ const Page: React.FC = () => {
     error: false,
   });
   const [documentURL, setDocumentURL] = useState("");
+  const [fileError, setFileError] = useState("");
+  const [anyFile, setAnyFile] = useState(null);
   const {
     values,
     handleBlur,
@@ -52,6 +54,7 @@ const Page: React.FC = () => {
         await createUser({ ...values, document: documentURL });
         actions.resetForm();
         setDocumentURL("");
+        setAnyFile(null);
         setDisplay({
           form: false,
           success: true,
@@ -83,6 +86,14 @@ const Page: React.FC = () => {
   const handleFileChange = (e: any) => {
     const selectedFile = e.target.files[0];
     if (selectedFile) {
+      setAnyFile(selectedFile);
+      const extension = selectedFile.name.split(".").pop().toLowerCase();
+      if (extension !== "pdf") {
+        console.log("Only PDF files are allowed");
+        setFileError("Please select a PDF file");
+        return;
+      }
+      setFileError("");
       const storageRef = firebase.storage().ref();
       const fileRef = storageRef.child(selectedFile.name);
 
@@ -98,6 +109,7 @@ const Page: React.FC = () => {
         })
         .catch((error) => {
           console.error("Error uploading file:", error);
+          setAnyFile(null);
         });
     } else {
       console.log("No file selected");
@@ -125,7 +137,14 @@ const Page: React.FC = () => {
               NOI 2024 Portal Access
             </p>
           </div>
-          <div className="mt-10 p-5">
+          <div
+            className="mt-10 p-5"
+            style={
+              { display: display.success ? "none" : "block" } || {
+                display: display.error ? "none" : "block",
+              }
+            }
+          >
             <p className="text-center text-gold">
               Sign up for National Olympiad in Informatics program.
             </p>
@@ -135,8 +154,11 @@ const Page: React.FC = () => {
           </div>
         </div>
         <form
-          style={{ display: display.success ? "none" : "block" } || { display: display.error ? "none" : "block" }}
-
+          style={
+            { display: display.success ? "none" : "block" } || {
+              display: display.error ? "none" : "block",
+            }
+          }
           className="p-8 w-full max-w-6xl shadow-sm"
           onSubmit={handleSubmit}
         >
@@ -155,10 +177,11 @@ const Page: React.FC = () => {
                   onBlur={handleBlur}
                   value={values.firstName}
                   style={{ zIndex: 21 }}
-                  className={`mt-1 block w-3/4 rounded-md border ${errors.firstName && touched.firstName
+                  className={`mt-1 block w-3/4 rounded-md border ${
+                    errors.firstName && touched.firstName
                       ? "border-red-500"
                       : "border-gray-300"
-                    } shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3`}
+                  } shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3`}
                 />
                 {errors.firstName && touched.firstName && (
                   <span className="text-red-500 text-sm mt-1">
@@ -177,10 +200,11 @@ const Page: React.FC = () => {
                   onBlur={handleBlur}
                   value={values.lastName}
                   style={{ zIndex: 21 }}
-                  className={`mt-1 block w-3/4 rounded-md border ${errors.lastName && touched.lastName
+                  className={`mt-1 block w-3/4 rounded-md border ${
+                    errors.lastName && touched.lastName
                       ? "border-red-500"
                       : "border-gray-300"
-                    } shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3`}
+                  } shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3`}
                 />
                 {errors.lastName && touched.lastName && (
                   <span className="text-red-500 text-sm mt-1">
@@ -199,10 +223,11 @@ const Page: React.FC = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.fullName}
-                  className={`mt-1 block w-3/4 rounded-md border ${errors.fullName && touched.fullName
+                  className={`mt-1 block w-3/4 rounded-md border ${
+                    errors.fullName && touched.fullName
                       ? "border-red-500"
                       : "border-gray-300"
-                    } shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3`}
+                  } shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3`}
                 />
                 {errors.fullName && touched.fullName && (
                   <span className="text-red-500 text-sm mt-1">
@@ -221,10 +246,11 @@ const Page: React.FC = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.birthdate}
-                  className={`mt-1 block w-3/4 rounded-md border ${errors.birthdate && touched.birthdate
+                  className={`mt-1 block w-3/4 rounded-md border ${
+                    errors.birthdate && touched.birthdate
                       ? "border-red-500"
                       : "border-gray-300"
-                    } shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3`}
+                  } shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3`}
                 />
                 {errors.birthdate && touched.birthdate && (
                   <span className="text-red-500 text-sm mt-1">
@@ -238,10 +264,11 @@ const Page: React.FC = () => {
                 <select
                   name="gender"
                   style={{ zIndex: 21 }}
-                  className={`mt-1 block w-3/4 rounded-md border ${errors.gender && touched.gender
+                  className={`mt-1 block w-3/4 rounded-md border ${
+                    errors.gender && touched.gender
                       ? "border-red-500"
                       : "border-gray-300"
-                    } shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3`}
+                  } shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3`}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.gender}
@@ -271,10 +298,11 @@ const Page: React.FC = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.schoolName}
-                  className={`mt-1 block w-3/4 rounded-md border ${errors.schoolName && touched.schoolName
+                  className={`mt-1 block w-3/4 rounded-md border ${
+                    errors.schoolName && touched.schoolName
                       ? "border-red-500"
                       : "border-gray-300"
-                    } shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3`}
+                  } shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3`}
                 />
                 {errors.schoolName && touched.schoolName && (
                   <span className="text-red-500 text-sm mt-1">
@@ -292,10 +320,11 @@ const Page: React.FC = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.schoolAddress}
-                  className={`mt-1 block w-3/4 rounded-md border ${errors.schoolAddress && touched.schoolAddress
+                  className={`mt-1 block w-3/4 rounded-md border ${
+                    errors.schoolAddress && touched.schoolAddress
                       ? "border-red-500"
                       : "border-gray-300"
-                    } shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3`}
+                  } shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3`}
                 />
                 {errors.schoolAddress && touched.schoolAddress && (
                   <span className="text-red-500 text-sm mt-1">
@@ -319,10 +348,11 @@ const Page: React.FC = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.addressLine1}
-                  className={`mt-1 block w-3/4 rounded-md border ${errors.addressLine1 && touched.addressLine1
+                  className={`mt-1 block w-3/4 rounded-md border ${
+                    errors.addressLine1 && touched.addressLine1
                       ? "border-red-500"
                       : "border-gray-300"
-                    } shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3`}
+                  } shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3`}
                 />
                 {errors.addressLine1 && touched.addressLine1 && (
                   <span className="text-red-500 text-sm mt-1">
@@ -340,10 +370,11 @@ const Page: React.FC = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.addressLine2}
-                  className={`mt-1 block w-3/4 rounded-md border ${errors.addressLine2 && touched.addressLine2
+                  className={`mt-1 block w-3/4 rounded-md border ${
+                    errors.addressLine2 && touched.addressLine2
                       ? "border-red-500"
                       : "border-gray-300"
-                    } shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3`}
+                  } shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3`}
                 />
                 {errors.addressLine2 && touched.addressLine2 && (
                   <span className="text-red-500 text-sm mt-1">
@@ -361,10 +392,11 @@ const Page: React.FC = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.addressLine3}
-                  className={`mt-1 block w-3/4 rounded-md border ${errors.addressLine3 && touched.addressLine3
+                  className={`mt-1 block w-3/4 rounded-md border ${
+                    errors.addressLine3 && touched.addressLine3
                       ? "border-red-500"
                       : "border-gray-300"
-                    } shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3`}
+                  } shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3`}
                 />
                 {errors.addressLine3 && touched.addressLine3 && (
                   <span className="text-red-500 text-sm mt-1">
@@ -373,7 +405,9 @@ const Page: React.FC = () => {
                 )}
               </label>
               <label className="block mb-5 flex flex-col justify-center items-center">
-                <span className="text-gold">Contact Number</span>
+                <span className="text-gold">
+                  Contact Number (ex: +94761234567)
+                </span>
                 <input
                   name="contactNumber"
                   type="text"
@@ -382,10 +416,11 @@ const Page: React.FC = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.contactNumber}
-                  className={`mt-1 block w-3/4 rounded-md border ${errors.contactNumber && touched.contactNumber
+                  className={`mt-1 block w-3/4 rounded-md border ${
+                    errors.contactNumber && touched.contactNumber
                       ? "border-red-500"
                       : "border-gray-300"
-                    } shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3`}
+                  } shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3`}
                 />
                 {errors.contactNumber && touched.contactNumber && (
                   <span className="text-red-500 text-sm mt-1">
@@ -403,10 +438,11 @@ const Page: React.FC = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.email}
-                  className={`mt-1 block w-3/4 rounded-md border ${errors.email && touched.email
+                  className={`mt-1 block w-3/4 rounded-md border ${
+                    errors.email && touched.email
                       ? "border-red-500"
                       : "border-gray-300"
-                    } shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3`}
+                  } shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3`}
                 />
                 {errors.email && touched.email && (
                   <span className="text-red-500 text-sm mt-1">
@@ -425,10 +461,11 @@ const Page: React.FC = () => {
                   onBlur={handleBlur}
                   style={{ zIndex: 21 }}
                   value={values.documentType}
-                  className={`mt-1 block w-3/4 rounded-md border ${errors.documentType && touched.documentType
+                  className={`mt-1 block w-3/4 rounded-md border ${
+                    errors.documentType && touched.documentType
                       ? "border-red-500"
                       : "border-gray-300"
-                    } shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3`}
+                  } shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3`}
                 >
                   <option value="">Select Document Type</option>
                   <option value="nic">NIC</option>
@@ -444,7 +481,9 @@ const Page: React.FC = () => {
                 )}
               </label>
               <label className="block mb-5 flex flex-col justify-center items-center">
-                <span className="text-gold mb-2">Document</span>
+                <span className="text-gold mb-2">
+                  Document (.pdf format preferred)
+                </span>
                 <input
                   style={{ zIndex: 21 }}
                   name="document"
@@ -452,13 +491,22 @@ const Page: React.FC = () => {
                   onChange={handleFileChange}
                   onBlur={handleBlur}
                   // value={documentURL}
-                  className={`mt-1 block w-3/4 rounded-md border w-3/4 p-2 bg-white text-black border z-21 rounded ${documentURL == "" && touched.document ? "border-red-500" : "border-gray-300"
-                    } shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3`}
+                  className={`mt-1 block w-3/4 rounded-md border w-3/4 p-2 bg-white text-black border z-21 rounded ${
+                    documentURL == "" && touched.document
+                      ? "border-red-500"
+                      : "border-gray-300"
+                  } shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3`}
                 />
-                {documentURL == "" && touched.document && (
+                {anyFile === null && touched.document ? (
                   <span className="text-red-500 text-sm mt-1">
-                    Please provide document
+                    Required
                   </span>
+                ) : (
+                  fileError && (
+                    <span className="text-red-500 text-sm mt-1">
+                      {fileError}
+                    </span>
+                  )
                 )}
               </label>
             </div>
@@ -467,16 +515,16 @@ const Page: React.FC = () => {
             <button
               type="submit"
               style={{ zIndex: 21 }}
-              className={`w-1/2 sm:w-1/2 md:w-1/6 lg:w-1/6 py-3 px-4 border-2 font-horus text-lg border-gold rounded-md shadow-sm text-gold ${isSubmitting
+              className={`w-1/2 sm:w-1/2 md:w-1/6 lg:w-1/6 py-3 px-4 border-2 font-horus text-lg border-gold rounded-md shadow-sm text-gold ${
+                isSubmitting
                   ? "bg-black hover:bg-black cursor-not-allowed"
                   : " hover:bg-black"
-                }`}
+              }`}
               disabled={isSubmitting}
             >
               {isSubmitting ? "Submitting" : "Submit"}
             </button>
           </div>
-
         </form>
         <div
           className="p-10 mb-4 text-gold rounded-lg dark:text-gold z-21 "
@@ -522,13 +570,12 @@ const Page: React.FC = () => {
           style={{ display: display.error ? "block" : "none" }}
         >
           <div className="flex items-center justify-center min-h-full">
-            
             <span className="sr-only">Info</span>
             <h3 className="text-lg font-medium">Registration Failed</h3>
           </div>
           <div className="mt-2 mb-4 text-sm">
-            Try again. If the problem persists, contact the administrator.
-            Email :{" "}
+            Try again. If the problem persists, contact the administrator. Email
+            :{" "}
             <Link
               target="_blank"
               rel="noopener noreferrer"
@@ -543,7 +590,6 @@ const Page: React.FC = () => {
               type="button"
               className="text-white bg-red-800 hover:bg-red-900 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-xs px-3 py-1.5 me-2 text-center inline-flex items-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
             >
-             
               <Link href="/register" style={{ zIndex: 21 }}>
                 <div>Try Again</div>
               </Link>

@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import loadingIcon from "@/assets/img/Horse.svg";
+import NOILOgo from "@/assets/img//NOILogoGold.svg";
 
 const LoadingScreen: React.FC = () => {
   return (
@@ -8,12 +9,11 @@ const LoadingScreen: React.FC = () => {
       <div className="flex flex-col items-center">
         <Image
           alt="loading Icon"
-          src={loadingIcon}
-          width={100}
-          height={100}
+          src={NOILOgo}
+          width={150}
+          height={150}
           className=" rounded-lg"
           loading="eager"
-          style={{ transform: "scaleX(-1)" }}
         />
       </div>
     </div>

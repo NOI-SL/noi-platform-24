@@ -43,7 +43,7 @@ const HowToCompete: React.FC = () => {
           >
             <div className="w-full flex flex-col justify-center items-center">
               <Image
-                className="hover:scale-105 transition-transform duration-300 mt-8"
+                className="hover:scale-105 transition-transform duration-300 mb-8"
                 src={NOIMask}
                 alt="maskImage"
                 width={650}

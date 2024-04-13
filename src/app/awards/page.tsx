@@ -57,7 +57,7 @@ const Page: React.FC = () => {
               />
             </div>
             <h1 className="text-2xl font-bold text-gold text-center mt-10">
-              Awards | සම්මාන
+              Awards
             </h1>
           </motion.main>
           <motion.main
@@ -70,7 +70,7 @@ const Page: React.FC = () => {
             <div className="flex flex-col w-1/2 lg:flex-row lg:w-1/2 sm:flex-col sm:w-full">
               <div className="flex flex-col w-full justify-center items-center sm:w-full md:w-3/4 lg:w-1/2 pt-20 sm:pt-10 md:pt-20 lg:pt-20">
                 <h1 className="text-1xl font-bold text-white text-center">
-                  Under 16 | 16 න් පහළ
+                  Under 16
                 </h1>
                 <p className="text-gold text-center">Gold | Silver | Bronze</p>
                 <Image
@@ -83,7 +83,7 @@ const Page: React.FC = () => {
               </div>
               <div className="flex flex-col w-full justify-center items-center sm:w-full md:w-3/4 lg:w-1/2 pt-10 sm:pt-10 md:pt-20 lg:pt-20">
                 <h1 className="text-1xl font-bold text-white text-center">
-                  Under 20 | 20 න් පහළ
+                  Under 20
                 </h1>
                 <p className="text-gold text-center">Gold | Silver | Bronze</p>
                 <Image
@@ -105,7 +105,7 @@ const Page: React.FC = () => {
           >
             <div className="flex flex-col w-3/4 sm:w-1/2 md:3/4 lg:w-1/2 pt-10">
               <h1 className="text-2xl font-bold text-gold text-center pb-10">
-                Special Awards | විශේෂ සම්මාන
+                Special Awards
               </h1>
               {awards.map((award, index) => (
                 <div className="py-10" key={index}>

@@ -114,7 +114,7 @@ const Page: React.FC = () => {
               />
             </div>
             <h1 className="text-2xl font-bold text-gold text-center mb-8 mt-10">
-              Resources | සම්පත්
+              Resources
             </h1>
           </motion.main>
         </div>

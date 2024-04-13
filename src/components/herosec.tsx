@@ -76,9 +76,9 @@ const Herosec: React.FC = () => {
                     <p className="text-sm text-white md:text-lg lg:text-[25px] tracking-widest font-sans lg:mb-2">
                       <b>National Olympiad In Informatics</b>
                     </p>
-                    <p className="text-sm text-gold md:text-lg lg:text-[15px] tracking-widest font-sans lg:mb-2">
+                    {/* <p className="text-sm text-gold md:text-lg lg:text-[15px] tracking-widest font-sans lg:mb-2">
                       <b>ජාතික පරිගණක විද්‍යා ඔලිම්පියාඩ් තරඟාවලිය</b>
-                    </p>
+                    </p> */}
                     <p className="text-sm text-gold md:text-lg lg:text-[20px] tracking-widest font-sans lg:mb-2">
                       <b>2024</b>
                     </p>

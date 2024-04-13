@@ -130,7 +130,7 @@ const Page: React.FC = () => {
             <div className="flex flex-col justify-center items-center">
               <div className="p-4 w-1/2">
                 <h2 className="text-2xl font-bold text-gold text-center sm:text-center md:text-center lg:text-center mt-10">
-                  Past Papers and Solutions
+                  Past Problems and Solutions
                 </h2>
                 <div className="w-full flex flex-col justify-center items-center  mt-10">
                   {pastProblemsAndSolutions.map((resource, index) => (

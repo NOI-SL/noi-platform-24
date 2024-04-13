@@ -52,7 +52,7 @@ const HowToCompete: React.FC = () => {
               />
             </div>
             <h1 className="text-2xl text-center font-bold text-gold sm:w-full">
-              How to Compete | තරඟ වදින ආකාරය
+              How to Compete
             </h1>
           </motion.main>
         </div>
@@ -65,7 +65,7 @@ const HowToCompete: React.FC = () => {
             className="w-full"
           >
             <h2 className="text-lg font-semibold mb-4 text-gold w-full text-center sm:text-center md:text-center lg:text-center">
-              Eligibility | සුදුසුකම්
+              Eligibility
             </h2>
             <p className="text-white w-full sm:w-full md:w-3/4 lg:w-full mb-2 text-center sm:text-center md:text-justify lg:text-justify">
               The National Olympiad in Informatics program is for secondary
@@ -111,7 +111,7 @@ const HowToCompete: React.FC = () => {
         >
           <div className="container mx-auto text-left flex flex-col justify-center items-center sm:justify-center sm:items-center  md:justify-left md:items-center lg:justify-left md:items-center px-4 py-8 w-3/4 sm:w-3/4 lg:w-3/4 md:w-3/4  w-full text-white">
             <h1 className="text-lg font-bold mb-5 text-gold text-center sm:text-center md:text-center lg:text-center text-gold w-full sm:w-3/4 md:w-3/4 lg:w-full mb-5">
-              Process of the competition | තරඟ ක්‍රියාවලිය
+              Process of the competition
             </h1>
             <p className="text-white w-3/4 sm:w-3/4 md:w-3/4 lg:w-full mb-2 text-center sm:text-center md:text-justify lg:text-justify">
               Upon registering at the National Olympiad in Informatics program website, you will be enrolled in to
@@ -164,7 +164,7 @@ const HowToCompete: React.FC = () => {
 
             <div className="flex flex-col w-full h-400 mt-5">
               <h1 className="text-lg font-semibold mb-4 text-gold w-full text-center sm:text-center md:text-center lg:text-center">
-                Eligible Languages | භාවිත කළ හැකි භාෂා
+                Eligible Languages
               </h1>
               <div className="flex flex-row w-full justify-left items-center">
                 <a
@@ -195,7 +195,7 @@ const HowToCompete: React.FC = () => {
               </div>
             </div>
             <h1 className="text-lg font-semibold mb-4 text-gold w-full text-center sm:text-center md:text-center lg:text-center">
-              About the Competition | තරගාවලිය පිළිබඳව
+              About the Competition
             </h1>
             <p className="mb-8 text-white w-3/4 sm:w-3/4 md:w-3/4 lg:w-full mb-5 text-center sm:text-center md:text-justify lg:text-justify">
               The main competition (or the National Olympiad in Informatics)

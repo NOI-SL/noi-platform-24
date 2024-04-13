@@ -12,6 +12,7 @@ const Footer: React.FC = () => {
       <footer
         className="w-full bg-gradient-to-br from-black to-darkgreen p-4 sm:p-8 md:p-12 lg:p-16"
         style={{ zIndex: 1 }}
+        
       >
         <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
           <div className="md:flex md:justify-between flex-wrap">

@@ -469,7 +469,7 @@ const Page: React.FC = () => {
               style={{ zIndex: 21 }}
               className={`w-1/2 sm:w-1/2 md:w-1/6 lg:w-1/6 py-3 px-4 border-2 font-horus text-lg border-gold rounded-md shadow-sm text-gold ${isSubmitting
                   ? "bg-black hover:bg-black cursor-not-allowed"
-                  : "bg-black hover:bg-black"
+                  : " hover:bg-black"
                 }`}
               disabled={isSubmitting}
             >
@@ -479,7 +479,7 @@ const Page: React.FC = () => {
 
         </form>
         <div
-          className="p-10 mb-4 text-gold rounded-lg dark:text-gold z-21 border"
+          className="p-10 mb-4 text-gold rounded-lg dark:text-gold z-21 "
           role="alert"
           style={{ display: display.success ? "block" : "none" }}
         >
@@ -517,20 +517,12 @@ const Page: React.FC = () => {
         </div>
 
         <div
-          className="p-4 mb-4 text-red-800  rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+          className="p-10 mb-4 text-gold rounded-lg dark:text-gold z-21 "
           role="alert"
           style={{ display: display.error ? "block" : "none" }}
         >
-          <div className="flex items-center">
-            <svg
-              className="flex-shrink-0 w-4 h-4 me-2"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
-            </svg>
+          <div className="flex items-center justify-center min-h-full">
+            
             <span className="sr-only">Info</span>
             <h3 className="text-lg font-medium">Registration Failed</h3>
           </div>
@@ -546,32 +538,24 @@ const Page: React.FC = () => {
               hapuarachchikaviru@gmail.com
             </Link>
           </div>
-          <div className="flex">
+          <div className="flex justify-center align-center">
             <button
               type="button"
               className="text-white bg-red-800 hover:bg-red-900 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-xs px-3 py-1.5 me-2 text-center inline-flex items-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
             >
-              <svg
-                className="me-2 h-3 w-3"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 20 14"
-              >
-                <path d="M10 0C4.612 0 0 5.336 0 7c0 1.742 3.546 7 10 7 6.454 0 10-5.258 10-7 0-1.664-4.612-7-10-7Zm0 10a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z" />
-              </svg>
+             
               <Link href="/register" style={{ zIndex: 21 }}>
                 <div>Try Again</div>
               </Link>
             </button>
             <button
               type="button"
-              className="text-red-800 bg-transparent border border-red-800 hover:bg-red-900 hover:text-white focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-xs px-3 py-1.5 text-center dark:hover:bg-red-600 dark:border-red-600 dark:text-red-500 dark:hover:text-white dark:focus:ring-red-800"
+              className="text-red-800 bg-transparent border border-red-800 hover:bg-red-900 hover:text-white focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-xs px-3 py-1.5 text-center dark:hover:bg-red-600 dark:border-red-600 dark:text-red-500 dark:hover:text-white dark:focus:ring-red-800 z-50"
               data-dismiss-target="#alert-additional-content-2"
               aria-label="Close"
             >
               <Link href="https://wa.me/94713491029" style={{ zIndex: 21 }}>
-                <div>Contact Admin</div>
+                <div className="text-white hover:text-red ">Contact Admin</div>
               </Link>
             </button>
           </div>

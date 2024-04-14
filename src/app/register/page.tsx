@@ -133,16 +133,16 @@ const Page: React.FC = () => {
         >
           <div className="flex flex-col">
             <div className="mt-10">
-            <div className="w-full flex flex-col justify-center items-center">
-              <Image
-                className="hover:scale-105 transition-transform duration-300 mb-8"
-                src={NOIMask}
-                alt="maskImage"
-                width={650}
-                height={500}
-                style={{ zIndex: 21 }}
-              />
-            </div>
+              <div className="w-full flex flex-col justify-center items-center">
+                <Image
+                  className="hover:scale-105 transition-transform duration-300 mb-8"
+                  src={NOIMask}
+                  alt="maskImage"
+                  width={650}
+                  height={500}
+                  style={{ zIndex: 21 }}
+                />
+              </div>
               <h2 className="text-4xl font-bold text-center mb-5 font-horus text-gold">
                 Registration | Student
               </h2>
@@ -297,53 +297,68 @@ const Page: React.FC = () => {
                     </span>
                   )}
                 </label>
-
-                <h2 className="text-2xl font-bold mt-24 sm:mt-24 md:mt-8 text-gold">
-                  School Information
-                </h2>
-                <label className="block mb-5 flex flex-col justify-center items-center">
-                  <span className="text-gold mt-8">School Name</span>
-                  <input
-                    name="schoolName"
-                    type="text"
-                    placeholder="School name"
-                    style={{ zIndex: 21 }}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={values.schoolName}
-                    className={`mt-1 block w-3/4 rounded-md border ${
-                      errors.schoolName && touched.schoolName
-                        ? "border-red-500"
-                        : "border-gray-300"
-                    } shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3`}
-                  />
-                  {errors.schoolName && touched.schoolName && (
-                    <span className="text-red-500 text-sm mt-1">
-                      {errors.schoolName}
+                <label>
+                  <label className="block mb-5 flex flex-col justify-center items-center">
+                    <h2 className="text-2xl font-bold my-8 text-gold mt-16 sm:mt-4 md:mt-7">
+                      Proof Document Type
+                    </h2>
+                    <span className="text-gold ">Document Type</span>
+                    <select
+                      name="documentType"
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      style={{ zIndex: 21 }}
+                      value={values.documentType}
+                      className={`mt-1 block w-3/4 rounded-md border ${
+                        errors.documentType && touched.documentType
+                          ? "border-red-500"
+                          : "border-gray-300"
+                      } shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3`}
+                    >
+                      <option value="">Select Document Type</option>
+                      <option value="nic">NIC</option>
+                      <option value="postal_id">Postal ID</option>
+                      <option value="passport">Passport</option>
+                      <option value="letter">Letter certified by school</option>
+                      <option value="birth_certificate">
+                        Birth Certificate
+                      </option>
+                    </select>
+                    {errors.documentType && touched.documentType && (
+                      <span className="text-red-500 text-sm mt-1">
+                        {errors.documentType}
+                      </span>
+                    )}
+                  </label>
+                  <label className="block mb-5 flex flex-col justify-center items-center">
+                    <span className="text-gold mb-2">
+                      Document (.pdf format preferred)
                     </span>
-                  )}
-                </label>
-                <label className="block mb-5 flex flex-col justify-center items-center">
-                  <span className="text-gold">School Address</span>
-                  <input
-                    name="schoolAddress"
-                    type="text"
-                    placeholder="School address"
-                    style={{ zIndex: 21 }}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={values.schoolAddress}
-                    className={`mt-1 block w-3/4 rounded-md border ${
-                      errors.schoolAddress && touched.schoolAddress
-                        ? "border-red-500"
-                        : "border-gray-300"
-                    } shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3`}
-                  />
-                  {errors.schoolAddress && touched.schoolAddress && (
-                    <span className="text-red-500 text-sm mt-1">
-                      {errors.schoolAddress}
-                    </span>
-                  )}
+                    <input
+                      style={{ zIndex: 21 }}
+                      name="document"
+                      type="file"
+                      onChange={handleFileChange}
+                      onBlur={handleBlur}
+                      // value={documentURL}
+                      className={`mt-1 block w-3/4 rounded-md border w-3/4 p-2 bg-white text-black border z-21 rounded ${
+                        documentURL == "" && touched.document
+                          ? "border-red-500"
+                          : "border-gray-300"
+                      } shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3`}
+                    />
+                    {anyFile === null && touched.document ? (
+                      <span className="text-red-500 text-sm mt-1">
+                        Required
+                      </span>
+                    ) : (
+                      fileError && (
+                        <span className="text-red-500 text-sm mt-1">
+                          {fileError}
+                        </span>
+                      )
+                    )}
+                  </label>
                 </label>
               </div>
 
@@ -463,61 +478,51 @@ const Page: React.FC = () => {
                     </span>
                   )}
                 </label>
+                <h2 className="text-2xl font-bold mt-24 sm:mt-24 md:mt-12 text-gold">
+                  School Information
+                </h2>
                 <label className="block mb-5 flex flex-col justify-center items-center">
-                  <h2 className="text-2xl font-bold my-8 text-gold mt-16 sm:mt-4 md:mt-7">
-                    Proof Document Type
-                  </h2>
-                  <span className="text-gold ">Document Type</span>
-                  <select
-                    name="documentType"
+                  <span className="text-gold mt-8">School Name</span>
+                  <input
+                    name="schoolName"
+                    type="text"
+                    placeholder="School name"
+                    style={{ zIndex: 21 }}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    style={{ zIndex: 21 }}
-                    value={values.documentType}
+                    value={values.schoolName}
                     className={`mt-1 block w-3/4 rounded-md border ${
-                      errors.documentType && touched.documentType
-                        ? "border-red-500"
-                        : "border-gray-300"
-                    } shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3`}
-                  >
-                    <option value="">Select Document Type</option>
-                    <option value="nic">NIC</option>
-                    <option value="postal_id">Postal ID</option>
-                    <option value="passport">Passport</option>
-                    <option value="letter">Letter certified by school</option>
-                    <option value="birth_certificate">Birth Certificate</option>
-                  </select>
-                  {errors.documentType && touched.documentType && (
-                    <span className="text-red-500 text-sm mt-1">
-                      {errors.documentType}
-                    </span>
-                  )}
-                </label>
-                <label className="block mb-5 flex flex-col justify-center items-center">
-                  <span className="text-gold mb-2">
-                    Document (.pdf format preferred)
-                  </span>
-                  <input
-                    style={{ zIndex: 21 }}
-                    name="document"
-                    type="file"
-                    onChange={handleFileChange}
-                    onBlur={handleBlur}
-                    // value={documentURL}
-                    className={`mt-1 block w-3/4 rounded-md border w-3/4 p-2 bg-white text-black border z-21 rounded ${
-                      documentURL == "" && touched.document
+                      errors.schoolName && touched.schoolName
                         ? "border-red-500"
                         : "border-gray-300"
                     } shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3`}
                   />
-                  {anyFile === null && touched.document ? (
-                    <span className="text-red-500 text-sm mt-1">Required</span>
-                  ) : (
-                    fileError && (
-                      <span className="text-red-500 text-sm mt-1">
-                        {fileError}
-                      </span>
-                    )
+                  {errors.schoolName && touched.schoolName && (
+                    <span className="text-red-500 text-sm mt-1">
+                      {errors.schoolName}
+                    </span>
+                  )}
+                </label>
+                <label className="block mb-5 flex flex-col justify-center items-center">
+                  <span className="text-gold">School Address</span>
+                  <input
+                    name="schoolAddress"
+                    type="text"
+                    placeholder="School address"
+                    style={{ zIndex: 21 }}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.schoolAddress}
+                    className={`mt-1 block w-3/4 rounded-md border ${
+                      errors.schoolAddress && touched.schoolAddress
+                        ? "border-red-500"
+                        : "border-gray-300"
+                    } shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3`}
+                  />
+                  {errors.schoolAddress && touched.schoolAddress && (
+                    <span className="text-red-500 text-sm mt-1">
+                      {errors.schoolAddress}
+                    </span>
                   )}
                 </label>
               </div>

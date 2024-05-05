@@ -20,7 +20,7 @@ const Herosec: React.FC = () => {
 
   const state =
     String(status) === "authenticated" ? "authenticated" : "unauthenticated";
-  const name = String(profileData?.given_name);
+  const name = String(profileData?.given_name || "NOI User");
 
   useEffect(() => {
     if (status !== "loading") {

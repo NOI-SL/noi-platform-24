@@ -41,6 +41,7 @@ const Page: React.FC = () => {
 
   return (
     <>
+    {/* results are not yet published through NOI site. To DO*/}
       {/* <motion.main
         // initial={{ opacity: 0, y: 50 }}
         // animate={{ opacity: 1, y: 0 }}

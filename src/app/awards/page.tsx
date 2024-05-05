@@ -73,26 +73,12 @@ const Page: React.FC = () => {
                   Under 16
                 </h1>
                 <p className="text-gold text-center">Gold | Silver | Bronze</p>
-                <Image
-                  className="py-5"
-                  src={awardImages}
-                  alt="Image 2"
-                  width={200}
-                  height={200}
-                />
               </div>
               <div className="flex flex-col w-full justify-center items-center sm:w-full md:w-3/4 lg:w-1/2 pt-10 sm:pt-10 md:pt-20 lg:pt-20">
                 <h1 className="text-1xl font-bold text-white text-center">
                   Under 20
                 </h1>
                 <p className="text-gold text-center">Gold | Silver | Bronze</p>
-                <Image
-                  className="py-5"
-                  src={awardImages}
-                  alt="Image 2"
-                  width={200}
-                  height={200}
-                />
               </div>
             </div>
           </motion.main>
@@ -112,7 +98,9 @@ const Page: React.FC = () => {
                   <h2 className="text-1xl text-gold text-center sm:text-center md:text-center lg:text-center ">
                     {award.title}
                   </h2>
-                  <p className="text-center sm:text-center md:text-center lg:text-center">{award.description}</p>
+                  <p className="text-center sm:text-center md:text-center lg:text-center">
+                    {award.description}
+                  </p>
                 </div>
               ))}
 

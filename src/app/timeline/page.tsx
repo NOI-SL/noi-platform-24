@@ -36,25 +36,26 @@ const Page: React.FC = () => {
         "April Monthly Contest with APIO Selection Test. Served as the Selection Test to select the Sri Lankan Delegation for APIO 2024.",
     },
     {
-      date: "20th May, 2024",
-      event: "May Monthly Contest",
-      description: "",
+      date: "26th May, 2024",
+      event: "May Monthly Contest | National Olympiad in Informatics - Qualifier Round",
+      description: "Conducted online through Hackerrank",
     },
     {
-      date: "4th June, 2024",
-      event: "Qualifier Round",
-      description: "",
-    },
-    {
-      date: "To be announced",
+      date: "5th June, 2024",
       event: "Day 01 - Final Round of NOI 2024",
-      description: "Final Round of NOI 2024, held at the UCSC Premises",
+      description: "Final Round of NOI 2024, held at the UCSC Premises. Four students will be selected to represent Sri Lanka at the International Olympiad in Informatics 2024.",
     },
     {
-      date: "To be announced",
+      date: "6th June, 2024",
       event: "Day 02 - Final Round of NOI 2024",
       description:
         "Final Round of NOI 2024, held at the UCSC Premises. Four students will be selected to represent Sri Lanka at the International Olympiad in Informatics 2024.",
+    },
+    {
+      date: "TBD",
+      event: "Training after National Rounds",
+      description:
+        "Post-national round training on advanced topics, problem-solving, and mock contests. Led by experienced trainers and former IOI participants.",
     },
     {
       date: "1st september - 8th September 2024",

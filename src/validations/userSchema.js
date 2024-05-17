@@ -18,6 +18,7 @@ const userSchema = yup.object().shape({
     .string()
     .required("Required")
     .oneOf(["male", "female", "other"], "Please Select Your Gender"),
+  hackerrank: yup.string().required("Required"),
   schoolName: yup.string().required("Required"),
   schoolAddress: yup.string().required("Required"),
   addressLine1: yup.string().required("Required"),

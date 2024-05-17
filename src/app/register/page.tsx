@@ -6,7 +6,7 @@ import Footer from "@/components/footer";
 import Particles from "@/components/particles/ParticleDesign";
 import { useFormik } from "formik";
 import userSchema from "@/validations/userSchema";
-import { createUser } from "@/app/api/register/register";
+import { createUser } from "@/app/api/register/register"; 
 import { FormikValues } from "formik";
 import firebase from "firebase/compat/app";
 import "firebase/compat/storage";
@@ -40,6 +40,7 @@ const Page: React.FC = () => {
       fullName: "",
       birthdate: "",
       gender: "",
+      hackerrank: "",
       schoolName: "",
       schoolAddress: "",
       addressLine1: "",
@@ -297,6 +298,30 @@ const Page: React.FC = () => {
                     </span>
                   )}
                 </label>
+
+                <label className="block mb-5 flex flex-col justify-center items-center">
+                  <span className="text-gold">HackerRank Username</span>
+                  <input
+                    name="hackerrank"
+                    type="text"
+                    placeholder="Your HackerRank username"
+                    style={{ zIndex: 21 }}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.hackerrank}
+                    className={`mt-1 block w-3/4 rounded-md border ${
+                      errors.hackerrank && touched.hackerrank
+                        ? "border-red-500"
+                        : "border-gray-300"
+                    } shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 py-2 px-3`}
+                  />
+                  {errors.hackerrank && touched.hackerrank && (
+                    <span className="text-red-500 text-sm mt-1">
+                      {errors.hackerrank}
+                    </span>
+                  )}
+                </label>
+
                 <label>
                   <label className="block mb-5 flex flex-col justify-center items-center">
                     <h2 className="text-2xl font-bold my-8 text-gold mt-16 sm:mt-4 md:mt-7">

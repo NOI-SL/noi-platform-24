@@ -70,6 +70,7 @@ export async function createUser(formData: any) {
       },
       birthdate: formData.birthdate,
       gender: genderEnum,
+      hackerrank : formData.hackerrank,
       school: {
         name: formData.schoolName,
         address: formData.schoolAddress,

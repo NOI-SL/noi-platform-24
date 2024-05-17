@@ -20,6 +20,7 @@ const userSchema = new mongoose.Schema({
   },
   birthdate: { type: Date, required: true },
   gender: { type: String, enum: gender, required: true },
+  hackerrank: { type: String, required: true },
   school: {
     name: { type: String, required: true },
     address: { type: String, required: true },

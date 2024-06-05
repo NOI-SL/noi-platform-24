@@ -41,12 +41,12 @@ const Page: React.FC = () => {
       description: "Conducted online through Hackerrank",
     },
     {
-      date: "8th June, 2024 | 10AM - 3PM",
+      date: "TBD",
       event: "Day 01 - Final Round of NOI 2024",
       description: "Final Round of NOI 2024, held at the UCSC labs. Four students will be selected to represent Sri Lanka at the International Olympiad in Informatics 2024.",
     },
     {
-      date: "9th June, 2024 | 10AM - 3PM",
+      date: "TBD",
       event: "Day 02 - Final Round of NOI 2024",
       description:
         "Final Round of NOI 2024, held at the UCSC labs. Four students will be selected to represent Sri Lanka at the International Olympiad in Informatics 2024.",

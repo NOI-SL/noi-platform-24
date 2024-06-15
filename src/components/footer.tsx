@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
       >
         <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
           <div className="md:flex md:justify-between flex-wrap">
-            <div className="mb-6 md:mb-0">
+            {/* <div className="mb-6 md:mb-0">
               <div className="flex items-center">
                 <Link href="/" style={{ zIndex: 21 }} passHref>
                   <Image
@@ -50,7 +50,7 @@ const Footer: React.FC = () => {
                   <Image src={ACMLogo} width={100} height={50} alt="ACM Logo" />
                 </Link>
               </div>
-            </div>
+            </div> */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-6">
               <div className="mb-6 md:mb-0">
                 <h2 className="mb-6 text-white font-semibold text-gold-900 uppercase dark:text-gold text-center md:text-left">
@@ -109,7 +109,7 @@ const Footer: React.FC = () => {
                   </li> */}
                 </ul>
               </div>
-              <div className="mb-6 md:mb-0">
+              {/* <div className="mb-6 md:mb-0">
                 <h2 className="mb-6 text-white font-semibold text-gold-900 uppercase dark:text-gold  text-center md:text-left">
                   Partners
                 </h2>
@@ -148,8 +148,8 @@ const Footer: React.FC = () => {
                     </Link>
                   </li>
                 </ul>
-              </div>
-              <div className="w-full mb-6 md:mb-0">
+              </div> */}
+              {/* <div className="w-full mb-6 md:mb-0">
                 <h2 className="mb-6 text-white  text-center md:text-left font-semibold text-gold-900 uppercase dark:text-gold">
                   Contact
                 </h2>
@@ -175,7 +175,7 @@ const Footer: React.FC = () => {
                     </address>
                   </li>
                 </ul>
-              </div>
+              </div> */}
             </div>
           </div>
           <hr className="border-gold my-6 border-gold-200 sm:mx-auto dark:border-gold-700 lg:my-8" />

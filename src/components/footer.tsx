@@ -12,7 +12,6 @@ const Footer: React.FC = () => {
       <footer
         className="w-full bg-gradient-to-br from-black to-darkgreen p-4 sm:p-8 md:p-12 lg:p-16"
         style={{ zIndex: 1 }}
-        
       >
         <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
           <div className="md:flex md:justify-between flex-wrap">
@@ -51,13 +50,13 @@ const Footer: React.FC = () => {
                 </Link>
               </div>
             </div> */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-6">
-              <div className="mb-6 md:mb-0">
-                <h2 className="mb-6 text-white font-semibold text-gold-900 uppercase dark:text-gold text-center md:text-left">
+            <div className="w-full">
+              <div className="mb-6 md:mb-0 w-full flex flex-col">
+                {/* <h2 className="mb-6 text-white font-semibold text-gold-900 uppercase dark:text-gold text-center md:text-center w-full">
                   Pages
-                </h2>
-                <ul className="text-gold-500 dark:text-gold-400 font-medium  text-center md:text-left">
-                  <li className="mb-2  text-center md:text-left">
+                </h2> */}
+                <ul className="text-gold-500 dark:text-gold-400 font-medium  text-center md:text-left w-full flex flex-col md:flex-row justify-center items-center">
+                  <li className="mb-2  text-center md:text-center w-full md:w-1/6">
                     <Link
                       href="/howtocompete"
                       className="text-gold"
@@ -66,7 +65,7 @@ const Footer: React.FC = () => {
                       How to Compete
                     </Link>
                   </li>
-                  <li className="mb-2  text-center md:text-left">
+                  <li className="mb-2  text-center md:text-center  w-full md:w-1/6">
                     <Link
                       href="/resources"
                       className="text-gold"
@@ -75,7 +74,7 @@ const Footer: React.FC = () => {
                       Resources
                     </Link>
                   </li>
-                  <li className="mb-2  text-center md:text-left">
+                  <li className="mb-2  text-center md:text-center  w-full md:w-1/6">
                     <Link
                       href="/awards"
                       className="text-gold"
@@ -84,7 +83,7 @@ const Footer: React.FC = () => {
                       Awards
                     </Link>
                   </li>
-                  <li className="mb-2  text-center md:text-left">
+                  <li className="mb-2  text-center md:text-center  w-full md:w-1/6">
                     <Link
                       href="/timeline"
                       className="text-gold"
@@ -93,7 +92,7 @@ const Footer: React.FC = () => {
                       Timeline
                     </Link>
                   </li>
-                  <li className="mb-2  text-center md:text-left">
+                  <li className="mb-2  text-center md:text-center  w-full md:w-1/6">
                     <Link
                       href="/register"
                       className="text-gold"

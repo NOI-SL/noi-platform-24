@@ -12,6 +12,10 @@ import LoadingScreen from "@/components/loadingscreen";
 import PrimButtwo from "./ui/buttontwo";
 import Particles from "@/components/particles/ParticleDesign";
 import Mobilenav from "./mobilenav";
+import deera from "@/assets/img/deera.jpeg";
+import mindiya from "@/assets/img/mindiya.jpeg";
+import malitha from "@/assets/img/malitha.jpeg";
+import praveen from "@/assets/img/praveen.jpeg";
 
 const Herosec: React.FC = () => {
   const [isSplineLoaded, setIsSplineLoaded] = useState<boolean>(false);
@@ -41,9 +45,9 @@ const Herosec: React.FC = () => {
 
   return (
     <>
-      <main className="absolute min-h-screen w-full flex flex-col items-center justify-center text-center overflow-hidden bg-gradient-to-br from-black to-darkgreen">
+      <main className="absolute min-h-screen h-auto w-full flex flex-col items-center justify-center text-center overflow-hidden bg-gradient-to-br from-black to-darkgreen">
         <Navbar />
-        <div className="flex flex-col items-center justify-center w-full p-10 sm:p-10 md:p-0 h-screen text-accent">
+        <div className="flex flex-col items-center justify-center w-full p-10 sm:p-10 md:p-0 h-auto md:h-1.1-screen text-accent">
           <Particles />
           {isSplineLoaded && (
             <>
@@ -73,15 +77,15 @@ const Herosec: React.FC = () => {
                       height={500}
                       style={{ zIndex: 50 }}
                     />
-                    <p className="text-sm text-white md:text-lg lg:text-[25px] tracking-widest font-sans lg:mb-2">
+                    <p className="text-sm text-gold md:text-lg lg:text-[25px] tracking-widest font-sans lg:mb-2">
                       <b>National Olympiad In Informatics</b>
                     </p>
                     {/* <p className="text-sm text-gold md:text-lg lg:text-[15px] tracking-widest font-sans lg:mb-2">
                       <b>ජාතික පරිගණක විද්‍යා ඔලිම්පියාඩ් තරඟාවලිය</b>
                     </p> */}
-                    <p className="text-sm text-gold md:text-lg lg:text-[20px] tracking-widest font-sans lg:mb-2">
+                    {/* <p className="text-sm text-gold md:text-lg lg:text-[20px] tracking-widest font-sans lg:mb-2">
                       <b>2024</b>
-                    </p>
+                    </p> */}
                   </div>
                 </motion.div>
               </div>
@@ -97,17 +101,116 @@ const Herosec: React.FC = () => {
                 }}
                 className="items-center z-10 font-horus"
               >
-                {state === "authenticated" ? (
+                {/* {state === "authenticated" ? (
                   // <PrimButtwo  name="Continuing to Profile" link="/profile"  />
                   <PrimButtwo name="Register Now" link="/register" />
                 ) : (
                   // <PrimBut name="Continue to portal" link="/" />
                   <PrimButtwo name="Register Now" link="/register" />
-                )}
+                )} */}
                 {/* <p className='font-sans'>If you haven't registered yet please register now</p> */}
               </motion.div>
             </>
           )}
+          <div className="w-full h-auto md:h-[300px] flex flex-col justify-center items-center">
+            <h1 className="text-sm text-white md:text-lg lg:text-[15px] tracking-widest font-sans lg:mb-2">
+              <b>NOI 2024 Team Sri Lanka</b>
+            </h1>
+            <div className="flex flex-col sm:flex-col md:flex-row w-3/4 justify-center items-center">
+              <motion.div
+                className="w-3/4 md:w-1/4  h-3/4 m-4 md:m-10 flex flex-col justify-center items-center transform transition-transform duration-300 hover:scale-110"
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{
+                  duration: 0.5,
+                  delay: 0.2,
+                  type: "spring",
+                  stiffness: 100,
+                }}
+                style={{ zIndex: 21 }}
+              >
+                <Image
+                  src={mindiya}
+                  alt="Mindiya Karunasinghe"
+                  height={150}
+                  width={150}
+                  className="rounded-full"
+                ></Image>
+                <p className="text-gold text-sm mt-2">
+                  <b>Mindiya Karunasinghe</b>
+                </p>
+              </motion.div>
+              <motion.div
+                className="w-3/4 md:w-1/4  h-3/4 m-4 md:m-10 flex flex-col justify-center items-center transform transition-transform duration-300 hover:scale-110"
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{
+                  duration: 0.5,
+                  delay: 0.2,
+                  type: "spring",
+                  stiffness: 100,
+                }}
+                style={{ zIndex: 21 }}
+              >
+                <Image
+                  src={deera}
+                  alt="Deera Wijesundara"
+                  height={150}
+                  width={150}
+                  className="rounded-full"
+                ></Image>
+                <p className="text-gold text-sm mt-2">
+                  <b>Deera Wijesundara</b>
+                </p>
+              </motion.div>
+              <motion.div
+                className="w-3/4 md:w-1/4  h-3/4 m-4 md:m-10 flex flex-col justify-center items-center transform transition-transform duration-300 hover:scale-110"
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{
+                  duration: 0.5,
+                  delay: 0.2,
+                  type: "spring",
+                  stiffness: 100,
+                }}
+                style={{ zIndex: 21 }}
+              >
+                <Image
+                  src={praveen}
+                  alt="Praveen Charuka"
+                  height={150}
+                  width={150}
+                  className="rounded-full"
+                ></Image>
+                <p className="text-gold text-sm mt-2">
+                  <b>Praveen Charuka</b>
+                </p>
+              </motion.div>
+              <motion.div
+                className="w-3/4 md:w-1/4  h-3/4 m-4 md:m-10 flex flex-col justify-center items-center transform transition-transform duration-300 hover:scale-110"
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{
+                  duration: 0.5,
+                  delay: 0.2,
+                  type: "spring",
+                  stiffness: 100,
+                }}
+                style={{ zIndex: 21 }}
+              >
+                <Image
+                  src={malitha}
+                  alt="Malitha Bandara"
+                  height={150}
+                  width={150}
+                  className="rounded-full"
+                ></Image>
+                <p className="text-gold text-sm mt-2">
+                  <b>Malitha Bandara</b>
+                </p>
+              </motion.div>
+            </div>
+          </div>
         </div>
         {/* <Mobilenav /> */}
         <Footer />

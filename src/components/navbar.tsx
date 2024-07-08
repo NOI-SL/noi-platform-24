@@ -34,10 +34,10 @@ const components: Component[] = [
     title: "IOI 2024",
     href: "https://www.ioi2024.eg/",
   },
-  {
-    title: "Register Now",
-    href: "/register",
-  },
+  // {
+  //   title: "Register Now",
+  //   href: "/register",
+  // },
 ];
 
 const Navbar: React.FC = () => {

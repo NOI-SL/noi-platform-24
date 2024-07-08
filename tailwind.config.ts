@@ -18,6 +18,9 @@ const config = {
       },
     },
     extend: {
+      height: {
+        '1.1-screen': '110vh',
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

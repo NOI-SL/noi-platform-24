@@ -92,7 +92,7 @@ const Footer: React.FC = () => {
                       Timeline
                     </Link>
                   </li>
-                  <li className="mb-2  text-center md:text-center  w-full md:w-1/6">
+                  {/* <li className="mb-2  text-center md:text-center  w-full md:w-1/6">
                     <Link
                       href="/register"
                       className="text-gold"
@@ -100,7 +100,7 @@ const Footer: React.FC = () => {
                     >
                       Register
                     </Link>
-                  </li>
+                  </li> */}
                   {/* <li className="mb-4 text-left">
                     <Link href="/results" className="text-gold">
                       Results

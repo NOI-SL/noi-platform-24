@@ -15,36 +15,46 @@ import Particles from "@/components/particles/ParticleDesign"
 const Page: React.FC = () => {
     let items = [
         {
-            date: "February, 2025",
+            date: "February 13, 2025",
             event: "Registrations Openes for NOI 2025",
             description: "",
         },
         {
-            date: "April, 2025",
+            date: "March 31, 2025",
+            event: "Registrations Close for NOI 2025",
+            description: "",
+        },
+        {
+            date: "April 5, 2025",
+            event: "Deadline for Submission of Proof of Qualification for Codeforces",
+            description: "",
+        },
+        {
+            date: "April 5, 2025",
             event: "Qualifier Contest for NOI 2025",
             description:
                 "An online qualifier contest will be conducted to select promising students who will advance to compete in the National Olympiad in Informatics (NOI) 2025.",
         },
         {
-            date: "April 2025",
-            event: "Practice Contest for NOI 2025",
+            date: "April 19, 2025",
+            event: "NOI 2025 Day 1",
             description:
-                "An online practice contest will be conducted to provide students with an opportunity to experience the NOI 2025 competition format and enhance their problem-solving skills.",
+                "Day 1 of NOI 2025 will be conducted at the end of April.",
         },
         {
-            date: "May 2025",
-            event: "NOI 2025 (Day 1 & Day 2)",
+            date: "April 26, 2025",
+            event: "NOI 2025 Day 2",
             description:
-                "The National Olympiad in Informatics (NOI) 2025 competition will take place at the end of May. The event will consist of two contest days and will coincide with the Asia-Pacific Informatics Olympiad (APIO).",
+                "Day 2 of NOI 2025 will be conducted at the end of April.",
         },
         {
-            date: "June - August, 2025",
+            date: "May - June, 2025",
             event: "Training Program",
             description:
                 "The selected national team will undergo an intensive training program, focusing on algorithms, competitive programming techniques, and problem-solving strategies to prepare for the International Olympiad in Informatics (IOI) 2025.",
         },
         {
-            date: "August, 2025",
+            date: "July 27 - Aug 3, 2025",
             event: "International Olympiad in Informatics (IOI) 2025",
             description:
                 "The Sri Lankan national team will represent the country at the International Olympiad in Informatics 2025, which will be held in Bolivia. ",

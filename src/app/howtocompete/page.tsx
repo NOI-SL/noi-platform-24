@@ -13,6 +13,7 @@ import img2021 from "@/assets/img/2021-team.jpg"
 import img2020 from "@/assets/img/2020-team.png"
 import img2019 from "@/assets/img/2019-team.jpg"
 import cplusplus from "@/assets/img/cplusplus.png"
+import programStructure from "@/assets/img/program-structure.png"
 import NOIMask from "@/assets/img/NOIMaskp.png"
 import Footer from "@/components/footer"
 import Particles from "@/components/particles/ParticleDesign"
@@ -101,54 +102,81 @@ const HowToCompete: React.FC = () => {
                             Eligibility
                         </h2>
                         <p className="text-white w-full sm:w-full md:w-3/4 lg:w-full mb-2 text-center sm:text-center md:text-justify lg:text-justify">
-                            The National Olympiad in Informatics (NOI) is open
-                            to secondary school students who are enrolled in a
-                            school. To participate, contestants must not be
-                            older than 20 years as of July 1, 2025.
+                            Sri Lankans who are not older than 20 yrs by July 1, 2025,
+                            and enrolled in a primary or secondary school (government / private) as a student are eligible for NOI.
                         </p>
 
                         <h1 className="text-lg font-bold mb-5 text-gold text-center sm:text-center md:text-center lg:text-center text-gold w-full sm:w-3/4 md:w-3/4 lg:w-full mb-5">
                             Competition Structure
                         </h1>
-                        <p className="text-white w-3/4 sm:w-3/4 md:w-3/4 lg:w-full mb-2 text-center sm:text-center md:text-justify lg:text-justify">
-                            The program offers several opportunities for
-                            students to showcase their skills and qualify for
-                            the National Olympiad in Informatics.
-                        </p>
-                        <p className="text-white w-3/4 sm:w-3/4 md:w-3/4 lg:w-full mb-2 text-center sm:text-center md:text-justify lg:text-justify font-bold">
-                            Meeting the qualification criteria of at least one
-                            of the following options will qualify you for the
-                            National Olympiad in Informatics.
-                        </p>
+
+                        <Image
+                            style={{ zIndex: 21 }}
+                            src={programStructure}
+                            alt="Program Structure"
+                        />
+                        <br/>
                         <div className="flex flex-col w-3/4 sm:w-3/4 md:w-full lg:w-full mx-auto">
+                            <div className="mb-4">
+                                <h3 className="text-md font-medium mb-2 text-gold">
+                                    National Olympiad in Informatics (NOI)
+                                </h3>
+                                <p className="text-white">
+                                    National Olympiad in Informatics is a
+                                    two-day on-site competition totaling 10
+                                    hours. Contestants are evaluated on
+                                    challenging problem-solving tasks using C++.
+                                    The top four performers with non-zero
+                                    scores are selected to represent Sri Lanka at
+                                    the International Olympiad in Informatics (IOI) 2025, Bolivia.
+
+                                    <br/><br/>
+
+                                    To participate in NOI, individuals must fulfill the eligibility
+                                    criteria above AND also fulfill one of the qualification paths below.
+                                </p>
+                            </div>
                             <div className="mb-4 mt-4">
                                 <h3 className="text-md font-medium mb-2 text-gold">
-                                    Qualification Options
+                                    Qualifying for National Olympiad in Informatics (NOI)
                                 </h3>
+                                <p className="text-white">
+                                    There are 5 paths through which an eligible (see eligibility criteria above)
+                                    individual can become qualified to participate in
+                                    National Olympiad in Informatics 2025.
+                                    <br/>
+                                    Meeting the qualification criteria of at least one
+                                    of the following paths will qualify you for the
+                                    National Olympiad in Informatics.
+                                    <br/>
+                                    It is recommended that you do the NOI Online Qualifier unless you are already
+                                    qualified through one of the other paths.
+                                </p>
                             </div>
                             <ul className="list-disc pl-5 mb-4">
-                                <li>
-                                    <h3 className="text-md font-medium mb-2 mt-2 text-white text-gold">
-                                        Codeforces Weekly Contests
-                                    </h3>
-                                    <p className="text-white">
-                                        Participants must maintain a minimum
-                                        rating of 1400 or higher in two rated
-                                        Codeforces contests held within three
-                                        months leading up to the NOI
-                                        registration deadline in 2025.
-                                    </p>
-                                </li>
                                 <li>
                                     <h3 className="text-md font-medium mb-2 mt-2 text-white text-gold">
                                         NOI Online Qualifier
                                     </h3>
                                     <p className="text-white">
-                                        Participants must compete and rank among
-                                        the top eight contestants from Sri Lanka
-                                        (excluding contestants already qualified
-                                        through another path), provided they
-                                        achieve non-zero scores in the round.
+                                        This is an online competitive programming contest held in April 2025.
+                                        <br/>
+                                        Top 8 performers in NOI Online Qualifier round (excluding contestants already
+                                        qualified through another path), with a non-zero score are qualified for NOI
+                                        through this path.
+                                        <br/>
+                                        All candidates registered through the website will receive notification via
+                                        email on the dates and the instructions to participate in the NOI Online
+                                        Qualifier.
+                                    </p>
+                                </li>
+                                <li>
+                                    <h3 className="text-md font-medium mb-2 mt-2 text-white text-gold">
+                                        Codeforces Weekly Contests
+                                    </h3>
+                                    <p className="text-white">
+                                        Individuals rated above 1400 following at least 2 rated Codeforeces contests between Jan 1, 2025 to
+                                        March 31, 2025 are qualified for NOI through this path.
                                     </p>
                                 </li>
                                 <li>
@@ -157,11 +185,8 @@ const HowToCompete: React.FC = () => {
                                         (NSSC)
                                     </h3>
                                     <p className="text-white">
-                                        Contestants must compete in the NSSC and
-                                        rank among the top six participants,
-                                        ensuring they have non-zero scores, in
-                                        the competition held prior to the
-                                        National Olympiad in Informatics (NOI).
+                                        Top 6 performers with a non-zero score in the most recent NSSC held prior to the
+                                        National Olympiad in Informatics (NOI) are qualified for NOI through this path.
                                     </p>
                                 </li>
                                 <li>
@@ -170,62 +195,48 @@ const HowToCompete: React.FC = () => {
                                         Competition
                                     </h3>
                                     <p className="text-white">
-                                        Participants must compete in the YCS
-                                        competition and rank among the top three
-                                        contestants in the respective age
-                                        categories, in the most recent YCS
-                                        competition held prior to the NOI.
+                                        Individuals who rank among the top 3
+                                        in the respective age categories, in the most recent YCS
+                                        competition held prior to the NOI
+                                        are qualified for NOI through this path.
+                                    </p>
+                                </li>
+                                <li>
+                                    <h3 className="text-md font-medium mb-2 mt-2 text-white text-gold">
+                                        International Mathematical Olympiad (IMO)
+                                    </h3>
+                                    <p className="text-white">
+                                        Individuals who competed at the most recent IMO prior to NOI,
+                                        representing Sri Lanka are qualified for NOI through this path.
                                     </p>
                                 </li>
                             </ul>
-                            <div className="mb-4 mt-4">
-                                <h3 className="text-md font-medium mb-2 text-gold">
-                                    International Mathematical Olympiad
-                                </h3>
-                                <p className="text-white">
-                                    Contestants must be one of the Sri Lankan
-                                    delegates who has competed at the most
-                                    recent IMO prior to the NOI.
-                                </p>
-                            </div>
-                            <div className="mb-4">
-                                <h3 className="text-md font-medium mb-2 text-gold">
-                                    National Olympiad in Informatics (NOI)
-                                    Elimination Round
-                                </h3>
-                                <p className="text-white">
-                                    If more than 30 contestants successfully
-                                    meet the preliminary qualification criteria
-                                    from one or more of the above options, an
-                                    elimination round will be held to further
-                                    filter participants down to 30. This
-                                    in-person competition will select the top 30
-                                    contestants with non-zero scores to move
-                                    forward.
-                                </p>
-                            </div>
-                            <div className="mb-4">
-                                <h3 className="text-md font-medium mb-2 text-gold">
-                                    National Olympiad in Informatics (NOI)
-                                </h3>
-                                <p className="text-white">
-                                    The top 30 qualifiers advance to the NOI, a
-                                    two-day in-person competition totaling 10
-                                    hours. Contestants are evaluated on
-                                    challenging problem-solving tasks using C++,
-                                    and the top four performers with non-zero
-                                    scores are selected to represent their
-                                    country at the IOI.
-                                </p>
-                            </div>
+                            {/*<div className="mb-4">*/}
+                            {/*    <h3 className="text-md font-medium mb-2 text-gold">*/}
+                            {/*        National Olympiad in Informatics (NOI)*/}
+                            {/*        Elimination Round*/}
+                            {/*    </h3>*/}
+                            {/*    <p className="text-white">*/}
+                            {/*        If more than 30 contestants successfully*/}
+                            {/*        meet the preliminary qualification criteria*/}
+                            {/*        from one or more of the above options, an*/}
+                            {/*        elimination round will be held to further*/}
+                            {/*        filter participants down to 30. This*/}
+                            {/*        in-person competition will select the top 30*/}
+                            {/*        contestants with non-zero scores to move*/}
+                            {/*        forward.*/}
+                            {/*    </p>*/}
+                            {/*</div>*/}
                             <div className="mb-4">
                                 <h3 className="text-md font-medium mb-2 text-gold">
                                     International Olympiad in Informatics (IOI)
                                 </h3>
                                 <p className="text-white">
-                                    The final stage involves the top four
-                                    contestants competing at the IOI, an
-                                    internationally renowned event that brings
+                                    The top four performers with non-zero
+                                    scores are selected to represent Sri Lanka at
+                                    the International Olympiad in Informatics (IOI) 2025, Bolivia.
+
+                                    IOI is an internationally renowned event that brings
                                     together the best young computer scientists
                                     from across the globe.
                                 </p>

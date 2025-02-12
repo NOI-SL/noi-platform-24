@@ -105,6 +105,12 @@ const Herosec: React.FC = () => {
                                                 Informatics (IOI).
                                             </p>
                                         </div>
+                                        <div className="mt-8">
+                                            <PrimButtwo
+                                                name="Register Now"
+                                                link="https://forms.gle/G5BfW6SAJVpS3gCU8"
+                                            />
+                                        </div>
                                         {/* <p className="text-sm text-gold md:text-lg lg:text-[15px] tracking-widest font-sans lg:mb-2">
                       <b>ජාතික පරිගණක විද්‍යා ඔලිම්පියාඩ් තරඟාවලිය</b>
                     </p> */}

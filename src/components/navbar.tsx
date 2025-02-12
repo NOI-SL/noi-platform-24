@@ -30,6 +30,10 @@ const components: Component[] = [
         title: "IOI 2025",
         href: "https://www.ioi2025.bo/",
     },
+    {
+        title: "Register Now",
+        href: "https://forms.gle/G5BfW6SAJVpS3gCU8",
+    },
     // {
     //   title: "Register Now",
     //   href: "/register",

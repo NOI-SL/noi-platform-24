@@ -83,6 +83,15 @@ const Footer: React.FC = () => {
                                             Timeline
                                         </Link>
                                     </li>
+                                    <li className="mb-2  text-center md:text-center  w-full md:w-1/6">
+                                        <Link
+                                            href="https://forms.gle/G5BfW6SAJVpS3gCU8"
+                                            className="text-gold"
+                                            style={{ zIndex: 21 }}
+                                        >
+                                            Register Now
+                                        </Link>
+                                    </li>
                                     {/* <li className="mb-2  text-center md:text-center  w-full md:w-1/6">
                     <Link
                       href="/register"

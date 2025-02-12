@@ -23,9 +23,14 @@ interface Passpapers {
 const Page: React.FC = () => {
     const pastProblemsAndSolutions: Passpapers[] = [
         {
+            title: "IOI 2024 Materials",
+            description: "Find Materials",
+            link: "https://ioinformatics.org/page/ioi-2024/59",
+        },
+        {
             title: "IOI 2023 Materials",
             description: "Find Materials",
-            link: "https://ioi2023.hu/tasks/index.html",
+            link: "https://ioinformatics.org/page/ioi-2023/58",
         },
         {
             title: "IOI 2022 Materials",

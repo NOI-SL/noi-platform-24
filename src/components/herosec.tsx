@@ -107,8 +107,8 @@ const Herosec: React.FC = () => {
                                         </div>
                                         <div className="mt-8">
                                             <PrimButtwo
-                                                name="Register Now"
-                                                link="https://forms.gle/G5BfW6SAJVpS3gCU8"
+                                                name="Register for the qualifier round"
+                                                link="https://docs.google.com/forms/d/e/1FAIpQLScqNMAtWQ5DnkdVuBuWxnqgMQvZCchHe0hLdxAtfVZhYXx3lQ/viewform"
                                             />
                                         </div>
                                         {/* <p className="text-sm text-gold md:text-lg lg:text-[15px] tracking-widest font-sans lg:mb-2">

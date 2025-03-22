@@ -32,7 +32,7 @@ const components: Component[] = [
     },
     {
         title: "Register Now",
-        href: "https://forms.gle/G5BfW6SAJVpS3gCU8",
+        href: "https://docs.google.com/forms/d/e/1FAIpQLScqNMAtWQ5DnkdVuBuWxnqgMQvZCchHe0hLdxAtfVZhYXx3lQ/viewform",
     },
     // {
     //   title: "Register Now",

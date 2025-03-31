@@ -36,13 +36,13 @@ const Page: React.FC = () => {
                 "An online qualifier contest will be conducted to select promising students who will advance to compete in the National Olympiad in Informatics (NOI) 2025.",
         },
         {
-            date: "April 19, 2025",
+            date: "May 3, 2025",
             event: "NOI 2025 Day 1",
             description:
                 "Day 1 of NOI 2025 will be conducted at the end of April.",
         },
         {
-            date: "April 26, 2025",
+            date: "May 4, 2025",
             event: "NOI 2025 Day 2",
             description:
                 "Day 2 of NOI 2025 will be conducted at the end of April.",

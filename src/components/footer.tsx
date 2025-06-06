@@ -76,6 +76,15 @@ const Footer: React.FC = () => {
                                     </li>
                                     <li className="mb-2  text-center md:text-center  w-full md:w-1/6">
                                         <Link
+                                            href="/organizers"
+                                            className="text-gold"
+                                            style={{ zIndex: 21 }}
+                                        >
+                                            Organizers
+                                        </Link>
+                                    </li>
+                                    <li className="mb-2  text-center md:text-center  w-full md:w-1/6">
+                                        <Link
                                             href="/timeline"
                                             className="text-gold"
                                             style={{ zIndex: 21 }}

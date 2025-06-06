@@ -23,6 +23,10 @@ const components: Component[] = [
         href: "/resources",
     },
     {
+        title: "Organizers",
+        href: "/organizers",
+    },
+    {
         title: "Timeline",
         href: "/timeline",
     },

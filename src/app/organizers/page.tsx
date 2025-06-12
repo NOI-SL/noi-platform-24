@@ -103,7 +103,7 @@ const Page: React.FC = () => {
                             <p className="text-white/80 text-center text-lg leading-relaxed">
                                 Organized by{" "}
                                 <span className="text-gold font-semibold">
-                                    IEEE Young Professionals Sri Lanka
+                                    IEEE CodeX Sri Lanka
                                 </span>{" "}
                                 in collaboration with the{" "}
                                 <span className="text-gold font-semibold">

@@ -26,13 +26,13 @@ const components: Component[] = [
         title: "Organizers",
         href: "/organizers",
     },
+    // {
+    //     title: "Timeline",
+    //     href: "/timeline",
+    // },
     {
-        title: "Timeline",
-        href: "/timeline",
-    },
-    {
-        title: "IOI 2025",
-        href: "https://www.ioi2025.bo/",
+        title: "IOI 2026",
+        href: "https://ioi2026.uz/",
     },
     {
         title: "Register Now",
@@ -117,12 +117,12 @@ const Navbar: React.FC = () => {
                                             key={index}
                                             style={{ zIndex: 21 }}
                                             target={
-                                                component.title === "IOI 2024"
+                                                component.title === "IOI 2026"
                                                     ? "_blank"
                                                     : "_self"
                                             }
                                             rel={
-                                                component.title === "IOI 2024"
+                                                component.title === "IOI 2026"
                                                     ? "noopener noreferrer"
                                                     : ""
                                             }
@@ -160,12 +160,12 @@ const Navbar: React.FC = () => {
                                             key={index}
                                             style={{ zIndex: 21 }}
                                             target={
-                                                component.title === "IOI 2024"
+                                                component.title === "IOI 2026"
                                                     ? "_blank"
                                                     : "_self"
                                             }
                                             rel={
-                                                component.title === "IOI 2024"
+                                                component.title === "IOI 2026"
                                                     ? "noopener noreferrer"
                                                     : ""
                                             }

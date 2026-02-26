@@ -46,13 +46,13 @@ const Page: React.FC = () => {
         {
             name: "Venudi Dayarathne",
             title: "Coordinator",
-            organization: "NOI 2025 Program",
+            organization: "NOI 2026 Program",
             image: venudi,
         },
         {
             name: "Pasindu Wijesena",
             title: "Member",
-            organization: "NOI 2025 Program",
+            organization: "NOI 2026 Program",
             image: pasindu,
         },
     ]

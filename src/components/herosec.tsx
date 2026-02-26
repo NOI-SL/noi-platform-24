@@ -80,7 +80,7 @@ const Herosec: React.FC = () => {
                                         <p className="text-sm text-gold md:text-lg lg:text-[25px] tracking-widest font-sans lg:mb-2">
                                             <b>
                                                 National Olympiad In Informatics
-                                                2025
+                                                2026
                                             </b>
                                         </p>
 

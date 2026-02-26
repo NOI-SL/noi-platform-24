@@ -7,9 +7,9 @@ import { NextAuthProvider } from "./providers"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-    title: "NOI 25 | National Olympiad in Informatics 25 ",
+    title: "NOI 26 | National Olympiad in Informatics 26 ",
     description:
-        "The official website of the National Olympiad in Informatics Sri Lanka 2025",
+        "The official website of the National Olympiad in Informatics Sri Lanka 2026",
 }
 
 export default function RootLayout({

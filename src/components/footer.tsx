@@ -189,7 +189,7 @@ const Footer: React.FC = () => {
                     <hr className="border-gold my-6 border-gold-200 sm:mx-auto dark:border-gold-700 lg:my-8" />
                     <div className="sm:flex  text-center md:text-left sm:justify-between">
                         <span className="text-gold text-gold-500  text-center md:text-left dark:text-gold-400">
-                            © 2025{" "}
+                            © 2026{" "}
                             <Link
                                 href="/"
                                 className="text-gold"

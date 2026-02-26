@@ -102,7 +102,7 @@ const HowToCompete: React.FC = () => {
                             Eligibility
                         </h2>
                         <p className="text-white w-full sm:w-full md:w-3/4 lg:w-full mb-2 text-center sm:text-center md:text-justify lg:text-justify">
-                            Sri Lankans who are not older than 20 yrs by July 1, 2025,
+                            Sri Lankans who are not older than 20 yrs by July 1, 2026,
                             and enrolled in a primary or secondary school (government / private) as a student are eligible for NOI.
                         </p>
 
@@ -128,7 +128,7 @@ const HowToCompete: React.FC = () => {
                                     challenging problem-solving tasks using C++.
                                     The top four performers with non-zero
                                     scores are selected to represent Sri Lanka at
-                                    the International Olympiad in Informatics (IOI) 2025, Bolivia.
+                                    the International Olympiad in Informatics (IOI) 2026, Bolivia.
 
                                     <br/><br/>
 
@@ -143,7 +143,7 @@ const HowToCompete: React.FC = () => {
                                 <p className="text-white">
                                     There are 5 paths through which an eligible (see eligibility criteria above)
                                     individual can become qualified to participate in
-                                    National Olympiad in Informatics 2025.
+                                    National Olympiad in Informatics 2026.
                                     <br/>
                                     Meeting the qualification criteria of at least one
                                     of the following paths will qualify you for the
@@ -159,7 +159,7 @@ const HowToCompete: React.FC = () => {
                                         NOI Online Qualifier
                                     </h3>
                                     <p className="text-white">
-                                        This is an online competitive programming contest held in April 2025.
+                                        This is an online competitive programming contest held in April 2026.
                                         <br/>
                                         Top 8 performers in NOI Online Qualifier round (excluding contestants already
                                         qualified through another path), with a non-zero score are qualified for NOI
@@ -175,8 +175,8 @@ const HowToCompete: React.FC = () => {
                                         Codeforces Weekly Contests
                                     </h3>
                                     <p className="text-white">
-                                        Individuals rated above 1400 following at least 2 rated Codeforeces contests between Jan 1, 2025 to
-                                        March 31, 2025 are qualified for NOI through this path.
+                                        Individuals rated above 1400 following at least 2 rated Codeforeces contests between Jan 1, 2026 to
+                                        March 31, 2026 are qualified for NOI through this path.
                                     </p>
                                 </li>
                                 <li>
@@ -234,7 +234,7 @@ const HowToCompete: React.FC = () => {
                                 <p className="text-white">
                                     The top four performers with non-zero
                                     scores are selected to represent Sri Lanka at
-                                    the International Olympiad in Informatics (IOI) 2025, Bolivia.
+                                    the International Olympiad in Informatics (IOI) 2026, Bolivia.
 
                                     IOI is an internationally renowned event that brings
                                     together the best young computer scientists
@@ -289,7 +289,7 @@ const HowToCompete: React.FC = () => {
                             Four contestants will be selected based on their
                             performance at the main competition to represent Sri
                             Lanka at the International Olympiad in Informatics
-                            2025 program, hosted by Bolivia.
+                            2026 program, hosted by Bolivia.
                         </p>
                     </div>
                 </motion.main>

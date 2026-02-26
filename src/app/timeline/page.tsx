@@ -15,55 +15,55 @@ import Particles from "@/components/particles/ParticleDesign"
 const Page: React.FC = () => {
     let items = [
         {
-            date: "February 13, 2025",
-            event: "Registrations Openes for NOI 2025",
+            date: "February 13, 2026",
+            event: "Registrations Openes for NOI 2026",
             description: "",
         },
         {
-            date: "March 31, 2025",
-            event: "Registrations Close for NOI 2025",
+            date: "March 31, 2026",
+            event: "Registrations Close for NOI 2026",
             description: "",
         },
         {
-            date: "April 5, 2025",
+            date: "April 5, 2026",
             event: "Deadline for Submission of Proof of Qualification for Codeforces",
             description: "",
         },
         {
-            date: "April 5, 2025",
-            event: "Qualifier Contest for NOI 2025",
+            date: "April 5, 2026",
+            event: "Qualifier Contest for NOI 2026",
             description:
-                "An online qualifier contest will be conducted to select promising students who will advance to compete in the National Olympiad in Informatics (NOI) 2025.",
+                "An online qualifier contest will be conducted to select promising students who will advance to compete in the National Olympiad in Informatics (NOI) 2026.",
         },
         {
-            date: "May 3, 2025",
-            event: "NOI 2025 Day 1",
+            date: "May 3, 2026",
+            event: "NOI 2026 Day 1",
             description:
-                "Day 1 of NOI 2025 will be conducted at the end of April.",
+                "Day 1 of NOI 2026 will be conducted at the end of April.",
         },
         {
-            date: "May 4, 2025",
-            event: "NOI 2025 Day 2",
+            date: "May 4, 2026",
+            event: "NOI 2026 Day 2",
             description:
-                "Day 2 of NOI 2025 will be conducted at the end of April.",
+                "Day 2 of NOI 2026 will be conducted at the end of April.",
         },
         {
-            date: "May - June, 2025",
+            date: "May - June, 2026",
             event: "Training Program",
             description:
-                "The selected national team will undergo an intensive training program, focusing on algorithms, competitive programming techniques, and problem-solving strategies to prepare for the International Olympiad in Informatics (IOI) 2025.",
+                "The selected national team will undergo an intensive training program, focusing on algorithms, competitive programming techniques, and problem-solving strategies to prepare for the International Olympiad in Informatics (IOI) 2026.",
         },
         {
-            date: "July 27 - Aug 3, 2025",
-            event: "International Olympiad in Informatics (IOI) 2025",
+            date: "July 27 - Aug 3, 2026",
+            event: "International Olympiad in Informatics (IOI) 2026",
             description:
-                "The Sri Lankan national team will represent the country at the International Olympiad in Informatics 2025, which will be held in Bolivia. ",
+                "The Sri Lankan national team will represent the country at the International Olympiad in Informatics 2026, which will be held in Bolivia. ",
         },
         {
-            date: "November, 2025",
+            date: "November, 2026",
             event: "Award Ceremony",
             description:
-                "An official award ceremony will be held to recognize and celebrate students who have demonstrated outstanding performance in NOI 2025. Special awards and certificates will be distributed to the top achievers.",
+                "An official award ceremony will be held to recognize and celebrate students who have demonstrated outstanding performance in NOI 2026. Special awards and certificates will be distributed to the top achievers.",
         },
     ]
     function timelineItem(
@@ -108,7 +108,7 @@ const Page: React.FC = () => {
                 >
                     <div className="w-full flex flex-col justify-center items-center">
                         <h1 className="text-2xl font-bold text-gold text-center mt-10">
-                            NOI 2025 Timeline
+                            NOI 2026 Timeline
                         </h1>
                         <div className="flex flex-col w-4/5 mb-10">
                             <div className="timeLineContainorOuter w-full">

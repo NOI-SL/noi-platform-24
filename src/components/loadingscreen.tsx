@@ -7,7 +7,7 @@ const LoadingScreen: React.FC = () => {
     return (
         <div className="fixed top-0 left-0 z-50 w-full h-full flex items-center justify-center bg-gradient-to-br from-black to-darkgreen">
             <div className="flex flex-col items-center">
-                <h1 className="text-white text-2xl font-bold">NOI 2025</h1>
+                <h1 className="text-white text-2xl font-bold">NOI 2026</h1>
             </div>
         </div>
     )

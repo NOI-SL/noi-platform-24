@@ -84,13 +84,13 @@ const Footer: React.FC = () => {
                                         </Link>
                                     </li>
                                     <li className="mb-2  text-center md:text-center  w-full md:w-1/6">
-                                        <Link
+                                        {/* <Link
                                             href="/timeline"
                                             className="text-gold"
                                             style={{ zIndex: 21 }}
                                         >
                                             Timeline
-                                        </Link>
+                                        </Link> */}
                                     </li>
                                     <li className="mb-2  text-center md:text-center  w-full md:w-1/6">
                                         <Link

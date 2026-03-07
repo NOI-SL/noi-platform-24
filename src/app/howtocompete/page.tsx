@@ -128,7 +128,7 @@ const HowToCompete: React.FC = () => {
                                     challenging problem-solving tasks using C++.
                                     The top four performers with non-zero
                                     scores are selected to represent Sri Lanka at
-                                    the International Olympiad in Informatics (IOI) 2026, Bolivia.
+                                    the International Olympiad in Informatics (IOI) 2026, Uzbekistan.
 
                                     <br/><br/>
 
@@ -234,7 +234,7 @@ const HowToCompete: React.FC = () => {
                                 <p className="text-white">
                                     The top four performers with non-zero
                                     scores are selected to represent Sri Lanka at
-                                    the International Olympiad in Informatics (IOI) 2026, Bolivia.
+                                    the International Olympiad in Informatics (IOI) 2026, Uzbekistan.
 
                                     IOI is an internationally renowned event that brings
                                     together the best young computer scientists
@@ -289,7 +289,7 @@ const HowToCompete: React.FC = () => {
                             Four contestants will be selected based on their
                             performance at the main competition to represent Sri
                             Lanka at the International Olympiad in Informatics
-                            2026 program, hosted by Bolivia.
+                            2026 program, hosted by Uzbekistan.
                         </p>
                     </div>
                 </motion.main>

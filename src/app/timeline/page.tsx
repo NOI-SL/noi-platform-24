@@ -57,7 +57,7 @@ const Page: React.FC = () => {
             date: "July 27 - Aug 3, 2026",
             event: "International Olympiad in Informatics (IOI) 2026",
             description:
-                "The Sri Lankan national team will represent the country at the International Olympiad in Informatics 2026, which will be held in Bolivia. ",
+                "The Sri Lankan national team will represent the country at the International Olympiad in Informatics 2026, which will be held in Uzbekistan. ",
         },
         {
             date: "November, 2026",

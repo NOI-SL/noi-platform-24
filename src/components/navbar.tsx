@@ -26,10 +26,6 @@ const components: Component[] = [
         title: "Organizers",
         href: "/organizers",
     },
-    // {
-    //     title: "Timeline",
-    //     href: "/timeline",
-    // },
     {
         title: "IOI 2026",
         href: "https://ioi2026.uz/",
@@ -38,10 +34,6 @@ const components: Component[] = [
         title: "Register Now",
         href: "https://docs.google.com/forms/d/e/1FAIpQLScqNMAtWQ5DnkdVuBuWxnqgMQvZCchHe0hLdxAtfVZhYXx3lQ/viewform",
     },
-    // {
-    //   title: "Register Now",
-    //   href: "/register",
-    // },
 ]
 
 const Navbar: React.FC = () => {
@@ -51,140 +43,74 @@ const Navbar: React.FC = () => {
     }
 
     return (
-        <>
-            <nav className="relative top-0  w-full md:flex md:flex-col justify-center items-center align-middle content-center z-50 md:py-4 pt-3 bg-black/50 backdrop-blur-sm">
-                <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-                    <div className="relative flex h-16 items-center justify-between">
-                        <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                            <button
-                                type="button"
-                                className="relative inline-flex items-center justify-center rounded-md p-2 text-gold hover:bg-black hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-                                aria-controls="mobile-menu"
-                                aria-expanded="false"
-                                style={{ zIndex: 21 }}
-                                onClick={toggleMenu}
-                            >
-                                <span className="absolute -inset-0.5"></span>
-                                <span className="sr-only">Open main menu</span>
-                                <svg
-                                    className="block h-6 w-6"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke-width="1.5"
-                                    stroke="currentColor"
-                                    aria-hidden="true"
+        <nav className="fixed top-0 left-0 w-full z-[100] transition-all duration-300 bg-brand-black/20 backdrop-blur-md border-b border-white/5">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="flex h-20 items-center justify-between">
+                    {/* Logo */}
+                    <div className="flex flex-shrink-0 items-center">
+                        <Link href="/" className="flex items-center gap-2 group">
+                            <Image
+                                src={logo}
+                                alt="NOI Logo"
+                                width={40}
+                                height={40}
+                                className="group-hover:scale-110 transition-transform duration-300"
+                            />
+                            <span className="text-brand-light font-bold tracking-tighter text-xl hidden sm:block">NOI</span>
+                        </Link>
+                    </div>
+
+                    {/* Desktop Menu */}
+                    <div className="hidden md:block">
+                        <div className="flex items-center space-x-8">
+                            {components.map((component, index) => (
+                                <Link
+                                    key={index}
+                                    href={component.href}
+                                    target={component.title === "IOI 2026" || component.title === "Register Now" ? "_blank" : "_self"}
+                                    rel={component.title === "IOI 2026" || component.title === "Register Now" ? "noopener noreferrer" : ""}
+                                    className={`text-sm font-medium tracking-widest uppercase transition-all duration-300 ${
+                                        component.title === "Register Now" 
+                                        ? "bg-brand-peach text-brand-black px-5 py-2.5 rounded-full hover:bg-brand-orange" 
+                                        : "text-brand-light/70 hover:text-brand-peach"
+                                    }`}
                                 >
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                                    />
-                                </svg>
-                                <svg
-                                    className="hidden h-6 w-6"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke-width="1.5"
-                                    stroke="currentColor"
-                                    aria-hidden="true"
-                                >
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        d="M6 18L18 6M6 6l12 12"
-                                    />
-                                </svg>
-                            </button>
-                        </div>
-                        <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start content-center">
-                            <div className="flex flex-shrink-0 items-center">
-                                <Link href="/" style={{ zIndex: 21 }}>
-                                    <Image
-                                        style={{ zIndex: 21 }}
-                                        src={logo}
-                                        alt="Your Company"
-                                        width={50}
-                                        height={50}
-                                    />
+                                    {component.title}
                                 </Link>
-                            </div>
-                            <div className="hidden sm:ml-6 sm:block">
-                                <div className="flex space-x-4">
-                                    {components.map((component, index) => (
-                                        <Link
-                                            className="items-center justify-center align-middle"
-                                            href={component.href}
-                                            key={index}
-                                            style={{ zIndex: 21 }}
-                                            target={
-                                                component.title === "IOI 2026"
-                                                    ? "_blank"
-                                                    : "_self"
-                                            }
-                                            rel={
-                                                component.title === "IOI 2026"
-                                                    ? "noopener noreferrer"
-                                                    : ""
-                                            }
-                                        >
-                                            <div className="text-gold hover:text-white rounded-md px-3 py-2 text-sm font-medium">
-                                                {component.title}
-                                            </div>
-                                        </Link>
-                                    ))}
-                                </div>
-                            </div>
+                            ))}
                         </div>
                     </div>
-                </div>
-                <div
-                    className="sm:hidden"
-                    id="mobile-menu"
-                    style={{ zIndex: 21 }}
-                >
-                    <div
-                        className={`${isOpen ? "block" : "hidden"} sm:hidden`}
-                        id="mobile-menu"
-                        style={{ zIndex: 21 }}
-                    >
-                        <div
-                            className="fixed w-1/2 h-screen space-y-1 px-2 pb-3 pt-2 transition-opacity duration-3000 z-50 bg-black/50 backdrop-blur-lg"
-                            style={{ zIndex: 40 }}
+
+                    {/* Mobile menu button */}
+                    <div className="flex md:hidden">
+                        <button
+                            onClick={toggleMenu}
+                            className="text-brand-light p-2"
                         >
-                            {isOpen && (
-                                <>
-                                    {components.map((component, index) => (
-                                        <Link
-                                            className="z-50"
-                                            href={component.href}
-                                            key={index}
-                                            style={{ zIndex: 21 }}
-                                            target={
-                                                component.title === "IOI 2026"
-                                                    ? "_blank"
-                                                    : "_self"
-                                            }
-                                            rel={
-                                                component.title === "IOI 2026"
-                                                    ? "noopener noreferrer"
-                                                    : ""
-                                            }
-                                        >
-                                            <div
-                                                className="text-gold hover:text-white block rounded-md px-3 py-2 text-base font-medium z-21"
-                                                style={{ zIndex: 21 }}
-                                            >
-                                                {component.title}
-                                            </div>
-                                        </Link>
-                                    ))}
-                                </>
-                            )}
-                        </div>
+                            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
+                            </svg>
+                        </button>
                     </div>
                 </div>
-            </nav>
-        </>
+            </div>
+
+            {/* Mobile Menu */}
+            <div className={`md:hidden transition-all duration-300 ${isOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0 overflow-hidden"}`}>
+                <div className="px-4 pt-2 pb-6 space-y-4 bg-brand-black/90 backdrop-blur-xl border-b border-white/5">
+                    {components.map((component, index) => (
+                        <Link
+                            key={index}
+                            href={component.href}
+                            onClick={() => setIsOpen(false)}
+                            className="block text-brand-light/80 hover:text-brand-peach text-base font-medium tracking-widest uppercase py-2"
+                        >
+                            {component.title}
+                        </Link>
+                    ))}
+                </div>
+            </div>
+        </nav>
     )
 }
 

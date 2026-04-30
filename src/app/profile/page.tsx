@@ -1,12 +1,11 @@
 "use client";
 
-import Mobilenav from '@/components/mobilenav';
 import Navbar from '@/components/navbar';
-import Particles from "@/components/particles/ParticleDesign";
 import { LogoutButton } from '@/components/ui/login'
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 export default function Profile() {
     const { data, status } = useSession();
@@ -22,59 +21,116 @@ export default function Profile() {
 
     if (status !== "authenticated") {
         return (
-            <main className="flex min-h-screen flex-col items-center justify-center p-4 sm:p-8 bg-gradient-to-br from-black to-darkgreen">
-                <p className="text-xl pb-8">Loading...</p>
+            <main className="relative flex min-h-screen flex-col items-center justify-center p-4 bg-brand-black overflow-hidden">
+                <div className="grainy-overlay" />
+                <div className="glow-orb w-[400px] h-[400px] -top-20 -left-20 bg-brand-peach" style={{ animation: "pagePulse 10s infinite alternate" }} />
+                <p className="text-brand-light/60 text-lg relative z-10">Loading...</p>
+                <style jsx>{`
+                    @keyframes pagePulse {
+                        from { transform: translate(0, 0) scale(1); opacity: 0.12; }
+                        to { transform: translate(25px, 25px) scale(1.12); opacity: 0.22; }
+                    }
+                `}</style>
             </main>
         )
     }
 
-    const state = String(status) === "authenticated" ? "authenticated" : "unauthenticated";
-    const name = String(profileData?.given_name);
+    const fields = [
+        { label: "First Name", value: profileData?.given_name },
+        { label: "Last Name", value: profileData?.family_name },
+        { label: "Email", value: profileData?.username },
+    ]
 
     return (
         <>
+            <main className="relative flex flex-col min-h-screen items-center text-center pt-36 pb-20 px-6 bg-brand-black overflow-hidden">
+                {/* Grainy Texture Overlay */}
+                <div className="grainy-overlay" />
 
-            <main className="flex flex-col min-h-screen items-center  text-center p-4 sm:p-8 from-black to-darkgreen bg-gradient-to-br text-white ">
-                <Navbar />  
-                <Particles />
-                <section className="mb-8">
-                    <h2 className="text-2xl font-semibold mb-4">Profile Information</h2>
-                    <div className="bg-white rounded-lg shadow-md p-4">
-                        <div className="space-y-2">
-                            <div className="flex flex-col sm:flex-row items-center">
-                                <span className="w-full sm:w-1/4 font-semibold text-gray-600">First Name:</span>
-                                <p className="text-gray-700">{profileData?.given_name}</p>
-                            </div>
-                            <div className="flex flex-col sm:flex-row items-center">
-                                <span className="w-full sm:w-1/4 font-semibold text-gray-600">Last Name:</span>
-                                <p className="text-gray-700">{profileData?.family_name}</p>
-                            </div>
-                            <div className="flex flex-col sm:flex-row items-center">
-                                <span className="w-full sm:w-1/4 font-semibold text-gray-600">Email:</span>
-                                <p className="text-gray-700">{profileData?.username}</p>
-                            </div>
+                {/* Glow Orbs */}
+                <div
+                    className="glow-orb w-[450px] h-[450px] -top-20 -right-20 bg-brand-peach"
+                    style={{ animation: "pagePulse 11s infinite alternate" }}
+                />
+                <div
+                    className="glow-orb w-[350px] h-[350px] bottom-40 -left-20 bg-brand-orange"
+                    style={{ animation: "pagePulse 15s infinite alternate-reverse" }}
+                />
+
+                <Navbar />
+
+                <div className="relative z-10 w-full max-w-2xl mx-auto">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        className="mb-10"
+                    >
+                        <span className="inline-block text-brand-peach text-sm font-medium tracking-[0.3em] uppercase mb-4 opacity-80">
+                            Your Account
+                        </span>
+                        <h1 className="text-4xl md:text-5xl font-bold text-brand-light leading-tight tracking-tight">
+                            My <span className="tech-gradient-text">Profile</span>
+                        </h1>
+                    </motion.div>
+
+                    {/* Profile Info Card */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.15 }}
+                        className="bg-black/30 backdrop-blur-sm border border-brand-peach/10 rounded-2xl p-6 mb-6 text-left"
+                    >
+                        <h2 className="text-brand-peach font-semibold tracking-wide mb-4">Profile Information</h2>
+                        <div className="space-y-3">
+                            {fields.map(({ label, value }) => (
+                                <div key={label} className="flex flex-col sm:flex-row sm:items-center gap-1 py-2 border-b border-white/5 last:border-0">
+                                    <span className="text-brand-light/40 text-sm w-28 shrink-0">{label}</span>
+                                    <p className="text-brand-light font-medium">{value || "—"}</p>
+                                </div>
+                            ))}
                         </div>
-                    </div>
-                </section>
-                <section className="mb-8 w-full lg:w-1/2">
-                    <h2 className="text-2xl font-semibold mb-4">Hackerank</h2>
-                    <div className="bg-white rounded-lg shadow-md p-4">
-                        {/* Account settings content */}
-                    </div>
-                </section>
-                <section className="mb-8 w-full lg:w-1/2">
-                    <h2 className="text-2xl font-semibold mb-4">Division</h2>
-                    <div className="bg-white rounded-lg shadow-md p-4">
-                        {/* Activity log content */}
-                    </div>
-                </section>
-                <div className='z-30'>
-                    <LogoutButton />
+                    </motion.div>
+
+                    {/* Hackerrank */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.25 }}
+                        className="bg-black/30 backdrop-blur-sm border border-brand-peach/10 rounded-2xl p-6 mb-6 text-left"
+                    >
+                        <h2 className="text-brand-peach font-semibold tracking-wide mb-2">HackerRank</h2>
+                        <p className="text-brand-light/40 text-sm">No HackerRank data linked yet.</p>
+                    </motion.div>
+
+                    {/* Division */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.35 }}
+                        className="bg-black/30 backdrop-blur-sm border border-brand-peach/10 rounded-2xl p-6 mb-8 text-left"
+                    >
+                        <h2 className="text-brand-peach font-semibold tracking-wide mb-2">Division</h2>
+                        <p className="text-brand-light/40 text-sm">Division info not yet available.</p>
+                    </motion.div>
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.45 }}
+                        className="flex justify-center"
+                    >
+                        <LogoutButton />
+                    </motion.div>
                 </div>
             </main>
-           
+
+            <style jsx>{`
+                @keyframes pagePulse {
+                    from { transform: translate(0, 0) scale(1); opacity: 0.12; }
+                    to { transform: translate(25px, 25px) scale(1.12); opacity: 0.22; }
+                }
+            `}</style>
         </>
-
-
     )
 }

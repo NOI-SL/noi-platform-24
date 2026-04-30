@@ -2,9 +2,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/navigation';
-import { signIn } from "next-auth/react";
 
-// Define an interface for the component props
 interface PrimButProps {
     name: string;
     link: string;
@@ -12,75 +10,43 @@ interface PrimButProps {
 
 const PrimButtwo: React.FC<PrimButProps> = ({ name, link }) => {
     const [hovered, setHovered] = useState(false);
-
-    const handleHoverStart = () => {
-        setHovered(true);
-    };
-
-    const handleHoverEnd = () => {
-        setHovered(false);
-    };
-
     const router = useRouter();
+
     const handleClick = () => {
-        // Delay navigation using setTimeout
-        // setTimeout(() => {
-        router.push(link);
-        // }, 400); // Delay for 1 second (adjust as needed)
-    };
-
-    const hoverAnimation = {
-        scale: 1.05,
-        transition: {
-            duration: 0.3,
-            ease: "easeInOut",
-        },
-    };
-
-    const fillAnimation = {
-        initial: {
-            width: 0,
-            height: '100%',
-            backgroundColor: '#201C1C', // Change this color as needed
-        },
-        animate: {
-            width: '100%',
-            transition: {
-                duration: 0.15,
-                ease: 'easeInOut',
-            },
-        },
-        exit: {
-            width: 0,
-            transition: {
-                duration: 0.25,
-                ease: 'easeInOut',
-            },
-        },
+        if (link.startsWith('http')) {
+            window.open(link, '_blank', 'noopener,noreferrer');
+        } else {
+            router.push(link);
+        }
     };
 
     return (
-        <div onMouseEnter={handleHoverStart} onMouseLeave={handleHoverEnd} style={{ position: 'relative' }}>
-            <motion.button
-                className="py-3 px-8 mt-10 border-[3px] bg-darkgreen border-gold text-gold hover:text-gold-100  "
-                style={{ position: 'relative', overflow: 'hidden', zIndex: 21 }} // Change default background color as needed
-                whileHover={hoverAnimation} onClick={() => handleClick()}
-            >
-                <AnimatePresence>
-                    {hovered && (
-                        <motion.div
-                            className="absolute top-0 left-0"
-                            variants={fillAnimation}
-                            initial="initial"
-                            animate="animate"
-                            exit="exit"
-                            style={{ zIndex: 0 }}
-                        />
-                    )}
-                </AnimatePresence>
-                <span className='' style={{ position: 'relative', zIndex: 2 }}>{name}</span>
-            </motion.button>
-        </div>
+        <motion.button
+            onMouseEnter={() => setHovered(true)}
+            onMouseLeave={() => setHovered(false)}
+            onClick={handleClick}
+            className="relative px-10 py-4 overflow-hidden group rounded-full border border-brand-peach/30 transition-all duration-300"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+        >
+            {/* Background fill animation */}
+            <motion.div
+                className="absolute inset-0 bg-brand-peach"
+                initial={{ x: "-100%" }}
+                animate={{ x: hovered ? "0%" : "-100%" }}
+                transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
+            />
+            
+            {/* Text */}
+            <span className={`relative z-10 text-sm font-bold tracking-[0.2em] uppercase transition-colors duration-300 ${
+                hovered ? 'text-brand-black' : 'text-brand-peach'
+            }`}>
+                {name}
+            </span>
+
+            {/* Subtle glow effect */}
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-20 bg-brand-peach blur-xl transition-opacity duration-300" />
+        </motion.button>
     );
 }
 

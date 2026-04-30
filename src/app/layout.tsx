@@ -4,6 +4,8 @@ import "./globals.css"
 import logo from "../../public/logo.png"
 import { NextAuthProvider } from "./providers"
 
+import GalaxyBackground from "@/components/galaxy-background"
+
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
@@ -22,8 +24,11 @@ export default function RootLayout({
             <head>
                 <link rel="icon" href={logo.src} />
             </head>
-            <body className={inter.className}>
-                <NextAuthProvider>{children}</NextAuthProvider>
+            <body className={`${inter.className} relative`}>
+                <NextAuthProvider>
+                    <GalaxyBackground />
+                    <div className="relative z-10">{children}</div>
+                </NextAuthProvider>
             </body>
         </html>
     )

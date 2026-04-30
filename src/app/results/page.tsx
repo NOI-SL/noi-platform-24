@@ -1,6 +1,6 @@
 "use client";
 import React, { createContext } from "react";
-import { useSession } from "next-auth/react";
+// import { useSession } from "next-auth/react";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import Image from "next/image";

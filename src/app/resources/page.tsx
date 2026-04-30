@@ -1,6 +1,6 @@
 "use client"
 import React from "react"
-import { useSession } from "next-auth/react"
+// import { useSession } from "next-auth/react"
 import Navbar from "@/components/navbar"
 import { motion } from "framer-motion"
 import Footer from "@/components/footer"
@@ -55,7 +55,7 @@ const Page: React.FC = () => {
 
     return (
         <>
-            <main className="relative min-h-screen w-full flex flex-col items-center text-center overflow-hidden bg-brand-black">
+            <main className="relative min-h-screen w-full flex flex-col items-center text-center overflow-hidden bg-transparent">
                 {/* Grainy Texture Overlay */}
                 <div className="grainy-overlay" />
 

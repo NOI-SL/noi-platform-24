@@ -2,26 +2,27 @@
 
 import Navbar from '@/components/navbar';
 import { LogoutButton } from '@/components/ui/login'
-import { useSession } from 'next-auth/react';
+// import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 export default function Profile() {
-    const { data, status } = useSession();
+    // const { data, status } = useSession();
     const { push } = useRouter();
 
-    const profileData = data?.user?.profile;
+    // const profileData = data?.user?.profile;
+    const profileData: any = {};
 
-    useEffect(() => {
-        if (status === 'unauthenticated') {
-            push('/unauthorized');
-        }
-    }, [status, push])
+    // useEffect(() => {
+    //     if (status === 'unauthenticated') {
+    //         push('/unauthorized');
+    //     }
+    // }, [status, push])
 
-    if (status !== "authenticated") {
-        return (
-            <main className="relative flex min-h-screen flex-col items-center justify-center p-4 bg-brand-black overflow-hidden">
+    // if (status !== "authenticated") {
+    //     return (
+            <main className="relative flex min-h-screen flex-col items-center justify-center p-4 bg-transparent overflow-hidden">
                 <div className="grainy-overlay" />
                 <div className="glow-orb w-[400px] h-[400px] -top-20 -left-20 bg-brand-peach" style={{ animation: "pagePulse 10s infinite alternate" }} />
                 <p className="text-brand-light/60 text-lg relative z-10">Loading...</p>
@@ -31,9 +32,9 @@ export default function Profile() {
                         to { transform: translate(25px, 25px) scale(1.12); opacity: 0.22; }
                     }
                 `}</style>
-            </main>
-        )
-    }
+    //         </main>
+    //     )
+    // }
 
     const fields = [
         { label: "First Name", value: profileData?.given_name },
@@ -43,7 +44,7 @@ export default function Profile() {
 
     return (
         <>
-            <main className="relative flex flex-col min-h-screen items-center text-center pt-36 pb-20 px-6 bg-brand-black overflow-hidden">
+            <main className="relative flex flex-col min-h-screen items-center text-center pt-36 pb-20 px-6 bg-transparent overflow-hidden">
                 {/* Grainy Texture Overlay */}
                 <div className="grainy-overlay" />
 

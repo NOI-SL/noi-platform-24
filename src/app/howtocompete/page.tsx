@@ -10,7 +10,7 @@ import Footer from "@/components/footer"
 const HowToCompete: React.FC = () => {
     return (
         <>
-            <main className="relative min-h-screen w-full flex flex-col items-center text-center overflow-hidden bg-brand-black">
+            <main className="relative min-h-screen w-full flex flex-col items-center text-center overflow-hidden bg-transparent">
                 {/* Grainy Texture Overlay */}
                 <div className="grainy-overlay" />
 

@@ -1,24 +1,24 @@
 "use client";
 
 import { LoginButton } from "@/components/ui/login";
-import { useSession } from "next-auth/react";
+// import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 
 export default function Unauthorized() {
-    const { status } = useSession();
+    // const { status } = useSession();
     const { push } = useRouter();
 
-    useEffect(() => {
-        if (status === 'authenticated') {
-            push('/');
-        }
-    }, [status, push])
+    // useEffect(() => {
+    //     if (status === 'authenticated') {
+    //         push('/');
+    //     }
+    // }, [status, push])
 
     return (
         <>
-            <main className="relative flex min-h-screen flex-col items-center justify-center p-6 bg-brand-black overflow-hidden">
+            <main className="relative flex min-h-screen flex-col items-center justify-center p-6 bg-transparent overflow-hidden">
                 {/* Grainy Texture Overlay */}
                 <div className="grainy-overlay" />
 

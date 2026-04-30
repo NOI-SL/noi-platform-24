@@ -5,24 +5,24 @@ import Link from "next/link"
 import Image from "next/image"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
-import { useSession } from "next-auth/react"
+// import { useSession } from "next-auth/react"
 import LoadingScreen from "@/components/loadingscreen"
 import PrimButtwo from "./ui/buttontwo"
 
 const Herosec: React.FC = () => {
-    const { status } = useSession()
+    // const { status } = useSession()
 
-    if (status === "loading") {
-        return (
-            <main className="flex min-h-screen flex-col items-center justify-center p-24 bg-brand-black">
-                <LoadingScreen />
-            </main>
-        )
-    }
+    // if (status === "loading") {
+    //     return (
+    //         <main className="flex min-h-screen flex-col items-center justify-center p-24 bg-brand-black">
+    //             <LoadingScreen />
+    //         </main>
+    //     )
+    // }
 
     return (
         <>
-            <main className="relative min-h-screen w-full flex flex-col items-center justify-center text-center overflow-hidden bg-brand-black">
+            <main className="relative min-h-screen w-full flex flex-col items-center justify-center text-center overflow-hidden bg-transparent">
                 {/* Grainy Texture Overlay */}
                 <div className="grainy-overlay" />
 

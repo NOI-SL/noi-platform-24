@@ -19,6 +19,7 @@ interface Passpapers {
 
 const Page: React.FC = () => {
     const pastProblemsAndSolutions: Passpapers[] = [
+        { title: "IOI 2025 Materials", description: "Find Materials", link: "https://ioinformatics.org/page/ioi-2025/60" },
         { title: "IOI 2024 Materials", description: "Find Materials", link: "https://ioinformatics.org/page/ioi-2024/59" },
         { title: "IOI 2023 Materials", description: "Find Materials", link: "https://ioinformatics.org/page/ioi-2023/58" },
         { title: "IOI 2022 Materials", description: "Find Materials", link: "https://ioinformatics.org/page/ioi-2022/56" },
@@ -41,17 +42,67 @@ const Page: React.FC = () => {
             href={link}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center justify-between bg-white/5 backdrop-blur-md border border-white/10 hover:border-brand-peach/40 rounded-xl px-5 py-4 transition-all duration-300 hover:-translate-y-0.5"
+            className="group relative overflow-hidden flex flex-col justify-between bg-[#0a0a0a]/80 backdrop-blur-xl border border-white/5 hover:border-brand-peach/30 rounded-2xl p-6 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_30px_-5px_rgba(255,143,112,0.15)] h-36"
         >
-            <div className="text-left">
-                <p className="text-brand-light font-medium group-hover:text-brand-peach transition-colors duration-300">{title}</p>
-                {subtopic && <p className="text-brand-light/40 text-xs mt-0.5">{subtopic}</p>}
+            {/* Subtle gradient overlay on hover */}
+            <div className="absolute inset-0 bg-gradient-to-br from-brand-peach/0 via-brand-peach/0 to-brand-peach/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" />
+
+            <div className="relative z-10 flex flex-col h-full justify-start">
+                <p className="text-brand-light font-semibold text-lg leading-tight group-hover:text-brand-peach transition-colors duration-300 line-clamp-2">
+                    {title}
+                </p>
+                {subtopic && <p className="text-brand-light/40 text-sm mt-1.5 line-clamp-1">{subtopic}</p>}
+                
+                <div className="flex items-center gap-2 mt-auto">
+                    <span className="text-brand-peach/70 text-sm font-medium group-hover:text-brand-peach transition-colors duration-300">
+                        {description}
+                    </span>
+                    <svg className="w-4 h-4 text-brand-peach/50 group-hover:text-brand-peach group-hover:translate-x-1 transition-all duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                </div>
             </div>
-            <span className="text-brand-peach/60 text-sm font-medium group-hover:text-brand-peach transition-colors duration-300 shrink-0 ml-4">
-                {description} →
-            </span>
         </a>
     )
+
+    const PastProblemCard = ({ title, description, link }: { title: string; description: string; link: string }) => {
+        const yearMatch = title.match(/\d{4}/);
+        const year = yearMatch ? yearMatch[0] : "";
+
+        return (
+            <a
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative overflow-hidden flex flex-col justify-between bg-[#0a0a0a]/80 backdrop-blur-xl border border-white/5 hover:border-brand-peach/30 rounded-2xl p-6 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_30px_-5px_rgba(255,143,112,0.15)] h-32"
+            >
+                {/* Background Year */}
+                {year && (
+                    <div className="absolute -right-2 -bottom-8 text-8xl font-black text-white/[0.02] group-hover:text-brand-peach/[0.05] transition-colors duration-500 pointer-events-none select-none z-0 tracking-tighter">
+                        {year}
+                    </div>
+                )}
+                
+                {/* Subtle gradient overlay on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-brand-peach/0 via-brand-peach/0 to-brand-peach/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" />
+
+                <div className="relative z-10 flex flex-col h-full justify-between">
+                    <p className="text-brand-light font-semibold text-lg group-hover:text-brand-peach transition-colors duration-300">
+                        {title}
+                    </p>
+                    
+                    <div className="flex items-center gap-2 mt-auto">
+                        <span className="text-brand-peach/70 text-sm font-medium group-hover:text-brand-peach transition-colors duration-300">
+                            {description}
+                        </span>
+                        <svg className="w-4 h-4 text-brand-peach/50 group-hover:text-brand-peach group-hover:translate-x-1 transition-all duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </div>
+                </div>
+            </a>
+        );
+    }
 
     return (
         <>
@@ -98,9 +149,9 @@ const Page: React.FC = () => {
                             <h2 className="text-brand-peach text-lg font-semibold tracking-widest uppercase mb-4 text-left">
                                 Past Problems & Solutions
                             </h2>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                                 {pastProblemsAndSolutions.map((r, i) => (
-                                    <ResourceCard key={i} title={r.title} description={r.description} link={r.link} />
+                                    <PastProblemCard key={i} title={r.title} description={r.description} link={r.link} />
                                 ))}
                             </div>
                         </motion.section>
@@ -110,11 +161,12 @@ const Page: React.FC = () => {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.25 }}
+                            className="col-span-1 md:col-span-2"
                         >
                             <h2 className="text-brand-peach text-lg font-semibold tracking-widest uppercase mb-4 text-left">
                                 Books
                             </h2>
-                            <div className="flex flex-col gap-3">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 {books.map((r, i) => (
                                     <ResourceCard key={i} title={r.title} subtopic={r.subtopic} description={r.description} link={r.link} />
                                 ))}
@@ -126,11 +178,12 @@ const Page: React.FC = () => {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.35 }}
+                            className="col-span-1 md:col-span-2"
                         >
                             <h2 className="text-brand-peach text-lg font-semibold tracking-widest uppercase mb-4 text-left">
                                 Platforms & Others
                             </h2>
-                            <div className="flex flex-col gap-3">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                                 {others.map((r, i) => (
                                     <ResourceCard key={i} title={r.title} subtopic={r.subtopic} description={r.description} link={r.link} />
                                 ))}

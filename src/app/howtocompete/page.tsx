@@ -7,10 +7,10 @@ import { Globe, Terminal, School, User, Sigma, CheckCircle2, Languages, Trophy, 
 
 // Arrow connector component
 const FlowArrow = () => (
-    <div className="w-12 shrink-0 flex items-center justify-center">
+    <div className="w-16 md:w-24 shrink-0 flex items-center justify-center">
         <div className="flex items-center w-full">
-            <div className="flex-1 h-px bg-gradient-to-r from-blue-500/10 via-blue-500/40 to-blue-500/40" />
-            <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-l-[8px] border-l-blue-500/50" />
+            <div className="flex-1 h-[2px] bg-gradient-to-r from-blue-500/10 via-blue-500/40 to-blue-500/40" />
+            <div className="w-0 h-0 border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent border-l-[10px] border-l-blue-500/60" />
         </div>
     </div>
 )
@@ -27,7 +27,7 @@ const HowToCompete: React.FC = () => {
             location: "Online Contest",
             desc: "The primary entry point. An online algorithmic contest held in April 2026 to identify top national talent.",
             icon: Globe,
-            color: "bg-purple-500",
+            color: "bg-blue-600",
             pattern: "waves"
         },
         {
@@ -38,7 +38,7 @@ const HowToCompete: React.FC = () => {
             location: "Global Platform",
             desc: "For active competitive programmers. Maintain a 1400+ rating with recent participation.",
             icon: Terminal,
-            color: "bg-blue-500",
+            color: "bg-sky-500",
             pattern: "dots-wave"
         },
         {
@@ -49,7 +49,7 @@ const HowToCompete: React.FC = () => {
             location: "Colombo, LK",
             desc: "Recognizing excellence in the National Schools Software Competition. Top 6 finishers qualify.",
             icon: School,
-            color: "bg-yellow-400",
+            color: "bg-cyan-600",
             pattern: "chevrons"
         },
         {
@@ -60,7 +60,7 @@ const HowToCompete: React.FC = () => {
             location: "Colombo, LK",
             desc: "Top 3 performers from the Young Computer Scientist competition age categories are eligible.",
             icon: User,
-            color: "bg-green-500",
+            color: "bg-indigo-500",
             pattern: "dots-circle"
         },
         {
@@ -71,7 +71,7 @@ const HowToCompete: React.FC = () => {
             location: "International",
             desc: "Sri Lankan representatives at the International Mathematical Olympiad (IMO) receive direct entry.",
             icon: Sigma,
-            color: "bg-orange-500",
+            color: "bg-blue-500",
             pattern: "stripes-circle"
         },
     ]
@@ -91,7 +91,7 @@ const HowToCompete: React.FC = () => {
 
                 <Navbar />
 
-                <div className="relative z-10 w-full max-w-6xl mx-auto px-6 pt-48 pb-32">
+                <div className="relative z-10 w-full max-w-[1440px] mx-auto px-6 pt-48 pb-32">
                     {/* Header */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -227,46 +227,46 @@ const HowToCompete: React.FC = () => {
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="glass-card rounded-[1.5rem] p-8 md:p-12 mb-32 overflow-hidden"
+                        className="glass-card rounded-[2rem] p-8 md:py-16 md:px-6 mb-32 overflow-hidden shadow-2xl"
                     >
-                        <h2 className="text-3xl font-bold text-white mb-4 tracking-tight text-center">
+                        <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6 tracking-tight text-center">
                             Program <span className="text-blue-500">Structure</span>
                         </h2>
-                        <p className="text-slate-500 text-sm text-center mb-12 max-w-lg mx-auto">
+                        <p className="text-slate-400 text-base md:text-lg text-center mb-16 max-w-2xl mx-auto font-light">
                             The complete journey from eligibility verification to international representation.
                         </p>
 
                         {/* Scrollable flow */}
-                        <div className="overflow-x-auto">
-                            <div className="min-w-[960px] px-2">
+                        <div className="w-full pb-8 overflow-x-auto scrollbar-hide">
+                            <div className="min-w-[1300px] px-4 mx-auto">
 
                                 {/* Column Headers */}
-                                <div className="flex mb-6">
-                                    <div className="w-[140px] shrink-0 border-b border-dashed border-blue-500/15 pb-3">
-                                        <span className="text-blue-400/60 text-[9px] font-bold uppercase tracking-[0.25em]">Eligibility</span>
+                                <div className="flex mb-10">
+                                    <div className="w-[220px] shrink-0 border-b-2 border-dashed border-blue-500/20 pb-4 pl-2">
+                                        <span className="text-blue-400/80 text-xs font-bold uppercase tracking-[0.25em]">Eligibility</span>
                                     </div>
-                                    <div className="w-12 shrink-0" />
-                                    <div className="flex-1 border-b border-dashed border-blue-500/15 pb-3">
-                                        <span className="text-blue-400/60 text-[9px] font-bold uppercase tracking-[0.25em]">Qualifying for NOI</span>
+                                    <div className="w-16 md:w-24 shrink-0" />
+                                    <div className="flex-1 border-b-2 border-dashed border-blue-500/20 pb-4 pl-2">
+                                        <span className="text-blue-400/80 text-xs font-bold uppercase tracking-[0.25em]">Qualifying for NOI</span>
                                     </div>
-                                    <div className="w-12 shrink-0" />
-                                    <div className="w-[200px] shrink-0 border-b border-dashed border-blue-500/15 pb-3">
-                                        <span className="text-blue-400/60 text-[9px] font-bold uppercase tracking-[0.25em]">NOI</span>
+                                    <div className="w-16 md:w-24 shrink-0" />
+                                    <div className="w-[280px] shrink-0 border-b-2 border-dashed border-blue-500/20 pb-4 pl-2 text-center">
+                                        <span className="text-blue-400/80 text-xs font-bold uppercase tracking-[0.25em]">NOI</span>
                                     </div>
-                                    <div className="w-12 shrink-0" />
-                                    <div className="w-[200px] shrink-0 border-b border-dashed border-blue-500/15 pb-3">
-                                        <span className="text-blue-400/60 text-[9px] font-bold uppercase tracking-[0.25em]">After NOI</span>
+                                    <div className="w-16 md:w-24 shrink-0" />
+                                    <div className="w-[280px] shrink-0 border-b-2 border-dashed border-blue-500/20 pb-4 pl-2 text-center">
+                                        <span className="text-blue-400/80 text-xs font-bold uppercase tracking-[0.25em]">After NOI</span>
                                     </div>
                                 </div>
 
                                 {/* Flow Nodes */}
-                                <div className="flex items-stretch pt-6">
+                                <div className="flex items-stretch pt-4">
 
                                     {/* ── Eligibility ── */}
-                                    <div className="w-[140px] shrink-0 flex items-center">
-                                        <div className="w-full rounded-lg border border-blue-500/20 bg-blue-500/[0.04] p-4 text-center">
-                                            <User className="w-5 h-5 text-blue-500/60 mx-auto mb-3" />
-                                            <p className="text-slate-300 text-[11px] font-medium leading-relaxed">
+                                    <div className="w-[220px] shrink-0 flex items-center">
+                                        <div className="w-full rounded-2xl border border-blue-500/20 bg-blue-500/[0.04] p-8 text-center shadow-lg transition-transform hover:-translate-y-1 hover:bg-blue-500/[0.06] duration-300">
+                                            <User className="w-10 h-10 text-blue-500/70 mx-auto mb-5" />
+                                            <p className="text-slate-300 text-[15px] font-medium leading-relaxed">
                                                 Sri Lankans who are not older than 20 yrs by July 1, 2026 and enrolled in a primary or secondary school
                                             </p>
                                         </div>
@@ -275,31 +275,33 @@ const HowToCompete: React.FC = () => {
                                     <FlowArrow />
 
                                     {/* ── Qualification Paths ── */}
-                                    <div className="flex-1 flex flex-col gap-3 justify-center">
+                                    <div className="flex-1 flex flex-col gap-6 justify-center">
                                         {/* Primary */}
-                                        <div className="rounded-lg border border-blue-500/25 bg-blue-500/[0.06] px-5 py-3.5 flex items-center gap-3 hover:bg-blue-500/10 transition-colors">
-                                            <Globe className="w-4 h-4 text-blue-500 shrink-0" />
+                                        <div className="rounded-2xl border border-blue-500/30 bg-blue-500/[0.08] px-8 py-6 flex items-center gap-5 hover:bg-blue-500/15 transition-all duration-300 shadow-lg group cursor-default hover:border-blue-400/50 hover:-translate-y-1">
+                                            <div className="bg-blue-500/20 p-3 rounded-xl group-hover:bg-blue-500/30 transition-colors">
+                                                <Globe className="w-8 h-8 text-blue-400" />
+                                            </div>
                                             <div>
-                                                <span className="text-white font-semibold text-[13px]">NOI Online Qualifier</span>
-                                                <span className="text-blue-400/50 text-[9px] ml-2 uppercase tracking-wider">Primary</span>
+                                                <span className="text-white font-bold text-lg block mb-1">NOI Online Qualifier</span>
+                                                <span className="text-blue-400/80 text-xs font-semibold uppercase tracking-widest">Primary Path</span>
                                             </div>
                                         </div>
 
                                         {/* Secondary group */}
-                                        <div className="rounded-xl border border-white/[0.06] p-3.5 relative mt-1">
-                                            <span className="absolute -top-2 left-3 px-2 text-[8px] font-bold text-slate-600 uppercase tracking-wider bg-[#0a1628] border border-white/5 rounded">
+                                        <div className="rounded-2xl border border-white/[0.08] p-7 relative mt-4 shadow-lg bg-[#0a1628]/40 backdrop-blur-sm transition-transform duration-300 hover:-translate-y-1">
+                                            <span className="absolute -top-3.5 left-6 px-4 py-1.5 text-[11px] font-bold text-slate-300 uppercase tracking-[0.2em] bg-[#09152b] border border-white/10 rounded-md shadow-md">
                                                 Other Qualification Paths
                                             </span>
-                                            <div className="flex flex-col gap-2 mt-1.5">
+                                            <div className="flex flex-col gap-4 mt-4">
                                                 {[
                                                     { icon: Terminal, name: "Codeforces Weekly Contests" },
                                                     { icon: School, name: "National School Software Competition (NSSC)" },
                                                     { icon: User, name: "Young Computer Scientist (YCS)" },
                                                     { icon: Sigma, name: "International Mathematical Olympiad (IMO)" },
                                                 ].map((item, i) => (
-                                                    <div key={i} className="rounded-md border border-white/[0.04] bg-white/[0.02] px-4 py-2.5 flex items-center gap-3 text-slate-400 text-[12px] hover:border-blue-500/15 hover:text-slate-300 transition-colors">
-                                                        <item.icon className="w-3.5 h-3.5 text-slate-600 shrink-0" />
-                                                        {item.name}
+                                                    <div key={i} className="rounded-xl border border-white/[0.06] bg-white/[0.02] px-6 py-4 flex items-center gap-5 text-slate-300 text-[15px] hover:border-blue-500/30 hover:bg-blue-500/5 hover:text-white transition-all duration-300">
+                                                        <item.icon className="w-6 h-6 text-slate-400 shrink-0" />
+                                                        <span className="font-medium tracking-wide">{item.name}</span>
                                                     </div>
                                                 ))}
                                             </div>
@@ -309,16 +311,16 @@ const HowToCompete: React.FC = () => {
                                     <FlowArrow />
 
                                     {/* ── NOI ── */}
-                                    <div className="w-[200px] shrink-0 flex items-center">
-                                        <div className="w-full rounded-xl border border-blue-500/25 bg-blue-600/[0.08] p-6 text-center relative overflow-hidden">
+                                    <div className="w-[280px] shrink-0 flex items-center">
+                                        <div className="w-full rounded-2xl border-2 border-blue-500/40 bg-blue-600/[0.1] p-10 text-center relative overflow-hidden shadow-[0_0_40px_-10px_rgba(59,130,246,0.3)] transition-transform duration-300 hover:-translate-y-1 hover:border-blue-400/60">
                                             {/* Subtle glow behind */}
-                                            <div className="absolute inset-0 bg-blue-500/5 blur-2xl pointer-events-none" />
+                                            <div className="absolute inset-0 bg-blue-500/15 blur-3xl pointer-events-none" />
                                             <div className="relative z-10">
-                                                <div className="w-11 h-11 rounded-full bg-blue-600/15 border border-blue-500/20 flex items-center justify-center mx-auto mb-4">
-                                                    <Trophy className="w-5 h-5 text-blue-500" />
+                                                <div className="w-20 h-20 rounded-full bg-blue-600/20 border border-blue-400/40 flex items-center justify-center mx-auto mb-6 shadow-inner">
+                                                    <Trophy className="w-10 h-10 text-blue-400 drop-shadow-[0_0_15px_rgba(59,130,246,0.5)]" />
                                                 </div>
-                                                <h4 className="text-white font-bold text-sm mb-1 leading-snug">National Olympiad in Informatics</h4>
-                                                <p className="text-blue-400/60 text-[9px] font-bold uppercase tracking-widest">(NOI) 2026</p>
+                                                <h4 className="text-white font-extrabold text-[22px] mb-3 leading-tight tracking-tight">National Olympiad in Informatics</h4>
+                                                <p className="text-blue-400/90 text-sm font-bold uppercase tracking-[0.2em]">(NOI) 2026</p>
                                             </div>
                                         </div>
                                     </div>
@@ -326,13 +328,13 @@ const HowToCompete: React.FC = () => {
                                     <FlowArrow />
 
                                     {/* ── IOI ── */}
-                                    <div className="w-[200px] shrink-0 flex items-center">
-                                        <div className="w-full rounded-xl border border-white/[0.06] bg-white/[0.02] p-6 text-center">
-                                            <div className="w-11 h-11 rounded-full bg-slate-800/80 border border-white/5 flex items-center justify-center mx-auto mb-4">
-                                                <Globe className="w-5 h-5 text-slate-400" />
+                                    <div className="w-[280px] shrink-0 flex items-center">
+                                        <div className="w-full rounded-2xl border border-white/[0.1] bg-white/[0.04] p-10 text-center shadow-2xl transition-transform duration-300 hover:-translate-y-1 hover:border-white/[0.2] hover:bg-white/[0.06]">
+                                            <div className="w-20 h-20 rounded-full bg-slate-800/90 border border-white/10 flex items-center justify-center mx-auto mb-6 shadow-inner">
+                                                <Globe className="w-10 h-10 text-slate-300" />
                                             </div>
-                                            <h4 className="text-white font-bold text-sm mb-1 leading-snug">International Olympiad in Informatics</h4>
-                                            <p className="text-slate-500 text-[9px] font-bold uppercase tracking-widest">(IOI) 2026, Bolivia</p>
+                                            <h4 className="text-white font-extrabold text-[22px] mb-3 leading-tight tracking-tight">International Olympiad in Informatics</h4>
+                                            <p className="text-slate-400 text-sm font-bold uppercase tracking-[0.2em]">(IOI) 2026, Bolivia</p>
                                         </div>
                                     </div>
 

@@ -41,7 +41,7 @@ const Page: React.FC = () => {
             href={link}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center justify-between bg-black/30 backdrop-blur-sm border border-brand-peach/10 hover:border-brand-peach/40 rounded-xl px-5 py-4 transition-all duration-300 hover:-translate-y-0.5"
+            className="group flex items-center justify-between bg-white/5 backdrop-blur-md border border-white/10 hover:border-brand-peach/40 rounded-xl px-5 py-4 transition-all duration-300 hover:-translate-y-0.5"
         >
             <div className="text-left">
                 <p className="text-brand-light font-medium group-hover:text-brand-peach transition-colors duration-300">{title}</p>
@@ -61,11 +61,11 @@ const Page: React.FC = () => {
 
                 {/* Subtle Glow Orbs */}
                 <div
-                    className="glow-orb w-[450px] h-[450px] -top-20 -right-20 bg-brand-peach"
+                    className="glow-orb w-[450px] h-[450px] -top-20 -right-20 bg-brand-peach/30"
                     style={{ animation: "pagePulse 11s infinite alternate" }}
                 />
                 <div
-                    className="glow-orb w-[350px] h-[350px] bottom-40 -left-20 bg-brand-orange"
+                    className="glow-orb w-[350px] h-[350px] bottom-40 -left-20 bg-brand-orange/20"
                     style={{ animation: "pagePulse 15s infinite alternate-reverse" }}
                 />
 

@@ -7,6 +7,8 @@ import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 
+import { PatternDotsCircle, PatternWaves, PatternStripesCircle } from "@/components/ui/card-patterns"
+
 export default function Profile() {
     // const { data, status } = useSession();
     const { push } = useRouter();
@@ -50,11 +52,11 @@ export default function Profile() {
 
                 {/* Glow Orbs */}
                 <div
-                    className="glow-orb w-[450px] h-[450px] -top-20 -right-20 bg-brand-peach"
+                    className="glow-orb w-[450px] h-[450px] -top-20 -right-20 bg-brand-peach/30"
                     style={{ animation: "pagePulse 11s infinite alternate" }}
                 />
                 <div
-                    className="glow-orb w-[350px] h-[350px] bottom-40 -left-20 bg-brand-orange"
+                    className="glow-orb w-[350px] h-[350px] bottom-40 -left-20 bg-brand-orange/20"
                     style={{ animation: "pagePulse 15s infinite alternate-reverse" }}
                 />
 
@@ -80,16 +82,19 @@ export default function Profile() {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.15 }}
-                        className="bg-black/30 backdrop-blur-sm border border-brand-peach/10 rounded-2xl p-6 mb-6 text-left"
+                        className="glass-card relative overflow-hidden rounded-2xl p-6 mb-6 text-left"
                     >
-                        <h2 className="text-brand-peach font-semibold tracking-wide mb-4">Profile Information</h2>
-                        <div className="space-y-3">
+                        <h2 className="relative z-10 text-brand-peach font-semibold tracking-wide mb-4">Profile Information</h2>
+                        <div className="relative z-10 space-y-3">
                             {fields.map(({ label, value }) => (
                                 <div key={label} className="flex flex-col sm:flex-row sm:items-center gap-1 py-2 border-b border-white/5 last:border-0">
                                     <span className="text-brand-light/40 text-sm w-28 shrink-0">{label}</span>
                                     <p className="text-brand-light font-medium">{value || "—"}</p>
                                 </div>
                             ))}
+                        </div>
+                        <div className="absolute inset-0 pointer-events-none opacity-10 mix-blend-screen">
+                            <PatternDotsCircle />
                         </div>
                     </motion.div>
 
@@ -98,10 +103,13 @@ export default function Profile() {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.25 }}
-                        className="bg-black/30 backdrop-blur-sm border border-brand-peach/10 rounded-2xl p-6 mb-6 text-left"
+                        className="glass-card relative overflow-hidden rounded-2xl p-6 mb-6 text-left border border-brand-orange/10"
                     >
-                        <h2 className="text-brand-peach font-semibold tracking-wide mb-2">HackerRank</h2>
-                        <p className="text-brand-light/40 text-sm">No HackerRank data linked yet.</p>
+                        <h2 className="relative z-10 text-brand-orange font-semibold tracking-wide mb-2">HackerRank</h2>
+                        <p className="relative z-10 text-brand-light/40 text-sm">No HackerRank data linked yet.</p>
+                        <div className="absolute inset-0 pointer-events-none opacity-20 mix-blend-screen hue-rotate-[220deg]">
+                            <PatternWaves />
+                        </div>
                     </motion.div>
 
                     {/* Division */}
@@ -109,10 +117,13 @@ export default function Profile() {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.35 }}
-                        className="bg-black/30 backdrop-blur-sm border border-brand-peach/10 rounded-2xl p-6 mb-8 text-left"
+                        className="glass-card relative overflow-hidden rounded-2xl p-6 mb-8 text-left border border-purple-500/10"
                     >
-                        <h2 className="text-brand-peach font-semibold tracking-wide mb-2">Division</h2>
-                        <p className="text-brand-light/40 text-sm">Division info not yet available.</p>
+                        <h2 className="relative z-10 text-purple-400 font-semibold tracking-wide mb-2">Division</h2>
+                        <p className="relative z-10 text-brand-light/40 text-sm">Division info not yet available.</p>
+                        <div className="absolute inset-0 pointer-events-none opacity-20 mix-blend-screen hue-rotate-[280deg] saturate-150">
+                            <PatternStripesCircle />
+                        </div>
                     </motion.div>
 
                     <motion.div

@@ -25,7 +25,7 @@ const PrimButtwo: React.FC<PrimButProps> = ({ name, link }) => {
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
             onClick={handleClick}
-            className="relative px-10 py-4 overflow-hidden group rounded-full border border-brand-peach/30 transition-all duration-300"
+            className="relative px-10 py-4 overflow-hidden group rounded-full border border-brand-peach/30 transition-all duration-300 backdrop-blur-sm"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
         >

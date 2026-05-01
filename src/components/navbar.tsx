@@ -43,7 +43,7 @@ const Navbar: React.FC = () => {
     }
 
     return (
-        <nav className="fixed top-0 left-0 w-full z-[100] transition-all duration-300 bg-brand-black/20 backdrop-blur-md border-b border-white/5">
+        <nav className="fixed top-0 left-0 w-full z-[100] transition-all duration-300 bg-brand-navy/30 backdrop-blur-lg border-b border-white/10">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="flex h-20 items-center justify-between">
                     {/* Logo */}
@@ -97,7 +97,7 @@ const Navbar: React.FC = () => {
 
             {/* Mobile Menu */}
             <div className={`md:hidden transition-all duration-300 ${isOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0 overflow-hidden"}`}>
-                <div className="px-4 pt-2 pb-6 space-y-4 bg-brand-black/90 backdrop-blur-xl border-b border-white/5">
+                <div className="px-4 pt-2 pb-6 space-y-4 bg-brand-navy/60 backdrop-blur-2xl border-b border-white/10">
                     {components.map((component, index) => (
                         <Link
                             key={index}

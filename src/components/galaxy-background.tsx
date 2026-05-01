@@ -29,11 +29,11 @@ const GalaxyBackground: React.FC = () => {
         // 400 stars for a dense, premium feel
         const numStars = 400;
 
-        // RGB values for brand colors: light, peach, orange, pure white
+        // RGB values for brand colors: blue, sky blue, cyan, pure white
         const colors = [
-            "230, 230, 230", // #E6E6E6
-            "247, 185, 128", // #F7B980
-            "237, 152, 95",  // #ED985F
+            "59, 130, 246",  // #3b82f6
+            "14, 165, 233",  // #0ea5e9
+            "56, 189, 248",  // #38bdf8
             "255, 255, 255"  // #ffffff
         ];
 

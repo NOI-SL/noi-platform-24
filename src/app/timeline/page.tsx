@@ -56,11 +56,11 @@ const Page: React.FC = () => {
 
                 {/* Subtle Glow Orbs */}
                 <div
-                    className="glow-orb w-[500px] h-[500px] -top-20 -left-20 bg-brand-peach"
+                    className="glow-orb w-[500px] h-[500px] -top-20 -left-20 bg-brand-peach/30"
                     style={{ animation: "pagePulse 13s infinite alternate" }}
                 />
                 <div
-                    className="glow-orb w-[400px] h-[400px] -bottom-20 -right-20 bg-brand-orange"
+                    className="glow-orb w-[400px] h-[400px] -bottom-20 -right-20 bg-brand-orange/20"
                     style={{ animation: "pagePulse 17s infinite alternate-reverse" }}
                 />
 

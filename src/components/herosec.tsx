@@ -28,11 +28,11 @@ const Herosec: React.FC = () => {
 
                 {/* Subtle Glow Orbs */}
                 <div 
-                    className="glow-orb w-[400px] h-[400px] -top-20 -left-20 bg-brand-peach" 
+                    className="glow-orb w-[400px] h-[400px] -top-20 -left-20 bg-brand-peach/30" 
                     style={{ animation: "pulse 10s infinite alternate" }}
                 />
                 <div 
-                    className="glow-orb w-[500px] h-[500px] -bottom-40 -right-20 bg-brand-orange" 
+                    className="glow-orb w-[500px] h-[500px] -bottom-40 -right-20 bg-brand-orange/20" 
                     style={{ animation: "pulse 12s infinite alternate-reverse" }}
                 />
                 

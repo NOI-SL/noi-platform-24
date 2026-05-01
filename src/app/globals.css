@@ -38,29 +38,29 @@
   --color-card-foreground: hsl(var(--card-foreground));
 
   /* Brand palette */
-  --color-blacky: #000000;
-  --color-blacky-foreground: #343a40;
+  --color-blacky: #00040a;
+  --color-blacky-foreground: #0f172a;
 
-  --color-gold: #F3D592;
-  --color-gold-foreground: #F3D592;
+  --color-gold: #38bdf8;
+  --color-gold-foreground: #38bdf8;
 
-  --color-darkred: #0a0908;
-  --color-darkred-foreground: #0a0908;
+  --color-darkred: #020617;
+  --color-darkred-foreground: #020617;
 
-  --color-darkgreen: #08433F;
-  --color-darkgreen-foreground: #08433F;
+  --color-darkgreen: #082f49;
+  --color-darkgreen-foreground: #082f49;
 
-  --color-gray: #343a40;
-  --color-gray-foreground: #343a40;
+  --color-gray: #1e293b;
+  --color-gray-foreground: #1e293b;
 
-  --color-brown: #6c584c;
-  --color-brown-foreground: #6c584c;
+  --color-brown: #0f172a;
+  --color-brown-foreground: #0f172a;
 
-  --color-brand-black: #000000;
-  --color-brand-light: #E6E6E6;
-  --color-brand-peach: #F7B980;
-  --color-brand-orange: #ED985F;
-  --color-brand-navy: #001F3D;
+  --color-brand-black: #00040a;
+  --color-brand-light: #f8fafc;
+  --color-brand-peach: #3b82f6;
+  --color-brand-orange: #0ea5e9;
+  --color-brand-navy: #020617;
 
   /* Border radius */
   --radius-lg: var(--radius);
@@ -91,65 +91,65 @@
 /* ─── Design tokens (CSS custom properties) ─────────────────────────────── */
 @layer base {
   :root {
-    --background: 0 0% 0%;
-    --foreground: 0 0% 90%;
+    --background: 222 47% 4%;
+    --foreground: 210 40% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
+    --card: 222 47% 4%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
+    --popover: 222 47% 4%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
 
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
   }
 
   .dark {
-    --background: 0 0% 0%;
-    --foreground: 0 0% 90%;
+    --background: 222 47% 4%;
+    --foreground: 210 40% 98%;
 
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
+    --card: 222 47% 4%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 222 47% 4%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
 
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
   }
 }
 
@@ -191,7 +191,7 @@
 }
 
 .tech-gradient-text {
-  background: linear-gradient(135deg, #F7B980 0%, #ED985F 100%);
+  background: linear-gradient(135deg, #3b82f6 0%, #0ea5e9 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -203,4 +203,24 @@
   filter: blur(100px);
   opacity: 0.2;
   pointer-events: none;
+}
+
+.glass-card {
+  background: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 4px 24px -1px rgba(0, 0, 0, 0.4),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  transform: translateY(-4px);
+  background: rgba(15, 23, 42, 0.5);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 
+    0 12px 40px -4px rgba(0, 0, 0, 0.5),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.1);
 }

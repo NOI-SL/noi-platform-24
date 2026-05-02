@@ -119,7 +119,7 @@ const HowToCompete: React.FC = () => {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="lg:col-span-2 glass-card rounded-2xl p-10 relative overflow-hidden"
+                            className="lg:col-span-2 bg-[#0a0a0a]/80 backdrop-blur-xl border border-white/5 rounded-2xl p-10 relative overflow-hidden"
                         >
                             <div className="relative z-10">
                                 <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-3">
@@ -142,7 +142,7 @@ const HowToCompete: React.FC = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.1 }}
-                            className="glass-card rounded-2xl p-10 border-t-2 border-t-blue-600/50"
+                            className="bg-[#0a0a0a]/80 backdrop-blur-xl border border-white/5 rounded-2xl p-10 border-t-2 border-t-blue-600/50"
                         >
                             <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-3">
                                 <CheckCircle2 className="w-5 h-5 text-blue-500" />
@@ -183,7 +183,7 @@ const HowToCompete: React.FC = () => {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.4, delay: index * 0.05 }}
-                                    className="glass-card relative overflow-hidden rounded-xl p-8 flex flex-col min-h-[360px] group"
+                                    className="bg-[#0a0a0a]/80 backdrop-blur-xl border border-white/5 relative overflow-hidden rounded-xl p-8 flex flex-col min-h-[360px] group transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_0_30px_-5px_rgba(59,130,246,0.15)]"
                                 >
                                     {/* Top Row */}
                                     <div className="flex justify-between items-start mb-10 relative z-10">
@@ -227,7 +227,7 @@ const HowToCompete: React.FC = () => {
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="glass-card rounded-[2rem] p-8 md:py-16 md:px-6 mb-32 overflow-hidden shadow-2xl"
+                        className="bg-[#0a0a0a]/80 backdrop-blur-xl border border-white/5 rounded-[2rem] p-8 md:py-16 md:px-6 mb-32 overflow-hidden shadow-2xl"
                     >
                         <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6 tracking-tight text-center">
                             Program <span className="text-blue-500">Structure</span>
@@ -350,7 +350,7 @@ const HowToCompete: React.FC = () => {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="md:col-span-3 glass-card rounded-2xl p-10 flex flex-col md:flex-row items-center gap-10 text-left"
+                            className="md:col-span-3 bg-[#0a0a0a]/80 backdrop-blur-xl border border-white/5 rounded-2xl p-10 flex flex-col md:flex-row items-center gap-10 text-left"
                         >
                             <div className="w-20 h-20 shrink-0 bg-slate-950/30 rounded-xl flex items-center justify-center border border-white/5">
                                 <Code2 className="w-9 h-9 text-blue-500/70" />
@@ -380,7 +380,7 @@ const HowToCompete: React.FC = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.1 }}
-                            className="glass-card rounded-2xl p-8 flex flex-col justify-center items-center text-center bg-blue-600/5 border-blue-500/10"
+                            className="bg-[#0a0a0a]/80 backdrop-blur-xl border border-white/5 rounded-2xl p-8 flex flex-col justify-center items-center text-center"
                         >
                             <div className="w-10 h-10 rounded-full bg-blue-600/5 flex items-center justify-center mb-5 text-blue-500">
                                 <Globe className="w-5 h-5" />

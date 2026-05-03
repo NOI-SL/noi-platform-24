@@ -12,9 +12,9 @@ import {
   PatternStripesCircle,
 } from "@/components/ui/card-patterns";
 
-import thamindu from "@/assets/img/thamindu.png";
+import dineth from "@/assets/img/DinethPalliyaguru.jpg.jpeg";
 import kulunu from "@/assets/img/kulunu.jpg";
-import dilini from "@/assets/img/dilini.png";
+import sidath from "@/assets/img/sidath.png";
 import lakshith from "@/assets/img/lakshith.jpeg";
 import pasindu from "@/assets/img/pasindu.png";
 import sadeep from "@/assets/img/sadeep.jpeg";
@@ -29,22 +29,22 @@ interface Organizer {
 const Page: React.FC = () => {
   const ieeeOrganizers: Organizer[] = [
     {
-      name: "Mr. Thamindu Sri Nirmal",
-      title: "Chair",
+      name: "Dineth Palliyaguru",
+      title: "Chairperson",
       organization: "IEEE CodeX Sri Lanka",
-      image: thamindu,
+      image: dineth,
     },
     {
       name: "Mr. Kulunu Weerasoory",
-      title: "Vice Chair",
+      title: "Chairperson",
       organization: "IEEE Young Professionals Sri Lanka",
       image: kulunu,
     },
     {
-      name: "Eng. Dilini Ekanayaka",
-      title: "Chair",
+      name: "Prof. Sidath Liyanage",
+      title: "Chairperson",
       organization: "Educational Activities Committee, IEEE Sri Lanka Section",
-      image: dilini,
+      image: sidath,
     },
   ];
 
@@ -155,17 +155,18 @@ const Page: React.FC = () => {
             <p className="text-brand-light/60 text-lg leading-relaxed max-w-2xl mx-auto">
               Organized by{" "}
               <span className="text-brand-peach font-semibold">
-                IEEE CodeX Sri Lanka
+                <a
+                  href="https://codex.ieee.lk"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  IEEE CodeX Sri Lanka
+                </a>
               </span>{" "}
               in collaboration with the{" "}
               <span className="text-brand-peach font-semibold">
                 NOI Scientific Committee
               </span>
-              , and endorsed by the{" "}
-              <span className="text-brand-peach font-semibold">
-                Ministry of Education Sri Lanka
-              </span>
-              .
             </p>
           </motion.div>
 

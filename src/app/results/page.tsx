@@ -1,6 +1,6 @@
 "use client";
 import React, { createContext } from "react";
-import { useSession } from "next-auth/react";
+// import { useSession } from "next-auth/react";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import Image from "next/image";
@@ -8,7 +8,6 @@ import { motion } from "framer-motion";
 import LoadingScreen from "@/components/loadingscreen";
 import TableResults from "./table";
 import NOIMask from "@/assets/img/NOIMask.svg";
-import Particles from "@/components/particles/ParticleDesign";
 
 interface Result {
   title: string;
@@ -41,7 +40,7 @@ const Page: React.FC = () => {
 
   return (
     <>
-    {/* results are not yet published through NOI site. To DO*/}
+      {/* results are not yet published through NOI site. To DO*/}
       {/* <motion.main
         // initial={{ opacity: 0, y: 50 }}
         // animate={{ opacity: 1, y: 0 }}

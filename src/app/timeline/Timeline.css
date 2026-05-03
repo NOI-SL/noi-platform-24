@@ -1,8 +1,9 @@
 :root {
-  --gold-color: #F3D592;
-  --black-color: #0b0b0b;
-  --white-color: #f5f5f5;
-  --darkgreen-color: #08433F;
+  --gold-color: #3b82f6;
+  --black-color: #020617;
+  --card-bg: rgba(15, 23, 42, 0.4);
+  --card-border: rgba(255, 255, 255, 0.1);
+  --white-color: #f8fafc;
 }
 
 
@@ -83,12 +84,12 @@
   .main-timeline-4::after {
     content: "";
     position: absolute;
-    width: 3px;
-    background-color: var(--gold-color);
+    width: 2px;
+    background: linear-gradient(to bottom, rgba(59, 130, 246, 0.1), rgba(59, 130, 246, 0.5), rgba(59, 130, 246, 0.1));
     top: 0;
     bottom: 0;
     left: 50%;
-    margin-left: -3px;
+    margin-left: -1px;
   }
 
   .timeline-4 {
@@ -100,13 +101,14 @@
   .timeline-4::after {
     content: "";
     position: absolute;
-    width: 25px;
-    height: 25px;
-    right: -11px;
-    background-color: var(--gold-color);
-    top: 15px;
+    width: 14px;
+    height: 14px;
+    right: -7px;
+    background: linear-gradient(135deg, #3b82f6, #0ea5e9);
+    top: 20px;
     border-radius: 50%;
     z-index: 1;
+    box-shadow: 0 0 12px rgba(59, 130, 246, 0.4);
   }
   .left-4 {
     padding: 0px 40px 20px 0px;
@@ -170,18 +172,28 @@
   
   .gradient-custom {
     --bs-card-border-width: none !important;
-    background: var(--black-color);
-    background: -webkit-linear-gradient(to right, var(--black-color), var(--black-color));
-    background: linear-gradient(to right, var(--black-color), var(--black-color));
-    border: 1px solid #000000;
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    transition: border-color 0.3s ease;
+  }
+  .gradient-custom:hover {
+    border-color: rgba(59, 130, 246, 0.3);
   }
   
   .gradient-custom-4 {
     --bs-card-border-width: none !important;
-    background: var(--black-color);
-    background: -webkit-linear-gradient(to left, var(--black-color), var(--black-color));
-    background: linear-gradient(to left, var(--black-color), var(--black-color));
-    border: 1px solid #000000;
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    transition: border-color 0.3s ease;
+  }
+  .gradient-custom-4:hover {
+    border-color: rgba(59, 130, 246, 0.3);
   }
   
   .timeLineContainor {

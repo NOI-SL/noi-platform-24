@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useRouter } from "next/navigation";
-import { signIn } from "next-auth/react";
+// import { signIn } from "next-auth/react";
 
 // Define an interface for the component props
 interface PrimButProps {
@@ -69,7 +69,7 @@ const PrimBut: React.FC<PrimButProps> = ({ name, link }) => {
         className="py-3 px-8 mt-10 border-[3px]  border-gold text-gold hover:text-gold-100 bg-darkgreen"
         style={{ position: "relative", overflow: "hidden", zIndex: 1 }} // Change default background color as needed
         whileHover={hoverAnimation}
-        onClick={() => signIn("asgardeo")}
+        // onClick={() => signIn("asgardeo")}
       >
         <AnimatePresence>
           {hovered && (

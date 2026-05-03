@@ -1,29 +1,75 @@
 "use client";
 
 import { LoginButton } from "@/components/ui/login";
-import { useSession } from "next-auth/react";
+// import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
+import { motion } from "framer-motion";
+
+import { PatternChevrons } from "@/components/ui/card-patterns"
 
 export default function Unauthorized() {
-    const { status } = useSession();
+    // const { status } = useSession();
     const { push } = useRouter();
 
-    useEffect(() => {
-        if (status === 'authenticated') {
-            push('/');
-        }
-    }, [status,push])
+    // useEffect(() => {
+    //     if (status === 'authenticated') {
+    //         push('/');
+    //     }
+    // }, [status, push])
 
     return (
-        <main className="flex min-h-screen flex-col items-center justify-center p-6 sm:p-12 ">
-            <div className="max-w-md mx-auto bg-white rounded-lg shadow-md overflow-hidden p-6 sm:p-8 m-4 sm:m-8">
-                <div className="bg-red-500 text-white flex items-center  justify-between px-4 py-3 rounded mb-4">
-                    <h1 className="text-2xl font-bold mb-4">Unauthorized</h1>
-                </div>
-                <p>You are not authorized to access this page.</p>
-            </div>
-            <LoginButton />
-        </main>
+        <>
+            <main className="relative flex min-h-screen flex-col items-center justify-center p-6 bg-transparent overflow-hidden">
+                {/* Grainy Texture Overlay */}
+                <div className="grainy-overlay" />
+
+                {/* Glow Orbs */}
+                <div
+                    className="glow-orb w-[400px] h-[400px] -top-20 -left-20 bg-brand-peach/30"
+                    style={{ animation: "pagePulse 10s infinite alternate" }}
+                />
+                <div
+                    className="glow-orb w-[350px] h-[350px] -bottom-20 -right-20 bg-brand-orange/20"
+                    style={{ animation: "pagePulse 14s infinite alternate-reverse" }}
+                />
+
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    className="relative z-10 max-w-md w-full text-center"
+                >
+                    <div className="glass-card relative overflow-hidden rounded-2xl p-10 mb-6 border border-red-500/10 shadow-2xl">
+                        <div className="relative z-10 w-16 h-16 rounded-2xl bg-red-500/10 border border-red-500/30 flex items-center justify-center mx-auto mb-6 shadow-lg shadow-red-500/5">
+                            <svg className="w-8 h-8 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" />
+                            </svg>
+                        </div>
+                        <h1 className="relative z-10 text-3xl font-bold text-white mb-3 tracking-tight">
+                            Unauthorized
+                        </h1>
+                        <p className="relative z-10 text-brand-light/50 mb-8 leading-relaxed font-light">
+                            You are not authorized to access this page. Please sign in to continue.
+                        </p>
+                        <div className="relative z-10">
+                            <LoginButton />
+                        </div>
+                        
+                        {/* Background Pattern */}
+                        <div className="absolute inset-0 pointer-events-none opacity-20 mix-blend-screen sepia hue-rotate-[320deg] saturate-200">
+                            <PatternChevrons />
+                        </div>
+                    </div>
+                </motion.div>
+            </main>
+
+            <style jsx>{`
+                @keyframes pagePulse {
+                    from { transform: translate(0, 0) scale(1); opacity: 0.12; }
+                    to { transform: translate(25px, 25px) scale(1.12); opacity: 0.22; }
+                }
+            `}</style>
+        </>
     );
 };
